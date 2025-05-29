@@ -1,0 +1,59 @@
+---
+import PricingCard from './shared/PricingCard.astro';
+
+const plans = [
+  {
+    title: 'Básico',
+    price: '$9',
+    description: 'Ideal para proyectos personales.',
+    features: ['1 proyecto', 'Soporte básico'],
+    buttonText: 'Comenzar',
+  },
+  {
+    title: 'Profesional',
+    price: '$29',
+    description: 'Para pequeñas empresas.',
+    features: ['5 proyectos', 'Soporte prioritario'],
+    buttonText: 'Comenzar',
+  },
+  {
+    title: 'Empresarial',
+    price: '$99',
+    description: 'Para empresas en crecimiento.',
+    features: ['Proyectos ilimitados', 'Soporte 24/7'],
+    buttonText: 'Comenzar',
+  },
+  {
+    title: 'Personalizado',
+    price: 'A consultar',
+    description: 'Soluciones a medida.',
+    features: ['Consultoría dedicada', 'Soporte premium'],
+    buttonText: 'Contactar',
+  },
+];
+---
+
+<section class="bg-white dark:bg-gray-900 py-12">
+  <div class="max-w-screen-xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
+        Planes para cada necesidad
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 text-lg">
+        Elige el plan que mejor se adapte a tu proyecto
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {plans.map((plan) => (
+        <PricingCard
+          title={plan.title}
+          price={plan.price}
+          description={plan.description}
+          features={plan.features}
+          buttonText={plan.buttonText}
+        />
+      ))}
+    </div>
+  </div>
+</section>
