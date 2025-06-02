@@ -1,76 +1,86 @@
 ---
 const faqs = [
   {
-    question: "¿Cómo empiezo un proyecto?",
-    answer: "Solo necesitas enviarnos un mensaje o llenar nuestro formulario de contacto. Agendamos una breve llamada o intercambio para entender tus necesidades, y te enviamos una cotización personalizada."
+    question: "What is included in your wedding videography package?",
+    answer: "Most packages include coverage of the ceremony and reception, edited highlight video, and full-length footage. Custom options are also available."
   },
   {
-    question: "¿Los precios son fijos o pueden cambiar?",
-    answer: "Cada proyecto es único. Los rangos que mostramos son estimados. El precio final se define con base en el alcance, tiempos y entregables necesarios."
+    question: "How many hours of coverage do you provide?",
+    answer: "I typically offer packages ranging from 4 to 10 hours, depending on the size and schedule of your event."
   },
   {
-    question: "¿Qué pasa si necesito algo que no está en los paquetes?",
-    answer: "También ofrecemos servicios individuales. Podemos cotizar lo que necesitas o ajustar uno de los paquetes para que se adapte a tu proyecto."
+    question: "When will we receive our final wedding video?",
+    answer: "You will receive your edited video within 4 to 8 weeks, depending on the complexity of the project."
   },
   {
-    question: "¿Cuántas rondas de cambios están incluidas?",
-    answer: "Cada paquete incluye un número definido de revisiones. Si necesitas más, se pueden agregar con costo adicional. Siempre buscamos que quedes satisfecho."
+    question: "Can we choose the music for our video?",
+    answer: "Yes, you're welcome to suggest music. I also provide a licensed music library to ensure legal usage."
   },
   {
-    question: "¿Cuánto tiempo tarda un proyecto?",
-    answer: "Depende del tipo de servicio. Un logotipo básico puede tomar entre 5 y 7 días; un branding completo o sitio web puede tardar de 2 a 4 semanas. Se establece un calendario desde el inicio."
+    question: "Do you offer drone footage?",
+    answer: "Yes, drone footage is available as an add-on, weather and venue permitting."
   },
   {
-    question: "¿Qué formas de pago aceptan?",
-    answer: "Aceptamos transferencias bancarias (SPEI) y pagos por plataformas digitales. Los proyectos se confirman con un anticipo del 50%, y el resto al entregar los archivos finales."
+    question: "Do you require a deposit to book the date?",
+    answer: "Yes, a non-refundable deposit is required to secure your date. The remaining balance is due before the event."
   },
   {
-    question: "¿Recibiré los archivos editables?",
-    answer: "Sí. Entregamos archivos en formatos editables (AI, PSD o Canva) y también en versiones listas para impresión o uso digital (JPG, PNG, PDF, etc.)."
+    question: "Will there be a second videographer?",
+    answer: "A second videographer can be added for more coverage, especially for larger weddings or events with multiple locations."
   },
   {
-    question: "¿Puedo usar los diseños en redes sociales o para impresión?",
-    answer: "¡Por supuesto! Todos los entregables están listos para usarse tanto en digital como en materiales físicos."
-  },
-  {
-    question: "¿Ofreces servicios de mantenimiento o actualización después del proyecto?",
-    answer: "Sí. Podemos ayudarte con ajustes, rediseños, nuevas piezas o contenido. Estos servicios se cotizan por separado según tus necesidades."
+    question: "Do you travel for destination weddings?",
+    answer: "Absolutely! I’m available for travel and destination weddings. Travel costs are discussed during the booking process."
   }
 ];
 
+const midpoint = Math.ceil(faqs.length / 2);
+const faqsLeft = faqs.slice(0, midpoint);
+const faqsRight = faqs.slice(midpoint);
 ---
 
 <section class="bg-primary py-16 md:py-20" id="faqs">
   <div class="max-w-screen-lg mx-auto px-4" data-aos="fade-up" data-aos-delay="100">
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-main text-gray-900 my-2">Frequently Asked Questions</h2>
-      <p class="text-lg text-accent">Here are answers to some common questions about our wedding films.</p>
+      <h2 class="text-4xl md:text-5xl font-main text-black my-2">Do you have any questions?</h2>
+      <p class="text-sm text-accent">Here are answers to some common questions about our wedding films.</p>
     </div>
 
-    <div class="flex flex-col gap-y-4 " id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white text-accent border-b-2" data-inactive-classes="text-gray-900">
-      {faqs.map((faq, index) => (
-        <div class="border-b border-gray-200 bg-white px-8 rounded-2xl shadow-xl" key={index}>
-          <h3 id={`accordion-flush-heading-${index}`} >
-            <button
-              type="button"
-              class="flex items-center justify-between w-full py-5 font-medium text-left "
-              data-accordion-target={`#accordion-flush-body-${index}`}
-              aria-expanded="false"
-              aria-controls={`accordion-flush-body-${index}`}
-            >
-              <span class="w-full">{faq.question}</span>
-     
-            <svg data-accordion-icon class="w-6 h-6 text-gray-800 dark:text-white rotate-180" aria-hidden="true"  width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 14-4-4-4 4"/>
-            </svg>
-
-            </button>
-          </h3>
-          <div id={`accordion-flush-body-${index}`} class="hidden" aria-labelledby={`accordion-flush-heading-${index}`}>
-            <div class="py-5 text-gray-600">
-              {faq.answer}
-            </div>
-          </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {[faqsLeft, faqsRight].map((column, colIndex) => (
+        <div class="space-y-4">
+          {column.map((faq, index) => {
+            const uniqueIndex = colIndex * midpoint + index;
+            return (
+              <div
+                class="bg-white px-8 rounded-lg"
+                key={uniqueIndex}
+                data-accordion="collapse"
+                data-active-classes="bg-white text-black border-b-2 border-gray"
+                data-inactive-classes="text-black"
+              >
+                <h3 id={`accordion-heading-${uniqueIndex}`}>
+                  <button
+                    type="button"
+                    class="flex items-center justify-between w-full py-4 font-medium text-left text-black"
+                    data-accordion-target={`#accordion-body-${uniqueIndex}`}
+                    aria-expanded="false"
+                    aria-controls={`accordion-body-${uniqueIndex}`}
+                  >
+                    <span class="w-full text-black">{faq.question}</span>
+                    <svg data-accordion-icon class="w-6 h-6 text-black rotate-180" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 14-4-4-4 4" />
+                    </svg>
+                  </button>
+                </h3>
+                <div id={`accordion-body-${uniqueIndex}`} class="hidden" aria-labelledby={`accordion-heading-${uniqueIndex}`}>
+                  <div class="py-3">
+                    {faq.answer}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>

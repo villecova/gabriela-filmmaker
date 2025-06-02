@@ -3,43 +3,73 @@ import PricingCard from './shared/PricingCard.astro';
 
 const plans = [
   {
-    title: 'Básico',
-    price: '$9',
-    description: 'Ideal para proyectos personales.',
-    features: ['1 proyecto', 'Soporte básico'],
-    buttonText: 'Comenzar',
+    title: 'Essential',
+    price: '$700',
+    description: 'Perfect for intimate ceremonies or elopements.',
+    features: [
+      '3-hour coverage',
+      '1 videographer',
+      '3–5 min highlight video',
+      'Digital delivery in 3 weeks',
+      'Licensed music',
+      'Single camera setup'
+    ],
+    buttonText: 'Book now',
   },
   {
-    title: 'Profesional',
-    price: '$29',
-    description: 'Para pequeñas empresas.',
-    features: ['5 proyectos', 'Soporte prioritario'],
-    buttonText: 'Comenzar',
+    title: 'Classic',
+    price: '$1,200',
+    description: 'Great for small to medium weddings.',
+    features: [
+      'Up to 6-hour coverage',
+      '1 videographer + basic drone',
+      '4–6 min highlight video',
+      '20–30 min extended film',
+      'Professional audio for vows & ceremony',
+      'Digital delivery in 4 weeks'
+    ],
+    buttonText: 'Book now',
   },
   {
-    title: 'Empresarial',
-    price: '$99',
-    description: 'Para empresas en crecimiento.',
-    features: ['Proyectos ilimitados', 'Soporte 24/7'],
-    buttonText: 'Comenzar',
+    title: 'Premium',
+    price: '$2,000',
+    description: 'Complete coverage for full-day events.',
+    features: [
+      'Up to 10-hour coverage',
+      '2 videographers',
+      'Professional drone footage',
+      '5–7 min highlight video',
+      '30–60 min cinematic film',
+      'USB box + online gallery',
+      '1-min trailer for social media'
+    ],
+    buttonText: 'Book now',
   },
   {
-    title: 'Personalizado',
-    price: 'A consultar',
-    description: 'Soluciones a medida.',
-    features: ['Consultoría dedicada', 'Soporte premium'],
-    buttonText: 'Contactar',
-  },
+    title: 'Custom',
+    price: 'Contact for pricing',
+    description: 'Tailored packages for multi-day or destination weddings.',
+    features: [
+      'Flexible multi-day coverage',
+      'Pre-wedding or trash-the-dress session',
+      'Creative consultation',
+      '4K cinematic footage',
+      'Vertical videos for reels/TikTok',
+      'Fast-track delivery available'
+    ],
+    buttonText: 'Schedule a call',
+  }
 ];
+
 ---
 
 <section class="bg-white dark:bg-gray-900 py-12">
   <div class="max-w-screen-lg mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-main text-gray-900 dark:text-white mb-4">
+      <h2 class="text-4xl md:text-5xl font-main text-black dark:text-white mb-4">
         Pricing Packages
       </h2>
-      <p class="text-lg text-accent">
+      <p class="text-sm text-accent">
         Simple and transparent.
       </p>
     </div>
