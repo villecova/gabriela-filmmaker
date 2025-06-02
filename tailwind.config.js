@@ -1,11 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte,md,mdx}',
+    './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte,md,mdx,css}',
     './node_modules/flowbite/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      scrollBehavior: {
+        smooth: 'smooth',
+      },
+      fontFamily: { 
+        secondary: ['Inter', 'sans-serif'],
+        main: ['Italiana', 'sans-serif']
+      },
+      colors: {
+        primary: '#FAF1E8',
+        secondary: '#777777',
+        accent: '#E0B589',
+      }
+    },
   },
   plugins: [require('flowbite/plugin')],
 };

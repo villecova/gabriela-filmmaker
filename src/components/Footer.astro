@@ -1,0 +1,36 @@
+---
+const links = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Proyectos', href: '/works' },
+  { label: 'Instagram', href: 'https://www.instagram.com/nitida.digital/', external: true }
+];
+---
+
+<footer class="bg-black text-white border-t border-gray-800">
+    <div class="max-w-screen-lg mx-auto">
+        <nav class="border-b boreder-gray-300 mb-16">
+            <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center text-sm">
+                <div class="flex gap-6">
+                {links.slice(0, 2).map(link => (
+                    <a href={link.href}>{link.label}</a>
+                ))}
+                </div>
+                <div>
+                <a href={links[2].href} target="_blank" rel="noopener noreferrer">
+                    {links[2].label}
+                </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="relative w-1/2 mx-auto">
+            <img src="/assets/images/hero_logo-w.svg" alt="Logo Footer" class="w-full relative z-10" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none"></div>
+        </div>
+        
+        <div class="max-w-screen-lg mx-auto py-4 text-xs text-center text-zinc-900">
+        <span>© {new Date().getFullYear()} Nítida. Todos los derechos reservados.</span>
+        </div>
+    </div>
+  </footer>
+  
