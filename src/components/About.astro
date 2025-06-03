@@ -1,4 +1,9 @@
 ---
+import en from '../i18n/messages/en.json';
+import es from '../i18n/messages/es.json';
+
+const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const t = lang === 'es' ? es : en;
 ---
 
 <section class="bg-white py-16" id="about">
@@ -7,16 +12,15 @@
       <!-- Texto -->
       <div>
         <h2 class="text-4xl md:text-5xl font-main mb-6 text-black">
-          About me
+          {t.about.title}
         </h2>
   
         <p class="mb-4 leading-relaxed">
-          Gabriela Villegas is a professional event photographer dedicated to capturing meaningful moments with an artistic eye.
-          With years of experience shooting weddings, corporate gatherings, and social events, she blends technical expertise with genuine passion, resulting in timeless, elegant images.
+          {t.about.subtitle}
         </p>
   
         <p class="leading-relaxed">
-          Gabriela’s style is a balance of candid storytelling and carefully composed shots. She thrives behind the lens—whether it’s a grand celebration or an intimate gathering—and believes every event has a unique story waiting to be preserved through photography and video.
+          {t.about.description}
         </p>
   
         <!-- Firma -->

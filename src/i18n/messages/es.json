@@ -1,0 +1,30 @@
+{
+    "hello": "¡Hola!",
+    "welcome": "Bienvenidos a nuestro sitio de videos de boda",
+    "navbar": {
+      "home": "Inicio",
+      "about": "Acerca de",
+      "portfolio": "Portafolio",
+      "faqs": "Preguntas",
+      "contact": "Contacto"
+    },
+    "logo": {
+        "title": "Gabriela Villegas",
+        "subtitle": "Videógrafa de bodas"
+    },
+    "hero": {
+      "title": "Capturando momentos inolvidables",
+      "subtitle": "Narrativa visual en cada evento",
+      "cta_primary": "Ver portfolio",
+      "cta_secondary": "Agendar" 
+    },
+    "about": {
+        "title": "Sobre mi",
+        "subtitle": "Gabriela Villegas es una fotógrafa profesional de eventos dedicada a capturar momentos significativos con un ojo artístico. Con años de experiencia fotografiando bodas, reuniones corporativas y eventos sociales, combina su experiencia técnica con una pasión genuina, dando como resultado imágenes elegantes y atemporales.",
+        "description": "El estilo de Gabriela es un equilibrio entre la narración sincera y las tomas cuidadosamente compuestas. Le encanta estar detrás del objetivo, tanto si se trata de una gran celebración como de una reunión íntima, y cree que cada evento tiene una historia única que espera ser preservada a través de la fotografía y el vídeo"
+      },
+    "footer": {
+      "rights": "Todos los derechos reservados."
+    }
+  }
+  

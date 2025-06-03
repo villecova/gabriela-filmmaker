@@ -1,7 +1,11 @@
 ---
 import Button from "./shared/Button.astro";
 
+import en from '../i18n/messages/en.json';
+import es from '../i18n/messages/es.json';
 
+const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const t = lang === 'es' ? es : en;
 ---
 
 <section class="relative w-full h-screen overflow-hidden flex items-center justify-center text-center pt-16" id="hero">
@@ -23,22 +27,22 @@ import Button from "./shared/Button.astro";
   <!-- Contenido -->
   <div class="relative z-3 text-white px-4 max-w-3xl">
     <h1 class="text-5xl md:text-7xl font-main ">
-      Gabriela Villegas
+      {t.logo.title}
     </h1>
     <h2 class="text-1xl font-secondary uppercase mb-6">
-      Wedding Filmmaker
+      {t.logo.subtitle}
     </h2>
 
     <p class="text-xl md:text-2xl font-secondary">
-      Capturing Unforgettable Moments.
+      {t.hero.title}
     </p>
     <p class="text-lg text-accent font-secondary mb-8">
-      Visual storytelling at every event.
+      {t.hero.subtitle}
     </p>
 
     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-      <Button href="/portfolio" label="View portfolio" variant="primary"  fullWidth/>
-      <Button href="/contact" label="book now" variant="secondary" fullWidth />
+      <Button href="/portfolio" label={t.hero.cta_primary} variant="primary"  fullWidth/>
+      <Button href="/contact" label={t.hero.cta_secondary} variant="secondary" fullWidth />
     </div>
   </div>
 </section>

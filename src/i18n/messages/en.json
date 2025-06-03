@@ -1,0 +1,30 @@
+{
+    "hello": "Hello!",
+    "welcome": "Welcome to our wedding video site",
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "portfolio": "Portfolio",
+      "faqs": "FAQs",
+      "contact": "Contact"
+    },
+    "logo": {
+        "title": "Gabriela Villegas",
+        "subtitle": "Wedding Filmmaker"
+    },
+    "hero": {
+      "title": "Capturing Unforgettable Moments.",
+      "subtitle": "Visual storytelling at every event.",
+      "cta_primary": "View portfolio",
+      "cta_secondary": "Book Now" 
+    },
+    "about": {
+        "title": "About me",
+        "subtitle": "Gabriela Villegas is a professional event photographer dedicated to capturing meaningful moments with an artistic eye. With years of experience shooting weddings, corporate gatherings, and social events, she blends technical expertise with genuine passion, resulting in timeless, elegant images",
+        "description": "Gabriela’s style is a balance of candid storytelling and carefully composed shots. She thrives behind the lens—whether it’s a grand celebration or an intimate gathering—and believes every event has a unique story waiting to be preserved through photography and video."
+      },
+    "footer": {
+      "rights": "All rights reserved."
+    }
+  }
+  
