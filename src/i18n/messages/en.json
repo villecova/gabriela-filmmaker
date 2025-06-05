@@ -23,6 +23,27 @@
         "subtitle": "Gabriela Villegas is a professional event photographer dedicated to capturing meaningful moments with an artistic eye. With years of experience shooting weddings, corporate gatherings, and social events, she blends technical expertise with genuine passion, resulting in timeless, elegant images",
         "description": "Gabriela’s style is a balance of candid storytelling and carefully composed shots. She thrives behind the lens—whether it’s a grand celebration or an intimate gathering—and believes every event has a unique story waiting to be preserved through photography and video."
       },
+      "contact": {
+        "title": "Wedding Quote Request",
+        "subtitle": "Tell us more about your day and what you’re looking for.",
+        "name": "Full Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "date": "Wedding Date",
+        "location": "City and Venue",
+        "guests": "Estimated Guest Count",
+        "services": "What services are you interested in?",
+        "fullVideo": "Full Video",
+        "teaser": "Teaser",
+        "saveDate": "Save the Date",
+        "drone": "Drone Footage",
+        "guestsMessages": "Messages from Guests",
+        "style": "Preferred Style (optional)",
+        "budget": "Estimated Budget (optional)",
+        "message": "Tell us more about your event",
+        "send": "Send Request",
+        "botField": "Do not fill this field:"
+      },
     "footer": {
       "rights": "All rights reserved."
     }

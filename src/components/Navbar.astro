@@ -2,19 +2,21 @@
 import Button from "./shared/Button.astro";
 
 
-const navItems = [
-  { label: "Home", href: "#hero", active: true  },
-  { label: "About", href: "#about"  },
-  { label: "Portfolio", href: "#porftolio" },
-  { label: "Faqs", href: "#faqs" },
-  { label: "Contact", href: "/contact" },
-]
-
 import en from '../i18n/messages/en.json';
 import es from '../i18n/messages/es.json';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
-const t = lang === 'es' ? es : en;
+const translations = lang === 'es' ? es : en;
+const base = lang === 'es' ? '/es' : '';
+
+const navItems = [
+  { label: translations.navbar.home, href: `..${base}` },
+  // { label: translations.navbar.about, href: `./#about${base}` },
+  { label: translations.navbar.portfolio, href: `/gallery${base}` },
+  { label: translations.navbar.faqs, href: `../#faqs${base}` },
+  { label: translations.navbar.contact, href: `/contact${base}` },
+];
+
 ---
 
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0">

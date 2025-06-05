@@ -23,6 +23,27 @@
         "subtitle": "Gabriela Villegas es una fotógrafa profesional de eventos dedicada a capturar momentos significativos con un ojo artístico. Con años de experiencia fotografiando bodas, reuniones corporativas y eventos sociales, combina su experiencia técnica con una pasión genuina, dando como resultado imágenes elegantes y atemporales.",
         "description": "El estilo de Gabriela es un equilibrio entre la narración sincera y las tomas cuidadosamente compuestas. Le encanta estar detrás del objetivo, tanto si se trata de una gran celebración como de una reunión íntima, y cree que cada evento tiene una historia única que espera ser preservada a través de la fotografía y el vídeo"
       },
+      "contact": {
+        "title": "Solicitud de Cotización para Boda",
+        "subtitle": "Cuéntanos sobre tu día y qué servicios estás buscando.",
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "date": "Fecha de la boda",
+        "location": "Ciudad y lugar del evento",
+        "guests": "Número estimado de invitados",
+        "services": "¿Qué servicios deseas cotizar?",
+        "fullVideo": "Video completo",
+        "teaser": "Teaser",
+        "saveDate": "Save the date",
+        "drone": "Tomas con dron",
+        "guestsMessages": "Mensajes de invitados",
+        "style": "Estilo preferido (opcional)",
+        "budget": "Presupuesto estimado (opcional)",
+        "message": "Cuéntanos más sobre tu evento",
+        "send": "Enviar solicitud",
+        "botField": "No llenar este campo:"
+      },
     "footer": {
       "rights": "Todos los derechos reservados."
     }
