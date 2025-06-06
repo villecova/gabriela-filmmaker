@@ -1,7 +1,5 @@
 {
     "intro": "Lo vivirás una vez. Lo sentirás por siempre.",
-    "hello": "¡Hola!",
-    "welcome": "Bienvenidos a nuestro sitio de videos de boda",
     "navbar": {
       "home": "Inicio",
       "about": "Acerca de",
@@ -23,6 +21,31 @@
         "title": "Sobre mi",
         "subtitle": "Gabriela Villegas es una fotógrafa profesional de eventos dedicada a capturar momentos significativos con un ojo artístico. Con años de experiencia fotografiando bodas, reuniones corporativas y eventos sociales, combina su experiencia técnica con una pasión genuina, dando como resultado imágenes elegantes y atemporales.",
         "description": "El estilo de Gabriela es un equilibrio entre la narración sincera y las tomas cuidadosamente compuestas. Le encanta estar detrás del objetivo, tanto si se trata de una gran celebración como de una reunión íntima, y cree que cada evento tiene una historia única que espera ser preservada a través de la fotografía y el vídeo"
+      },
+      "gallery": {
+        "title": "Galería",
+        "items": [
+          {
+            "category": "Boda | Verano",
+            "title": "Ena y Robert",
+            "date": "3 de junio de 2025"
+          },
+          {
+            "category": "Boda | Verano",
+            "title": "Clara y Max",
+            "date": "3 de junio de 2025"
+          },
+          {
+            "category": "Boda | Verano",
+            "title": "Anne y Sven",
+            "date": "3 de junio de 2025"
+          },
+          {
+            "category": "Boda | Verano",
+            "title": "Hanna y Simón",
+            "date": "3 de junio de 2025"
+          }
+        ]
       },
       "contact": {
         "title": "Solicitud de Cotización para Boda",

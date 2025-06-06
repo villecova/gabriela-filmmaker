@@ -1,7 +1,5 @@
 {
     "intro": "You'll live it once. You'll feel it forever",
-    "hello": "Hello!",
-    "welcome": "Welcome to our wedding video site",
     "navbar": {
       "home": "Home",
       "about": "About",
@@ -23,6 +21,31 @@
         "title": "About me",
         "subtitle": "Gabriela Villegas is a professional event photographer dedicated to capturing meaningful moments with an artistic eye. With years of experience shooting weddings, corporate gatherings, and social events, she blends technical expertise with genuine passion, resulting in timeless, elegant images",
         "description": "Gabriela’s style is a balance of candid storytelling and carefully composed shots. She thrives behind the lens—whether it’s a grand celebration or an intimate gathering—and believes every event has a unique story waiting to be preserved through photography and video."
+      },
+      "gallery": {
+        "title": "Gallery",
+        "items": [
+          {
+            "category": "Wedding | Summer",
+            "title": "Ena & Robert",
+            "date": "June 3rd, 2025"
+          },
+          {
+            "category": "Wedding | Summer",
+            "title": "Clara & Max",
+            "date": "June 3rd, 2025"
+          },
+          {
+            "category": "Wedding | Summer",
+            "title": "Anne & Sven",
+            "date": "June 3rd, 2025"
+          },
+          {
+            "category": "Wedding | Summer",
+            "title": "Hanna & Simon",
+            "date": "June 3rd, 2025"
+          }
+        ]
       },
       "contact": {
         "title": "Wedding Quote Request",

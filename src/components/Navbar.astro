@@ -5,9 +5,15 @@ import Button from "./shared/Button.astro";
 import en from '../i18n/messages/en.json';
 import es from '../i18n/messages/es.json';
 
+const currentPath = Astro.url.pathname;
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const translations = lang === 'es' ? es : en;
 const base = lang === 'es' ? '/es' : '/en';
+
+function getLangPath(code: string) {
+  return currentPath.replace(/^\/(en|es)/, `/${code}`);
+}
+
 
 const navItems = [
   { label: translations.navbar.home, href: `${base}#hero` },
@@ -29,7 +35,7 @@ const languages = [
   <a href={base} data-collapse-toggle="navbar-default" class="flex items-center space-x-3 rtl:space-x-reverse md:text-2xl font-main">
     Gabriela Villegas
   </a>
-  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center">
     <Button href="#" label="Book now" variant="primary" />
 
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
@@ -38,7 +44,7 @@ const languages = [
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
     </button>
-      <button data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
+      <button data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
         {lang.toUpperCase()}
       </button>
   </div>
@@ -64,7 +70,7 @@ const languages = [
       {languages.map(({ code, label }) => (
         <li>
           <a
-            href={`/${code}`}
+            href={getLangPath(code)}
             class={`block px-4 py-2 text-sm ${
               lang === code
                 ? 'font-semibold text-accent'
