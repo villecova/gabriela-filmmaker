@@ -71,8 +71,18 @@
           "required": "This field is required"
         }
       },
-    "footer": {
-      "rights": "All rights reserved."
-    }
+      "footer": {
+        "navigationTitle": "Navigation",
+        "contactTitle": "Contact",
+        "aboutTitle": "About Me",
+        "aboutText": "Capturing authentic love stories with a cinematic eye. Each wedding is unique, and my job is to immortalize it with elegance and emotion.",
+        "copyright": "All rights reserved.",
+        "links": {
+          "home": "Home",
+          "portfolio": "Portfolio",
+          "contact": "Contact",
+          "instagram": "Instagram"
+        }
+      }
   }
   

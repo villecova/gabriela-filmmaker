@@ -71,8 +71,18 @@
           "required": "Este campo es obligatorio"
         }
       },
-    "footer": {
-      "rights": "Todos los derechos reservados."
-    }
+      "footer": {
+        "navigationTitle": "Navegación",
+        "contactTitle": "Contacto",
+        "aboutTitle": "Sobre mí",
+        "aboutText": "Capturando historias de amor auténticas con una mirada cinematográfica. Cada boda es única, y mi trabajo es inmortalizarla con elegancia y emoción.",
+        "copyright": "Todos los derechos reservados.",
+        "links": {
+          "home": "Inicio",
+          "portfolio": "Portafolio",
+          "contact": "Contacto",
+          "instagram": "Instagram"
+        }
+      }
   }
   
