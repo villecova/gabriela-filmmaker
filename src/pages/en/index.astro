@@ -7,18 +7,10 @@ import Princing from '../../components/Princing.astro';
 import About from '../../components/About.astro';
 import Footer from '../../components/Footer.astro';
 import Faqs from '../../components/Faqs.astro';
-import IntroScreen from '../../components/IntroScreen.svelte';
-
-import en from '../../i18n/messages/en.json';
-import es from '../../i18n/messages/es.json';
-
-const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
-const t = lang === 'es' ? es : en;
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<IntroScreen translate={t} client:only="svelte"/>
 <Layout>
 	<Navbar/>
 	<Welcome/>

@@ -55,9 +55,9 @@
   });
 </script>
 
-<section class="bg-[#f6f2ed] pt-24 md:pt-32 pb-16 px-4">
+<section class="bg-[#f6f2ed] pt-32 pb-16 px-4">
   <div class="max-w-screen-lg mx-auto">
-    <h2 class="text-4xl md:text-5xl font-main mb-6 text-black text-center">Gallery</h2>
+    <h2 class="text-4xl md:text-5xl font-main mb-10 text-black text-center">Gallery</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       {#each items as item}

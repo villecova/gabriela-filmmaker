@@ -43,7 +43,10 @@
         "budget": "Estimated Budget (optional)",
         "message": "Tell us more about your event",
         "send": "Send Request",
-        "botField": "Do not fill this field:"
+        "botField": "Do not fill this field:",
+        "errors": {
+          "required": "This field is required"
+        }
       },
     "footer": {
       "rights": "All rights reserved."

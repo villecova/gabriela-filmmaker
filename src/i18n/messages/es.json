@@ -43,7 +43,10 @@
         "budget": "Presupuesto estimado (opcional)",
         "message": "Cuéntanos más sobre tu evento",
         "send": "Enviar solicitud",
-        "botField": "No llenar este campo:"
+        "botField": "No llenar este campo:",
+        "errors": {
+          "required": "Este campo es obligatorio"
+        }
       },
     "footer": {
       "rights": "Todos los derechos reservados."
