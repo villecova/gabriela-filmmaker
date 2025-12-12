@@ -8,8 +8,8 @@
       "contact": "Contact"
     },
     "logo": {
-        "title": "Gabriela Villegas",
-        "subtitle": "Wedding Filmmaker"
+        "title": "Double Films",
+        "subtitle": "Cinematic Love Stories"
     },
     "hero": {
       "title": "Capturing Unforgettable Moments.",
@@ -18,9 +18,10 @@
       "cta_secondary": "Book Now" 
     },
     "about": {
-        "title": "About me",
-        "subtitle": "Gabriela Villegas is a professional event photographer dedicated to capturing meaningful moments with an artistic eye. With years of experience shooting weddings, corporate gatherings, and social events, she blends technical expertise with genuine passion, resulting in timeless, elegant images",
-        "description": "Gabriela’s style is a balance of candid storytelling and carefully composed shots. She thrives behind the lens—whether it’s a grand celebration or an intimate gathering—and believes every event has a unique story waiting to be preserved through photography and video."
+      "title": "About Us",
+      "subtitle": "Double Films is a creative studio founded by Mario and Gabriela. Together, we capture love stories through two complementary perspectives, blending artistic sensitivity, cinematic technique, and a genuine connection with every couple. Our work is focused on creating authentic, emotional, and timeless wedding films.",
+      "description": "Our style is rooted in the balance between honest storytelling and a refined visual aesthetic. We observe, anticipate, and tell stories as they naturally unfold, whether in an intimate celebration or a large-scale wedding. We believe every couple has a unique way of loving, and our mission is to transform it into a film that feels real, personal, and made to last."
+
       },
       "gallery": {
         "title": "Gallery",
