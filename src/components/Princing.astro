@@ -73,7 +73,7 @@ const plans = [
 
 <section class="bg-white py-20 md:py-32" id="pricing">
   <div class="max-w-screen-xl mx-auto px-6 md:px-12">
-    <div class="text-center mb-16 md:mb-20">
+    <div data-aos="fade-up" class="text-center mb-16 md:mb-20">
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-main text-taupe mb-3 tracking-tight">
         {t.pricing.title}
       </h2>
@@ -86,7 +86,8 @@ const plans = [
     </div>
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      {plans.map((plan) => (
+      {plans.map((plan, index) => (
+        <div data-aos="fade-up" data-aos-delay={index * 100}>
         <PricingCard
           title={plan.title}
           price={plan.price}
@@ -96,6 +97,7 @@ const plans = [
           featured={plan.featured}
           microcopy={plan.microcopy}
         />
+        </div>
       ))}
     </div>
   </div>
