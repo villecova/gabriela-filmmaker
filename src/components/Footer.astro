@@ -7,10 +7,11 @@ const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
 
 const currentYear = new Date().getFullYear();
+const base = lang === 'es' ? '/es' : '';
 const links = [
-  { label: t.footer.links.home, href: lang === 'es' ? '/es' : '/en' },
-  { label: t.footer.links.portfolio, href: `${lang === 'es' ? '/es' : '/en'}/gallery` },
-  { label: t.footer.links.contact, href: `${lang === 'es' ? '/es' : '/en'}/contact` },
+  { label: t.footer.links.home, href: lang === 'es' ? '/es' : '/' },
+  { label: t.footer.links.portfolio, href: `${base}/gallery` },
+  { label: t.footer.links.contact, href: `${base}/contact` },
   { label: t.footer.links.instagram, href: 'https://www.instagram.com/nitida.digital/', external: true }
 ];
 ---

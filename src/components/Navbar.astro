@@ -8,15 +8,24 @@ import es from '../i18n/messages/es.json';
 const currentPath = Astro.url.pathname;
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const translations = lang === 'es' ? es : en;
-const base = lang === 'es' ? '/es' : '/en';
+const base = lang === 'es' ? '/es' : '';
 
 function getLangPath(code: string) {
-  return currentPath.replace(/^\/(en|es)/, `/${code}`);
+  // Remover /es del path si existe
+  const pathWithoutLang = currentPath.replace(/^\/es/, '') || '/';
+  
+  if (code === 'es') {
+    // Ir a español: agregar /es al inicio
+    return pathWithoutLang === '/' ? '/es' : `/es${pathWithoutLang}`;
+  } else {
+    // Ir a inglés: usar path sin /es
+    return pathWithoutLang;
+  }
 }
 
 
 const navItems = [
-  { label: translations.navbar.home, href: `${base}#hero` },
+  { label: translations.navbar.home, href: `${base || '/'}#hero` },
   { label: translations.navbar.about, href: `${base}#about` },
   { label: translations.navbar.portfolio, href: `${base}/gallery` },
   { label: translations.navbar.faqs, href: `${base}#faqs` },
@@ -32,7 +41,7 @@ const languages = [
 
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0">
   <div class="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
-  <Logo href={base} size="small" multiline={false} as="span" data-collapse-toggle="navbar-default" />
+  <Logo href={base || '/'} size="small" multiline={false} as="span" data-collapse-toggle="navbar-default" />
   <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center">
     <Button href="#" label="Book now" variant="primary" />
 
