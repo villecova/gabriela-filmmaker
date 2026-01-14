@@ -34,20 +34,38 @@ function parseMarkdown(text: string): string {
           </div>
         </div>
     
-        <!-- Imagen + Detalles -->
-        <div class="relative">
+        <!-- Imagen con Reveal Effect -->
+        <div class="reveal-card group h-[400px] w-full rounded-lg shadow-lg overflow-hidden relative cursor-pointer">
+          <!-- Imagen -->
           <img
             src="/assets/images/about2.webp"
             alt="Mario & Gabriela"
-            class="rounded-lg object-cover w-full shadow-lg h-[400px]"
+            class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:blur-sm"
           />
-          <div class="absolute bottom-0 left-0 right-0 bg-taupe/10 backdrop-blur-sm px-4 py-3 rounded-b-lg space-y-1">
-            <p class="text-sm text-white"><strong>Mario</strong> – {t.about.mario}</p>
-            <p class="text-sm text-white"><strong>Gabriela</strong> – {t.about.gabriela}</p>
+          
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-blush-bg/0 group-hover:bg-blush-bg/80 transition-all duration-500"></div>
+          
+          <!-- Contenido -->
+          <div class="absolute inset-0 flex flex-col justify-center items-center p-8 text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-xl font-main text-taupe mb-1">Mario</h4>
+                <p class="text-sm text-taupe/90 leading-relaxed">{t.about.mario}</p>
+              </div>
+              
+              <div class="w-16 h-px bg-taupe/30 mx-auto"></div>
+              
+              <div>
+                <h4 class="text-xl font-main text-taupe mb-1">Gabriela</h4>
+                <p class="text-sm text-taupe/90 leading-relaxed">{t.about.gabriela}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
   
     </div>
   </section>
+
   

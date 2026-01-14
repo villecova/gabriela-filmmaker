@@ -1,56 +1,28 @@
 ---
-import en from '../i18n/messages/en.json';
-import es from '../i18n/messages/es.json';
 import Logo from './shared/Logo.astro';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
-const t = lang === 'es' ? es : en;
-
 const currentYear = new Date().getFullYear();
-const base = lang === 'es' ? '/es' : '';
-const links = [
-  { label: t.footer.links.home, href: lang === 'es' ? '/es' : '/' },
-  { label: t.footer.links.portfolio, href: `${base}/gallery` },
-  { label: t.footer.links.contact, href: `${base}/contact` },
-  { label: t.footer.links.instagram, href: 'https://www.instagram.com/nitida.digital/', external: true }
-];
+
+const tagline = lang === 'es' ? 'Videos de boda atemporales' : 'Timeless wedding films';
 ---
 
-<footer class="bg-pearl text-taupe">
-  <div class="max-w-screen-lg mx-auto px-4 py-12 space-y-12">
+<footer class="bg-charcoal text-white">
+  <div class="max-w-screen-lg mx-auto px-4 py-16">
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-      <div>
-        <h3 class="uppercase font-semibold tracking-wide mb-3">{t.footer.navigationTitle}</h3>
-        <ul class="space-y-2">
-          {links.slice(0, 3).map(link => (
-            <li><a href={link.href} class="hover:text-dusty">{link.label}</a></li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="uppercase font-semibold tracking-wide mb-3">{t.footer.contactTitle}</h3>
-        <ul class="space-y-2">
-          <li><a href="mailto:hello@gabrielavillegas.com" class="hover:text-dusty">hello@gabrielavillegas.com</a></li>
-          <li><a href={links[3].href} target="_blank" rel="noopener noreferrer" class="hover:text-dusty">{links[3].label}</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="uppercase font-semibold tracking-wide mb-3">{t.footer.aboutTitle}</h3>
-        <p class="text-taupe/70 leading-relaxed">
-          {t.footer.aboutText}
-        </p>
-      </div>
+    <div class="flex flex-col items-center text-center space-y-6">
+      <!-- Logo -->
+      <Logo size="large" class="text-white" />
+      
+      <!-- Tagline -->
+      <p class="text-lg text-white/70 font-light tracking-wide">
+        {tagline}
+      </p>
     </div>
 
-    <div class="text-center">
-      <Logo size="large" class="text-taupe" />
-    </div>
-
-    <div class="text-center text-xs text-taupe/70 pt-6 border-t border-blush">
-      © {currentYear} PolkaDots Cinema — {t.footer.copyright}
+    <!-- Copyright -->
+    <div class="text-center text-xs text-white/40 mt-12 pt-8 border-t border-white/10">
+      © {currentYear} PolkaDots Cinema
     </div>
   </div>
 </footer>
