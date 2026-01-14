@@ -1,27 +1,47 @@
 ---
 import '../styles/global.css';
+import IntroScreen from '../components/IntroScreen.svelte';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>PolkaDots Cinema</title>
+		<!-- AOS CSS -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	</head>
 	<body>
+		<IntroScreen client:load />
 		<slot />
 		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+		<!-- AOS JS -->
+		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script is:inline>
+			AOS.init({
+				duration: 800,
+				easing: 'ease-out',
+				once: true,
+				offset: 0,
+				disable: false
+			});
+		</script>
 	</body>
 </html>
 
 <style>
-	html,
+	html {
+		margin: 0;
+		width: 100%;
+		overflow-x: hidden;
+	}
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
+		overflow-x: hidden;
 	}
 </style>
