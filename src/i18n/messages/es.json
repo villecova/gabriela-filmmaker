@@ -2,8 +2,8 @@
     "intro": "Lo vivirás una vez. Lo sentirás por siempre.",
     "navbar": {
       "home": "Inicio",
-      "about": "Acerca de",
-      "portfolio": "Nuestro Trabajo",
+      "about": "Nuestra Historia",
+      "portfolio": "Films",
       "pricing": "Precios",
       "faqs": "Preguntas",
       "contact": "Contacto"
@@ -13,21 +13,23 @@
         "subtitle": "Historias de amor como en el cine"
     },
     "hero": {
-      "title": "El tiempo vuela... pero la historia se mantiene.",
+      "title": "El tiempo vuela… pero la historia permanece.",
       "cta_primary": "Ver portfolio",
       "cta_secondary": "Agendar",
       "description": [
-        "Moody, cinematográfico y profundamente atmosférico.",
-        "Bodas con alma y mirada documental.",
-        "Tonos de película antigua — Emociones reales"
+        "Videos de boda cinematográficos",
+        "con mirada documental.",
+        "",
+        "Tonos de película antigua — emociones puras."
       ]
     },
     "about": {
-        "title": "Sobre nosotros",
-        "subtitle": "Juntos, no solo capturamos tu boda—creamos una historia atemporal que atesorarás para siempre.",
-        "description": "Somos Mario y Gabriela, una pareja y equipo creativo con más de 5 años de experiencia—y aquí te contamos por qué tendrás el mejor video de boda con nosotros:\n\nComo pareja, entendemos lo importante que es sentirse cómodo frente a la cámara. Nuestra promesa es hacerte sentir tan relajado como lo harías con amigos cercanos. ¿El resultado? Un video de boda que parece película—lleno de emociones reales y momentos auténticos.\n\nNuestro objetivo es darte el recuerdo más inolvidable, uno que te haga sentir las mismas emociones que viviste ese día, cada vez que lo veas.\n\nCon base en Playa del Carmen y siempre listos para viajar a cualquier parte del mundo, combinamos nuestras fortalezas:",
-        "mario": "videógrafo y fotógrafo con un ojo agudo para tomas creativas y únicas.",
-        "gabriela": "el corazón detrás de la narrativa, aportando sensibilidad y emoción a cada cuadro."
+        "title": "Nuestra Historia",
+        "intro": ["Las miradas robadas.", "Las risas nerviosas.", "Las lágrimas que tu papá intentó esconder."],
+        "description": "Antes de filmar bodas, aprendimos a prestar atención a las personas.\n\nSomos Mario y Gabriela — pareja en la vida y en el cine. Ser pareja nos enseñó lo vulnerable que es este día.\n\nPor eso no te pedimos que actúes para la cámara. Simplemente nos quedamos cerca, observamos en silencio, y dejamos que todo fluya.",
+        "mario": "La mirada. Enfocado en la composición, la luz y los momentos que suceden una sola vez.",
+        "gabriela": "El corazón. Sintonizada con la emoción, el ritmo y las conexiones invisibles entre las personas.",
+        "closing": "Juntos, contamos historias de amor como se sienten — honestas, íntimas y atemporales."
       },
       "portfolio": {
         "title": "Nuestros Films",
@@ -89,23 +91,23 @@
         ]
       },
       "testimonials": {
-        "title": "Lo que dicen nuestras parejas",
-        "subtitle": "Historias reales de parejas reales"
+        "title": "Sus historias, en sus palabras",
+        "subtitle": "Momentos reales. Emociones reales."
       },
       "pricing": {
-        "title": "Paquetes y Precios",
+        "title": "Colecciones de Video",
         "subtitle": "Simple y transparente."
       },
       "faqs": {
-        "title": "¿Tienes alguna pregunta?",
-        "subtitle": "Aquí encontrarás respuestas a las preguntas más frecuentes sobre nuestros videos de boda."
+        "title": "Algunas cosas que quizás quieras saber",
+        "subtitle": ""
       },
       "grid": {
-        "cta": "Explorar Nuestro Trabajo"
+        "cta": "Explorar los Films"
       },
       "contact": {
-        "title": "Solicitud de Cotización para Boda",
-        "subtitle": "Cuéntanos sobre tu día y qué servicios estás buscando.",
+        "title": "Cuéntanos sobre tu día",
+        "subtitle": "Nos encantaría saber más sobre tu boda.",
         "name": "Nombre completo",
         "email": "Correo electrónico",
         "phone": "Teléfono",
@@ -121,7 +123,7 @@
         "style": "Estilo preferido (opcional)",
         "budget": "Presupuesto estimado (opcional)",
         "message": "Cuéntanos más sobre tu evento",
-        "send": "Enviar solicitud",
+        "send": "Enviar mensaje",
         "botField": "No llenar este campo:",
         "errors": {
           "required": "Este campo es obligatorio"

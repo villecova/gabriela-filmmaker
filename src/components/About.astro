@@ -4,13 +4,6 @@ import es from '../i18n/messages/es.json';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
-
-// Convertir markdown básico a HTML (solo **bold**)
-function parseMarkdown(text: string): string {
-  return text
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-taupe">$1</strong>')
-    .replace(/\n\n/g, '</p><p class="leading-relaxed mb-4">')
-}
 ---
 
 <section class="bg-white py-20 md:py-32" id="about">
@@ -22,49 +15,37 @@ function parseMarkdown(text: string): string {
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-main mb-3 text-taupe tracking-tight">
             {t.about.title}
           </h2>
-          <div class="flex items-center gap-4 text-dusty text-xl mb-6">
+          <div class="flex items-center gap-4 text-dusty text-xl mb-8">
             <span>•</span><span>•</span><span>•</span>
           </div>
 
-          {t.about.subtitle && (
-            <p class="text-lg md:text-xl leading-relaxed text-taupe/70 mb-8 italic font-light">
-              {t.about.subtitle}
-            </p>
-          )}
-
-          <div class="text-sm md:text-base leading-relaxed text-taupe/60">
-            <p class="leading-relaxed mb-4" set:html={parseMarkdown(t.about.description)} />
+          <!-- Intro poético -->
+          <div class="mb-8 space-y-1">
+            {t.about.intro.map((line: string) => (
+              <p class="text-lg md:text-xl text-taupe/80 italic font-light">{line}</p>
+            ))}
           </div>
+
+          <!-- Descripción -->
+          <div class="text-sm md:text-base leading-relaxed text-taupe/60 space-y-4 mb-8">
+            {t.about.description.split('\n\n').map((paragraph: string) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+
+          <!-- Closing -->
+          <p class="text-sm md:text-base leading-relaxed text-taupe/70 italic border-l-2 border-dusty pl-4">
+            {t.about.closing}
+          </p>
         </div>
     
-        <!-- Imagen con Reveal Effect -->
-        <div class="reveal-card group h-[450px] lg:h-[550px] w-full overflow-hidden relative cursor-pointer">
-          <!-- Imagen -->
+        <!-- Imagen -->
+        <div class="h-[450px] lg:h-[550px] w-full overflow-hidden">
           <img
             src="/assets/images/about2.webp"
             alt="Mario & Gabriela"
-            class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:blur-sm"
+            class="w-full h-full object-cover"
           />
-          
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-blush-bg/0 group-hover:bg-blush-bg/80 transition-all duration-500"></div>
-          
-          <!-- Contenido -->
-          <div class="absolute inset-0 flex flex-col justify-center items-center p-8 text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-            <div class="space-y-4">
-              <div>
-                <h4 class="text-xl font-main text-taupe mb-1">Mario</h4>
-                <p class="text-sm text-taupe/90 leading-relaxed">{t.about.mario}</p>
-              </div>
-              
-              <div class="w-16 h-px bg-taupe/30 mx-auto"></div>
-              
-              <div>
-                <h4 class="text-xl font-main text-taupe mb-1">Gabriela</h4>
-                <p class="text-sm text-taupe/90 leading-relaxed">{t.about.gabriela}</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

@@ -2,8 +2,8 @@
     "intro": "You'll live it once. You'll feel it forever",
     "navbar": {
       "home": "Home",
-      "about": "About",
-      "portfolio": "Our Work",
+      "about": "Our Story",
+      "portfolio": "Films",
       "pricing": "Pricing",
       "faqs": "FAQs",
       "contact": "Contact"
@@ -13,21 +13,23 @@
         "subtitle": "Cinematic Love Stories"
     },
     "hero": {
-      "title": "Time flies... but the story remains.",
+      "title": "Time flies… but the story remains.",
       "cta_primary": "View portfolio",
       "cta_secondary": "Book Now",
       "description": [
-        "Moody, cinematic, and deeply atmospheric.",
-        "Weddings with soul & documentary eye.",
-        "Old film tones — Raw emotions"
+        "Moody, cinematic wedding films",
+        "with a documentary eye.",
+        "",
+        "Old film tones — raw emotions."
       ]
     },
     "about": {
-      "title": "About Us",
-      "subtitle": "Together, we don't just capture your wedding—we create a timeless story you'll treasure forever.",
-      "description": "We're Mario & Gabriela, a couple and creative team with over 5 years of experience—and here's why you'll get the best wedding video with us:\n\nAs a couple ourselves, we understand how important it is to feel comfortable in front of the camera. Our promise is to make you feel as relaxed as you would with close friends. The result? A wedding film that looks like a movie—filled with real emotions and authentic moments.\n\nOur goal is to give you the most unforgettable memory, one that makes you feel the same emotions you lived on that day, every time you watch it.\n\nBased in Playa del Carmen and always ready to travel worldwide, we combine our strengths:",
-      "mario": "a videographer and photographer with a sharp eye for creative, one-of-a-kind shots.",
-      "gabriela": "the heart behind the storytelling, bringing sensitivity and emotion to every frame."
+      "title": "Our Story",
+      "intro": ["The stolen glances.", "The nervous laughter.", "The tears your dad tried to hide."],
+      "description": "Before filming weddings, we learned to pay attention to people.\n\nWe are Mario & Gabriela — partners in life and in filmmaking. Being a couple ourselves taught us how vulnerable this day truly is.\n\nThat's why we don't ask you to perform for the camera. We simply stay close, observe quietly, and let things unfold.",
+      "mario": "The eye. Focused on composition, light, and the moments that happen once.",
+      "gabriela": "The heart. Attuned to emotion, rhythm, and the invisible connections between people.",
+      "closing": "Together, we tell love stories the way they are felt — honest, intimate, and timeless."
       },
       "portfolio": {
         "title": "Our Films",
@@ -89,23 +91,23 @@
         ]
       },
       "testimonials": {
-        "title": "What Our Couples Say",
-        "subtitle": "Real stories from real couples"
+        "title": "Their stories, in their words",
+        "subtitle": "Real moments. Real emotions."
       },
       "pricing": {
-        "title": "Pricing Packages",
+        "title": "Wedding Film Collections",
         "subtitle": "Simple and transparent."
       },
       "faqs": {
-        "title": "Do you have any questions?",
-        "subtitle": "Here are answers to some common questions about our wedding films."
+        "title": "A few things you may want to know",
+        "subtitle": ""
       },
       "grid": {
-        "cta": "Explore Our Work"
+        "cta": "Explore the Films"
       },
       "contact": {
-        "title": "Wedding Quote Request",
-        "subtitle": "Tell us more about your day and what you’re looking for.",
+        "title": "Let's Talk About Your Day",
+        "subtitle": "Tell us a little about your wedding — we'd love to hear from you.",
         "name": "Full Name",
         "email": "Email",
         "phone": "Phone Number",
@@ -121,7 +123,7 @@
         "style": "Preferred Style (optional)",
         "budget": "Estimated Budget (optional)",
         "message": "Tell us more about your event",
-        "send": "Send Request",
+        "send": "Get in Touch",
         "botField": "Do not fill this field:",
         "errors": {
           "required": "This field is required"

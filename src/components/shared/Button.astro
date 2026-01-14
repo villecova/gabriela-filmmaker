@@ -15,7 +15,7 @@
 interface Props {
   href?: string;
   label?: string;
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'inverse';
   size?: 'default' | 'compact';
   fullWidth?: boolean;
   class?: string;
@@ -49,8 +49,11 @@ const variantClasses = {
   // Secundario: outline, borde visible
   secondary: "bg-transparent text-taupe border-2 border-blush-bg hover:bg-blush-bg hover:shadow-lg focus:ring-4 focus:ring-blush-bg/30",
   
-  // Terciario: sutil, ghost
-  tertiary: "bg-transparent text-white border border-white/40 hover:border-white/60 hover:bg-white/5 focus:ring-2 focus:ring-white/20",
+  // Terciario: sutil, ghost - para fondos oscuros
+  tertiary: "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white hover:text-taupe focus:ring-2 focus:ring-white/20",
+  
+  // Inverse: para fondos de color (dusty, etc)
+  inverse: "bg-taupe text-white border-2 border-taupe hover:bg-white hover:text-taupe hover:border-white hover:shadow-lg focus:ring-4 focus:ring-taupe/30",
 };
 
 const classes = `${baseClass} ${variantClasses[variant] ?? variantClasses.primary}`;

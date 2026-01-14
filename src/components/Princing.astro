@@ -19,7 +19,7 @@ const plans = [
       'Licensed music',
       'Single camera setup'
     ],
-    buttonText: 'Book now',
+    buttonText: 'Check availability',
   },
   {
     title: 'Classic',
@@ -33,7 +33,7 @@ const plans = [
       'Professional audio for vows & ceremony',
       'Digital delivery in 4 weeks'
     ],
-    buttonText: 'Book now',
+    buttonText: 'Check availability',
   },
   {
     title: 'Premium',
@@ -48,11 +48,13 @@ const plans = [
       'USB box + online gallery',
       '1-min trailer for social media'
     ],
-    buttonText: 'Book now',
+    buttonText: 'Reserve your date',
+    featured: true,
+    microcopy: 'Limited dates per season',
   },
   {
     title: 'Custom',
-    price: 'Contact',
+    price: "Let's talk",
     description: 'Tailored packages for multi-day or destination weddings.',
     features: [
       'Flexible multi-day coverage',
@@ -63,6 +65,7 @@ const plans = [
       'Fast-track delivery available'
     ],
     buttonText: 'Schedule a call',
+    microcopy: "Let's talk about your vision",
   }
 ];
 
@@ -90,6 +93,8 @@ const plans = [
           description={plan.description}
           features={plan.features}
           buttonText={plan.buttonText}
+          featured={plan.featured}
+          microcopy={plan.microcopy}
         />
       ))}
     </div>

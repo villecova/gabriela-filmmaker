@@ -34,9 +34,9 @@ const base = lang === 'es' ? '/es' : '';
         {t.hero.title}
       </p>
 
-      <div class="text-base md:text-lg font-light text-white/80 mb-10 space-y-2">
+      <div class="text-base md:text-lg font-light text-white/80 mb-10 space-y-1">
         {t.hero.description.map((line: string) => (
-          <p>{line}</p>
+          line ? <p>{line}</p> : <p class="h-4"></p>
         ))}
       </div>
 

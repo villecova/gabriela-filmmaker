@@ -48,10 +48,9 @@ function isActive(href: string): boolean {
 
 const navItems = [
   { label: translations.navbar.home, href: `${base || '/'}#hero` },
-  { label: translations.navbar.about, href: `${base || '/'}#about` },
   { label: translations.navbar.portfolio, href: `${base}/gallery` },
+  { label: translations.navbar.about, href: `${base || '/'}#about` },
   { label: translations.navbar.pricing, href: `${base || '/'}#pricing` },
-  { label: translations.navbar.faqs, href: `${base || '/'}#faqs` },
   { label: translations.navbar.contact, href: `${base}/contact` },
 ].map(item => ({ ...item, active: isActive(item.href) }));
 
@@ -66,7 +65,7 @@ const languages = [
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 md:px-12 py-4">
   <Logo href={base || '/'} size="small" multiline={false} showCinema={false} as="span" data-collapse-toggle="navbar-default" />
   <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center">
-    <Button href="#" label="Book now" variant="primary" />
+    <Button href={`${base}/contact`} label={lang === 'es' ? 'Consultar disponibilidad' : 'Check availability'} variant="secondary" />
 
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
@@ -92,8 +91,8 @@ const languages = [
             aria-current={active ? "page" : undefined}
           >
             {label}
-            <span class={`absolute bottom-0 left-0 h-0.5 bg-dusty transition-all duration-300 ease-out ${
-              active ? "w-full" : "w-0 group-hover:w-full"
+            <span class={`absolute -bottom-1 left-1/2 -translate-x-1/2 h-px bg-dusty/70 transition-all duration-300 ease-out ${
+              active ? "w-3/5" : "w-0 group-hover:w-3/5"
             }`}></span>
           </a>
         </li>
