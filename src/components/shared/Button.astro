@@ -37,14 +37,14 @@ const sizeClasses = {
 };
 
 // Estilos base compartidos
-const baseClass = `cursor-pointer uppercase ${sizeClasses[size]} text-xs font-medium tracking-wide rounded-lg text-center block focus:outline-none transition-all duration-300 ${
+const baseClass = `cursor-pointer uppercase ${sizeClasses[size]} text-xs font-medium tracking-wide rounded text-center block focus:outline-none transition-all duration-300 ${
   fullWidth ? 'w-full' : 'inline-block'
 } ${className}`;
 
 // Variantes de estilo
 const variantClasses = {
   // Primario: sólido, prominente
-  primary: "bg-blush-bg text-taupe hover:bg-dusty border-2 border-blush-bg hover:border-dusty hover:shadow-lg focus:ring-4 focus:ring-blush-bg/50",
+  primary: "bg-blush-bg text-taupe hover:bg-dusty hover:text-white border-2 border-blush-bg hover:border-dusty hover:shadow-lg focus:ring-4 focus:ring-blush-bg/50",
   
   // Secundario: outline, borde visible
   secondary: "bg-transparent text-taupe border-2 border-blush-bg hover:bg-blush-bg hover:shadow-lg focus:ring-4 focus:ring-blush-bg/30",
