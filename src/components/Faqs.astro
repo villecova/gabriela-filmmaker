@@ -1,4 +1,10 @@
 ---
+import en from '../i18n/messages/en.json';
+import es from '../i18n/messages/es.json';
+
+const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const t = lang === 'es' ? es : en;
+
 const faqs = [
   {
     question: "What is included in your wedding videography package?",
@@ -39,11 +45,14 @@ const faqsLeft = faqs.slice(0, midpoint);
 const faqsRight = faqs.slice(midpoint);
 ---
 
-<section class="bg-primary py-16 md:py-20" id="faqs">
-  <div class="max-w-screen-lg mx-auto px-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-main text-black my-2">Do you have any questions?</h2>
-      <p class="text-sm text-accent">Here are answers to some common questions about our wedding films.</p>
+<section class="bg-pearl py-20 md:py-32" id="faqs">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12" data-aos="fade-up" data-aos-delay="100">
+    <div class="text-center mb-16 md:mb-20">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-main text-taupe mb-3 tracking-tight">{t.faqs.title}</h2>
+      <div class="flex items-center justify-center gap-4 text-dusty text-xl mb-6">
+        <span>•</span><span>•</span><span>•</span>
+      </div>
+      <p class="text-lg md:text-xl text-taupe/60 font-light">{t.faqs.subtitle}</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -53,22 +62,21 @@ const faqsRight = faqs.slice(midpoint);
             const uniqueIndex = colIndex * midpoint + index;
             return (
               <div
-                class="bg-white px-8 rounded-lg"
-                key={uniqueIndex}
+                class="bg-white px-8"
                 data-accordion="collapse"
-                data-active-classes="bg-white text-black border-b-2 border-gray"
-                data-inactive-classes="text-black"
+                data-active-classes="bg-white text-taupe border-b-2 border-blush"
+                data-inactive-classes="text-taupe"
               >
                 <h3 id={`accordion-heading-${uniqueIndex}`}>
                   <button
                     type="button"
-                    class="flex items-center justify-between w-full py-4 font-medium text-left text-black"
+                    class="flex items-center justify-between w-full min-h-[72px] py-4 font-medium text-left text-taupe"
                     data-accordion-target={`#accordion-body-${uniqueIndex}`}
                     aria-expanded="false"
                     aria-controls={`accordion-body-${uniqueIndex}`}
                   >
-                    <span class="w-full text-black">{faq.question}</span>
-                    <svg data-accordion-icon class="w-6 h-6 text-black rotate-180" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <span class="w-full text-taupe">{faq.question}</span>
+                    <svg data-accordion-icon class="w-6 h-6 text-taupe rotate-180 flex-shrink-0" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 14-4-4-4 4" />
                     </svg>
                   </button>

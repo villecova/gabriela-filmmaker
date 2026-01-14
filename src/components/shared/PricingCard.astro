@@ -1,30 +1,50 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   title: string;
   price: string;
   description: string;
   features: string[];
   buttonText: string;
+  featured?: boolean;
+  microcopy?: string;
 }
 
-const { title, price, description, features, buttonText } = Astro.props;
+const { title, price, description, features, buttonText, featured = false, microcopy } = Astro.props;
+
+const cardClasses = featured 
+  ? "flex flex-col justify-between p-8 bg-blush-bg text-left h-full shadow-md" 
+  : "flex flex-col justify-between p-6 bg-ivory text-left h-full shadow-sm";
+
+const textColor = featured ? "text-taupe" : "text-taupe";
+const textMuted = featured ? "text-taupe/80" : "text-taupe/70";
+const textSubtle = featured ? "text-taupe/70" : "text-taupe/50";
+const iconColor = featured ? "text-taupe" : "text-dusty";
 ---
 
-<div class="flex flex-col justify-around p-6 bg-gray rounded-lg dark:border-gray-600 dark:bg-gray-800 dark:text-white text-left">
-  <h3 class="mb-2 text-2xl font-bold">{title}</h3>
-  <p class="font-light text-gray-500 sm:text-xs dark:text-gray-400">{description}</p>
-  <div class="flex justify-start items-baseline mt-2 mb-4">
-    <span class="text-1xl font-bold text-black">{price}</span>
+<div class={cardClasses}>
+  <div>
+    <h3 class={`mb-2 text-2xl font-main ${textColor}`}>{title}</h3>
+    <p class={`font-light text-xs ${textMuted}`}>{description}</p>
+    <div class="flex justify-start items-baseline mt-3 mb-6">
+      <span class={`text-sm font-light tracking-wide ${textMuted}`}>{price}</span>
+    </div>
+    <ul role="list" class="mb-8 space-y-2 text-left">
+      {features.map((feature) => (
+        <li class="flex items-center space-x-3">
+          <svg class={`w-5 h-5 ${iconColor}`} fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.0 1.414l-8 8a1 1 0 01-1.414.0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414.0z" clip-rule="evenodd" />
+          </svg>
+          <span class={`text-xs ${featured ? 'text-taupe' : 'text-taupe'}`}>{feature}</span>
+        </li>
+      ))}
+    </ul>
   </div>
-  <ul role="list" class="mb-8 space-y-2 text-left">
-    {features.map((feature) => (
-      <li class="flex items-center space-x-3">
-        <svg class="w-5 h-5 text-accent dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.0 1.414l-8 8a1 1 0 01-1.414.0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414.0z" clip-rule="evenodd" />
-        </svg>
-        <span class="text-xs">{feature}</span>
-      </li>
-    ))}
-  </ul>
-  <a href="#" class="text-white bg-black hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-900">{buttonText}</a>
+  <div>
+    {microcopy && (
+      <p class={`text-[10px] text-center mb-3 italic tracking-wide ${textSubtle}`}>{microcopy}</p>
+    )}
+    <Button href="#" label={buttonText} variant={featured ? "inverse" : "primary"} fullWidth />
+  </div>
 </div>

@@ -2,54 +2,112 @@
     "intro": "Lo vivirás una vez. Lo sentirás por siempre.",
     "navbar": {
       "home": "Inicio",
-      "about": "Acerca de",
-      "portfolio": "Portafolio",
+      "about": "Nuestra Historia",
+      "portfolio": "Films",
+      "pricing": "Precios",
       "faqs": "Preguntas",
       "contact": "Contacto"
     },
     "logo": {
-        "title": "Double Films",
+        "title": "PolkaDots Cinema",
         "subtitle": "Historias de amor como en el cine"
     },
     "hero": {
-      "title": "Capturando momentos inolvidables",
-      "subtitle": "Narrativa visual en cada evento",
+      "title": "El tiempo vuela… pero la historia permanece.",
       "cta_primary": "Ver portfolio",
-      "cta_secondary": "Agendar" 
+      "cta_secondary": "Agendar",
+      "description": [
+        "Videos de boda cinematográficos",
+        "con mirada documental.",
+        "",
+        "Tonos de película antigua — emociones puras."
+      ]
     },
     "about": {
-        "title": "Sobre nosotros",
-        "subtitle": "Double Films es un estudio creativo formado por Mario y Gabriela. Juntos capturamos historias de amor desde dos miradas que se complementan, combinando sensibilidad artística, técnica cinematográfica y una conexión genuina con cada pareja. Nuestro trabajo se centra en crear películas de boda auténticas, emotivas y atemporales.",
-        "description": "Nuestro estilo nace del equilibrio entre la narración honesta y una estética cuidada. Nos gusta observar, anticipar y contar las historias tal como suceden, ya sea en una celebración íntima o en una boda de gran formato. Creemos que cada pareja tiene una forma única de amar, y nuestra misión es transformarla en una película que se sienta real, cercana y hecha para perdurar."
+        "title": "Nuestra Historia",
+        "intro": ["Las miradas robadas.", "Las risas nerviosas.", "Las lágrimas que tu papá intentó esconder."],
+        "description": "Antes de filmar bodas, aprendimos a prestar atención a las personas.\n\nSomos Mario y Gabriela — pareja en la vida y en el cine. Ser pareja nos enseñó lo vulnerable que es este día.\n\nPor eso no te pedimos que actúes para la cámara. Simplemente nos quedamos cerca, observamos en silencio, y dejamos que todo fluya.",
+        "mario": "La mirada. Enfocado en la composición, la luz y los momentos que suceden una sola vez.",
+        "gabriela": "El corazón. Sintonizada con la emoción, el ritmo y las conexiones invisibles entre las personas.",
+        "closing": "Juntos, contamos historias de amor como se sienten — honestas, íntimas y atemporales."
       },
-      "gallery": {
-        "title": "Galería",
-        "items": [
+      "portfolio": {
+        "title": "Nuestros Films",
+        "subtitle": "Una colección de historias de amor contadas a través del cine",
+        "viewFilm": "Ver film",
+        "backToPortfolio": "Volver al portafolio",
+        "nextFilm": "Siguiente film",
+        "projects": [
           {
-            "category": "Boda | Verano",
-            "title": "Ena y Robert",
-            "date": "3 de junio de 2025"
+            "slug": "elena-roberto",
+            "title": "Elena & Roberto",
+            "subtitle": "Un atardecer dorado, descalzos en la arena",
+            "description": "Su historia de amor comenzó con un encuentro casual en una tarde lluviosa en la Ciudad de México. Años después, eligieron celebrar rodeados de la brisa del Caribe y el calor de sus amigos y familiares más cercanos.",
+            "location": "Tulum, México",
+            "year": "2025",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
           },
           {
-            "category": "Boda | Verano",
-            "title": "Clara y Max",
-            "date": "3 de junio de 2025"
+            "slug": "clara-maximilian",
+            "title": "Clara & Maximilian",
+            "subtitle": "Donde las montañas se encuentran con el alma",
+            "description": "Una ceremonia íntima en el corazón de los Dolomitas, donde cada mirada hablaba más fuerte que las palabras. La neblina que recorría los valles se convirtió en parte de su historia.",
+            "location": "Tirol del Sur, Italia",
+            "year": "2025",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
           },
           {
-            "category": "Boda | Verano",
-            "title": "Anne y Sven",
-            "date": "3 de junio de 2025"
+            "slug": "anna-sebastian",
+            "title": "Anna & Sebastian",
+            "subtitle": "Bailando bajo mil luces",
+            "description": "Una celebración que se sintió como un sueño—champagne vintage, jardines iluminados con velas, y un primer baile que hizo que el tiempo se detuviera. Su alegría era contagiosa, su amor innegable.",
+            "location": "Provenza, Francia",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
           },
           {
-            "category": "Boda | Verano",
-            "title": "Hanna y Simón",
-            "date": "3 de junio de 2025"
+            "slug": "hannah-simon",
+            "title": "Hannah & Simon",
+            "subtitle": "Una carta de amor escrita en el viento",
+            "description": "Solo querían el océano, el cielo, y el uno al otro. Una ceremonia en los acantilados de Big Sur, donde el Pacífico fue testigo de sus promesas de amor eterno.",
+            "location": "Big Sur, California",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
+          },
+          {
+            "slug": "lucia-andres",
+            "title": "Lucía & Andrés",
+            "subtitle": "Raíces, ritmo y risas sin fin",
+            "description": "Una hacienda llena de cempasúchil, mariachis, y tres generaciones bailando hasta el amanecer. Su boda fue un tributo al patrimonio, la familia, y el amor más profundo.",
+            "location": "Oaxaca, México",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
           }
         ]
       },
+      "testimonials": {
+        "title": "Sus historias, en sus palabras",
+        "subtitle": "Momentos reales. Emociones reales."
+      },
+      "pricing": {
+        "title": "Colecciones de Video",
+        "subtitle": "Simple y transparente."
+      },
+      "faqs": {
+        "title": "Algunas cosas que quizás quieras saber",
+        "subtitle": ""
+      },
+      "grid": {
+        "cta": "Explorar los Films"
+      },
       "contact": {
-        "title": "Solicitud de Cotización para Boda",
-        "subtitle": "Cuéntanos sobre tu día y qué servicios estás buscando.",
+        "title": "Cuéntanos sobre tu día",
+        "subtitle": "Nos encantaría saber más sobre tu boda.",
         "name": "Nombre completo",
         "email": "Correo electrónico",
         "phone": "Teléfono",
@@ -65,7 +123,7 @@
         "style": "Estilo preferido (opcional)",
         "budget": "Presupuesto estimado (opcional)",
         "message": "Cuéntanos más sobre tu evento",
-        "send": "Enviar solicitud",
+        "send": "Enviar mensaje",
         "botField": "No llenar este campo:",
         "errors": {
           "required": "Este campo es obligatorio"

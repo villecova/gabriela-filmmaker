@@ -6,36 +6,48 @@ const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
 ---
 
-<section class="bg-white py-16" id="about">
-    <div class="max-w-screen-lg mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<section class="bg-white py-20 md:py-32" id="about">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-12">
       
-      <!-- Texto -->
-      <div>
-        <h2 class="text-4xl md:text-5xl font-main mb-6 text-black">
-          {t.about.title}
-        </h2>
-  
-        <p class="mb-4 leading-relaxed">
-          {t.about.subtitle}
-        </p>
-  
-        <p class="leading-relaxed">
-          {t.about.description}
-        </p>
-  
-        <!-- Firma -->
-        <img src="/assets/images/signature.webp" alt="Signature" class="h-32 w-auto" />
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Texto -->
+        <div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-main mb-3 text-taupe tracking-tight">
+            {t.about.title}
+          </h2>
+          <div class="flex items-center gap-4 text-dusty text-xl mb-8">
+            <span>•</span><span>•</span><span>•</span>
+          </div>
+
+          <!-- Intro poético -->
+          <div class="mb-8 space-y-1">
+            {t.about.intro.map((line: string) => (
+              <p class="text-lg md:text-xl text-taupe/80 italic font-light">{line}</p>
+            ))}
+          </div>
+
+          <!-- Descripción -->
+          <div class="text-sm md:text-base leading-relaxed text-taupe/60 space-y-4 mb-8">
+            {t.about.description.split('\n\n').map((paragraph: string) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+
+          <!-- Closing -->
+          <p class="text-sm md:text-base leading-relaxed text-taupe/70 italic border-l-2 border-dusty pl-4">
+            {t.about.closing}
+          </p>
+        </div>
+    
+        <!-- Imagen -->
+        <div class="h-[450px] lg:h-[550px] w-full overflow-hidden">
+          <img
+            src="/assets/images/about2.webp"
+            alt="Mario & Gabriela"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
-  
-      <!-- Imagen -->
-      <div>
-        <img
-          src="/assets/images/about2.webp"
-          alt="Gabriela with camera"
-          class="rounded-lg object-cover w-full shadow-lg h-[350px]"
-        />
-      </div>
-  
+
     </div>
   </section>
-  

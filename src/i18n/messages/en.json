@@ -2,55 +2,112 @@
     "intro": "You'll live it once. You'll feel it forever",
     "navbar": {
       "home": "Home",
-      "about": "About",
-      "portfolio": "Portfolio",
+      "about": "Our Story",
+      "portfolio": "Films",
+      "pricing": "Pricing",
       "faqs": "FAQs",
       "contact": "Contact"
     },
     "logo": {
-        "title": "Double Films",
+        "title": "PolkaDots Cinema",
         "subtitle": "Cinematic Love Stories"
     },
     "hero": {
-      "title": "Capturing Unforgettable Moments.",
-      "subtitle": "Visual storytelling at every event.",
+      "title": "Time flies… but the story remains.",
       "cta_primary": "View portfolio",
-      "cta_secondary": "Book Now" 
+      "cta_secondary": "Book Now",
+      "description": [
+        "Moody, cinematic wedding films",
+        "with a documentary eye.",
+        "",
+        "Old film tones — raw emotions."
+      ]
     },
     "about": {
-      "title": "About Us",
-      "subtitle": "Double Films is a creative studio founded by Mario and Gabriela. Together, we capture love stories through two complementary perspectives, blending artistic sensitivity, cinematic technique, and a genuine connection with every couple. Our work is focused on creating authentic, emotional, and timeless wedding films.",
-      "description": "Our style is rooted in the balance between honest storytelling and a refined visual aesthetic. We observe, anticipate, and tell stories as they naturally unfold, whether in an intimate celebration or a large-scale wedding. We believe every couple has a unique way of loving, and our mission is to transform it into a film that feels real, personal, and made to last."
-
+      "title": "Our Story",
+      "intro": ["The stolen glances.", "The nervous laughter.", "The tears your dad tried to hide."],
+      "description": "Before filming weddings, we learned to pay attention to people.\n\nWe are Mario & Gabriela — partners in life and in filmmaking. Being a couple ourselves taught us how vulnerable this day truly is.\n\nThat's why we don't ask you to perform for the camera. We simply stay close, observe quietly, and let things unfold.",
+      "mario": "The eye. Focused on composition, light, and the moments that happen once.",
+      "gabriela": "The heart. Attuned to emotion, rhythm, and the invisible connections between people.",
+      "closing": "Together, we tell love stories the way they are felt — honest, intimate, and timeless."
       },
-      "gallery": {
-        "title": "Gallery",
-        "items": [
+      "portfolio": {
+        "title": "Our Films",
+        "subtitle": "A collection of love stories told through cinema",
+        "viewFilm": "View film",
+        "backToPortfolio": "Back to portfolio",
+        "nextFilm": "Next film",
+        "projects": [
           {
-            "category": "Wedding | Summer",
-            "title": "Ena & Robert",
-            "date": "June 3rd, 2025"
+            "slug": "elena-roberto",
+            "title": "Elena & Roberto",
+            "subtitle": "A golden sunset, barefoot on the sand",
+            "description": "Their love story began with a chance encounter on a rainy afternoon in Mexico City. Years later, they chose to celebrate surrounded by the Caribbean breeze and the warmth of their closest friends and family.",
+            "location": "Tulum, Mexico",
+            "year": "2025",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
           },
           {
-            "category": "Wedding | Summer",
-            "title": "Clara & Max",
-            "date": "June 3rd, 2025"
+            "slug": "clara-maximilian",
+            "title": "Clara & Maximilian",
+            "subtitle": "Where the mountains meet the soul",
+            "description": "An intimate ceremony in the heart of the Dolomites, where every glance spoke louder than words. The mist rolling through the valleys became part of their story.",
+            "location": "South Tyrol, Italy",
+            "year": "2025",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
           },
           {
-            "category": "Wedding | Summer",
-            "title": "Anne & Sven",
-            "date": "June 3rd, 2025"
+            "slug": "anna-sebastian",
+            "title": "Anna & Sebastian",
+            "subtitle": "Dancing under a thousand lights",
+            "description": "A celebration that felt like a dream—vintage champagne, candlelit gardens, and a first dance that made time stand still. Their joy was contagious, their love undeniable.",
+            "location": "Provence, France",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
           },
           {
-            "category": "Wedding | Summer",
-            "title": "Hanna & Simon",
-            "date": "June 3rd, 2025"
+            "slug": "hannah-simon",
+            "title": "Hannah & Simon",
+            "subtitle": "A love letter written in the wind",
+            "description": "They wanted nothing but the ocean, the sky, and each other. A ceremony on the cliffs of Big Sur, where the Pacific witnessed their promises to forever.",
+            "location": "Big Sur, California",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
+          },
+          {
+            "slug": "lucia-andres",
+            "title": "Lucía & Andrés",
+            "subtitle": "Roots, rhythm, and endless laughter",
+            "description": "A hacienda filled with marigolds, mariachis, and three generations dancing until dawn. Their wedding was a tribute to heritage, family, and the deepest kind of love.",
+            "location": "Oaxaca, Mexico",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
           }
         ]
       },
+      "testimonials": {
+        "title": "Their stories, in their words",
+        "subtitle": "Real moments. Real emotions."
+      },
+      "pricing": {
+        "title": "Wedding Film Collections",
+        "subtitle": "Simple and transparent."
+      },
+      "faqs": {
+        "title": "A few things you may want to know",
+        "subtitle": ""
+      },
+      "grid": {
+        "cta": "Explore the Films"
+      },
       "contact": {
-        "title": "Wedding Quote Request",
-        "subtitle": "Tell us more about your day and what you’re looking for.",
+        "title": "Let's Talk About Your Day",
+        "subtitle": "Tell us a little about your wedding — we'd love to hear from you.",
         "name": "Full Name",
         "email": "Email",
         "phone": "Phone Number",
@@ -66,7 +123,7 @@
         "style": "Preferred Style (optional)",
         "budget": "Estimated Budget (optional)",
         "message": "Tell us more about your event",
-        "send": "Send Request",
+        "send": "Get in Touch",
         "botField": "Do not fill this field:",
         "errors": {
           "required": "This field is required"
