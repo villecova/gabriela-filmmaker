@@ -1,0 +1,169 @@
+---
+import en from '../i18n/messages/en.json';
+import es from '../i18n/messages/es.json';
+
+const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const t = lang === 'es' ? es : en;
+
+const testimonials = [
+  {
+    name: "Sarah & James",
+    location: "Playa del Carmen",
+    text: "Mario and Gabriela captured our day perfectly. Every time we watch our video, we're transported back to that magical moment. Their attention to detail is incredible.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
+    rating: 5
+  },
+  {
+    name: "Emily & David",
+    location: "Tulum",
+    text: "We couldn't have asked for a better team. They made us feel so comfortable and the final film exceeded all our expectations. Truly cinematic!",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    rating: 5
+  },
+  {
+    name: "Ana & Carlos",
+    location: "Cancún",
+    text: "The way they told our story was absolutely beautiful. Our families cry every time they watch it. Worth every penny!",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+    rating: 5
+  },
+  {
+    name: "Laura & Michael",
+    location: "Riviera Maya",
+    text: "Professional, creative, and so easy to work with. They truly understood our vision and delivered beyond our dreams.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    rating: 5
+  },
+  {
+    name: "María & José",
+    location: "Isla Mujeres",
+    text: "Our wedding film is a masterpiece. The emotions, the music, everything was perfect. We've watched it a hundred times!",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    rating: 5
+  }
+];
+---
+
+<section class="bg-blush-bg py-12 md:py-16" id="testimonials">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+    <div class="text-center mb-10 md:mb-12">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-main text-taupe mb-3 tracking-tight">
+        {t.testimonials?.title || "What Our Couples Say"}
+      </h2>
+      <div class="flex items-center justify-center gap-4 text-dusty text-xl mb-6">
+        <span>•</span><span>•</span><span>•</span>
+      </div>
+      <p class="text-lg md:text-xl text-taupe/60 font-light">
+        {t.testimonials?.subtitle || "Real stories from real couples"}
+      </p>
+    </div>
+
+    <!-- Slider container -->
+    <div class="flex items-center gap-4">
+      <!-- Prev arrow -->
+      <button 
+        id="prev-btn"
+        class="bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors hidden md:block flex-shrink-0"
+        aria-label="Previous"
+      >
+        <svg class="w-4 h-4 text-taupe" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <!-- Cards slider -->
+      <div id="testimonials-slider" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-2 flex-1">
+        {[...testimonials, ...testimonials].map((testimonial, idx) => (
+          <div class="testimonial-card bg-white p-5 rounded shadow-sm w-[calc(100%-16px)] md:w-[calc(33.333%-11px)] snap-start flex-shrink-0">
+            <div class="flex items-center mb-4">
+              <img 
+                src={testimonial.image} 
+                alt={testimonial.name}
+                class="w-10 h-10 rounded-full object-cover mr-3"
+              />
+              <div>
+                <h4 class="font-medium text-taupe text-sm">{testimonial.name}</h4>
+                <p class="text-xs text-taupe/60">{testimonial.location}</p>
+              </div>
+            </div>
+            <div class="flex gap-0.5 mb-5">
+              {[...Array(5)].map((_, i) => (
+                <svg 
+                  class={`w-4 h-4 ${i < testimonial.rating ? 'text-dusty' : 'text-gray-300'}`}
+                  fill="currentColor" 
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-xs text-taupe/80 leading-relaxed italic">
+              "{testimonial.text}"
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Next arrow -->
+      <button 
+        id="next-btn"
+        class="bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors hidden md:block flex-shrink-0"
+        aria-label="Next"
+      >
+        <svg class="w-4 h-4 text-taupe" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  const slider = document.getElementById('testimonials-slider');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  
+  if (slider) {
+    const cards = slider.querySelectorAll('.testimonial-card');
+    const totalCards = cards.length;
+    const originalCount = totalCards / 2; // Tenemos duplicados
+    
+    const getCardWidth = () => {
+      const card = slider.querySelector('.testimonial-card') as HTMLElement | null;
+      return card ? card.offsetWidth + 16 : 300; // width + gap
+    };
+    
+    // Posicionar al inicio del set original
+    slider.scrollLeft = 0;
+    
+    // Scroll infinito
+    slider.addEventListener('scroll', () => {
+      const cardWidth = getCardWidth();
+      const maxScroll = cardWidth * originalCount;
+      
+      if (slider.scrollLeft >= maxScroll) {
+        slider.scrollLeft = slider.scrollLeft - maxScroll;
+      } else if (slider.scrollLeft <= 0) {
+        slider.scrollLeft = maxScroll;
+      }
+    });
+    
+    prevBtn?.addEventListener('click', () => {
+      slider.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+    });
+    
+    nextBtn?.addEventListener('click', () => {
+      slider.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+    });
+  }
+</script>

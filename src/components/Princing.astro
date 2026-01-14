@@ -1,5 +1,10 @@
 ---
+import en from '../i18n/messages/en.json';
+import es from '../i18n/messages/es.json';
 import PricingCard from './shared/PricingCard.astro';
+
+const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const t = lang === 'es' ? es : en;
 
 const plans = [
   {
@@ -14,7 +19,7 @@ const plans = [
       'Licensed music',
       'Single camera setup'
     ],
-    buttonText: 'Book now',
+    buttonText: 'Check availability',
   },
   {
     title: 'Classic',
@@ -28,7 +33,7 @@ const plans = [
       'Professional audio for vows & ceremony',
       'Digital delivery in 4 weeks'
     ],
-    buttonText: 'Book now',
+    buttonText: 'Check availability',
   },
   {
     title: 'Premium',
@@ -43,11 +48,13 @@ const plans = [
       'USB box + online gallery',
       '1-min trailer for social media'
     ],
-    buttonText: 'Book now',
+    buttonText: 'Reserve your date',
+    featured: true,
+    microcopy: 'Limited dates per season',
   },
   {
     title: 'Custom',
-    price: 'Contact for pricing',
+    price: "Let's talk",
     description: 'Tailored packages for multi-day or destination weddings.',
     features: [
       'Flexible multi-day coverage',
@@ -58,19 +65,23 @@ const plans = [
       'Fast-track delivery available'
     ],
     buttonText: 'Schedule a call',
+    microcopy: "Let's talk about your vision",
   }
 ];
 
 ---
 
-<section class="bg-white dark:bg-gray-900 py-12">
-  <div class="max-w-screen-lg mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-main text-black dark:text-white mb-4">
-        Pricing Packages
+<section class="bg-white py-20 md:py-32" id="pricing">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+    <div class="text-center mb-16 md:mb-20">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-main text-taupe mb-3 tracking-tight">
+        {t.pricing.title}
       </h2>
-      <p class="text-sm text-accent">
-        Simple and transparent.
+      <div class="flex items-center justify-center gap-4 text-dusty text-xl mb-6">
+        <span>•</span><span>•</span><span>•</span>
+      </div>
+      <p class="text-lg md:text-xl text-taupe/60 font-light">
+        {t.pricing.subtitle}
       </p>
     </div>
 
@@ -82,6 +93,8 @@ const plans = [
           description={plan.description}
           features={plan.features}
           buttonText={plan.buttonText}
+          featured={plan.featured}
+          microcopy={plan.microcopy}
         />
       ))}
     </div>

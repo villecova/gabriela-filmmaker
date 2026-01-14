@@ -1,14 +1,16 @@
 ---
 import Button from "./shared/Button.astro";
+import Logo from "./shared/Logo.astro";
 
 import en from '../i18n/messages/en.json';
 import es from '../i18n/messages/es.json';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
+const base = lang === 'es' ? '/es' : '';
 ---
 
-<section class="relative w-full h-screen overflow-hidden flex items-center justify-center text-center pt-16" id="hero">
+<section class="relative w-full h-screen overflow-hidden flex items-center justify-start text-left pt-16" id="hero">
   <!-- Video de fondo -->
   <video
     autoplay
@@ -18,31 +20,27 @@ const t = lang === 'es' ? es : en;
     class="absolute top-0 left-0 w-full h-full object-cover z-0"
   >
     <source src="/assets/videos/hero.mp4" type="video/mp4" />
-    Tu navegador no soporta el video HTML5.
   </video>
 
-  <!-- Overlay negro -->
-  <div class="absolute inset-0 bg-black bg-opacity-50 z-2"></div>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-taupe bg-opacity-50 z-2"></div>
 
   <!-- Contenido -->
-  <div class="relative z-3 text-white px-4 max-w-3xl">
-    <h1 class="text-5xl md:text-7xl font-main ">
-      {t.logo.title}
-    </h1>
-    <h2 class="text-1xl font-secondary uppercase mb-6">
-      {t.logo.subtitle}
-    </h2>
+  <div class="relative z-3 text-white px-6 md:px-12 lg:px-16 max-w-screen-xl mx-auto w-full">
+    <div class="max-w-2xl">
+      <Logo size="hero" as="h1" class="mb-6" />
 
-    <p class="text-xl md:text-2xl font-secondary">
-      {t.hero.title}
-    </p>
-    <p class="text-lg text-accent font-secondary mb-8">
-      {t.hero.subtitle}
-    </p>
+      <p class="text-2xl md:text-3xl lg:text-4xl font-light mb-8 leading-relaxed">
+        {t.hero.title}
+      </p>
 
-    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:w-[70%] m-auto">
-      <Button href="/portfolio" label={t.hero.cta_primary} variant="primary"  fullWidth/>
-      <Button href="/contact" label={t.hero.cta_secondary} variant="secondary" fullWidth />
+      <div class="text-base md:text-lg font-light text-white/80 mb-10 space-y-1">
+        {t.hero.description.map((line: string) => (
+          line ? <p>{line}</p> : <p class="h-4"></p>
+        ))}
+      </div>
+
+      <Button href={`${base}/gallery`} label={t.grid.cta} variant="tertiary" size="compact" />
     </div>
   </div>
 </section>
