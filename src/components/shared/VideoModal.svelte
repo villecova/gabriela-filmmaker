@@ -22,7 +22,7 @@
     <button
       type="button"
       aria-label="Cerrar modal"
-      class="fixed inset-0 z-40 bg-black bg-opacity-70 cursor-default"
+      class="fixed inset-0 z-40 bg-dark bg-opacity-70 cursor-default"
       on:click={handleClose}
     >
     </button>

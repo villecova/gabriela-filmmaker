@@ -43,8 +43,8 @@
 <section class="bg-[#f6f2ed] pt-32 pb-16 px-4" id="contact">
   <div class="max-w-screen-lg mx-auto md:px-4">
     <div class="text-center mb-10">
-      <h2 class="text-4xl md:text-5xl font-main mb-2 text-black">{t.contact.title}</h2>
-      <p class="text-sm text-accent">{t.contact.subtitle}</p>
+      <h2 class="text-4xl md:text-5xl font-main mb-2 text-taupe">{t.contact.title}</h2>
+      <p class="text-sm text-dusty">{t.contact.subtitle}</p>
     </div>
 
     <form

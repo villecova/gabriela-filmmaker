@@ -1,13 +1,56 @@
 ---
-const { href = "#", label = "Click me", variant = "primary", fullWidth = false } = Astro.props;
+/**
+ * Button Component
+ * 
+ * Variantes:
+ * - primary: Botón sólido, fondo lleno - acciones principales
+ * - secondary: Botón outline con borde visible - acciones secundarias  
+ * - tertiary: Botón sutil/ghost, casi invisible - acciones terciarias
+ * 
+ * Tamaños:
+ * - default: Tamaño normal con padding completo
+ * - compact: Tamaño reducido, más ajustado al texto
+ */
 
-const baseClass = `cursor-pointer uppercase px-6 py-3 text-xs font-bold rounded-lg focus:outline-none transition-all duration-200 ${
-  fullWidth ? 'w-full' : ''
-}`;
+interface Props {
+  href?: string;
+  label?: string;
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  size?: 'default' | 'compact';
+  fullWidth?: boolean;
+  class?: string;
+}
 
+const { 
+  href = "#", 
+  label = "Click me", 
+  variant = "primary", 
+  size = "default",
+  fullWidth = false,
+  class: className = ''
+} = Astro.props;
+
+// Tamaños de padding
+const sizeClasses = {
+  default: 'px-6 py-3',
+  compact: 'px-4 py-3'
+};
+
+// Estilos base compartidos
+const baseClass = `cursor-pointer uppercase ${sizeClasses[size]} text-xs font-bold tracking-wide rounded-lg text-center block focus:outline-none transition-all duration-300 ${
+  fullWidth ? 'w-full' : 'inline-block'
+} ${className}`;
+
+// Variantes de estilo
 const variantClasses = {
-  primary: "bg-black text-white hover:bg-accent border-2 border-black hover:shadow-xl hover:border-accent focus:ring-4 focus:ring-accent/50",
-  secondary: "text-white border-2 border-accent hover:bg-white hover:text-accent hover:shadow-xl hover:border-white focus:ring-4 focus:ring-accent/50",
+  // Primario: sólido, prominente
+  primary: "bg-dusty text-taupe hover:bg-blush border-2 border-dusty hover:border-blush hover:shadow-lg focus:ring-4 focus:ring-dusty/30",
+  
+  // Secundario: outline, borde visible
+  secondary: "bg-transparent text-taupe border-2 border-dusty hover:bg-dusty hover:text-white hover:shadow-lg focus:ring-4 focus:ring-dusty/30",
+  
+  // Terciario: sutil, ghost
+  tertiary: "bg-transparent text-white border border-white/40 hover:border-white/60 hover:bg-white/5 focus:ring-2 focus:ring-white/20",
 };
 
 const classes = `${baseClass} ${variantClasses[variant] ?? variantClasses.primary}`;

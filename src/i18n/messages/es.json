@@ -8,18 +8,17 @@
       "contact": "Contacto"
     },
     "logo": {
-        "title": "Double Films",
+        "title": "PolkaDots Cinema",
         "subtitle": "Historias de amor como en el cine"
     },
     "hero": {
-      "title": "Capturando momentos inolvidables",
-      "subtitle": "Narrativa visual en cada evento",
+      "title": "El tiempo vuela... pero la historia se mantiene.",
       "cta_primary": "Ver portfolio",
       "cta_secondary": "Agendar" 
     },
     "about": {
         "title": "Sobre nosotros",
-        "subtitle": "Double Films es un estudio creativo formado por Mario y Gabriela. Juntos capturamos historias de amor desde dos miradas que se complementan, combinando sensibilidad artística, técnica cinematográfica y una conexión genuina con cada pareja. Nuestro trabajo se centra en crear películas de boda auténticas, emotivas y atemporales.",
+        "subtitle": "PolkaDots Cinema es un estudio creativo formado por Mario y Gabriela. Juntos capturamos historias de amor desde dos miradas que se complementan, combinando sensibilidad artística, técnica cinematográfica y una conexión genuina con cada pareja. Nuestro trabajo se centra en crear películas de boda auténticas, emotivas y atemporales.",
         "description": "Nuestro estilo nace del equilibrio entre la narración honesta y una estética cuidada. Nos gusta observar, anticipar y contar las historias tal como suceden, ya sea en una celebración íntima o en una boda de gran formato. Creemos que cada pareja tiene una forma única de amar, y nuestra misión es transformarla en una película que se sienta real, cercana y hecha para perdurar."
       },
       "gallery": {

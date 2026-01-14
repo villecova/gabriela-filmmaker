@@ -1,6 +1,7 @@
 ---
 import en from '../i18n/messages/en.json';
 import es from '../i18n/messages/es.json';
+import Logo from './shared/Logo.astro';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
@@ -14,7 +15,7 @@ const links = [
 ];
 ---
 
-<footer class="bg-black text-white border-t border-gray-800">
+<footer class="bg-pearl text-taupe">
   <div class="max-w-screen-lg mx-auto px-4 py-12 space-y-12">
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
@@ -22,7 +23,7 @@ const links = [
         <h3 class="uppercase font-semibold tracking-wide mb-3">{t.footer.navigationTitle}</h3>
         <ul class="space-y-2">
           {links.slice(0, 3).map(link => (
-            <li><a href={link.href} class="hover:text-accent">{link.label}</a></li>
+            <li><a href={link.href} class="hover:text-dusty">{link.label}</a></li>
           ))}
         </ul>
       </div>
@@ -30,26 +31,25 @@ const links = [
       <div>
         <h3 class="uppercase font-semibold tracking-wide mb-3">{t.footer.contactTitle}</h3>
         <ul class="space-y-2">
-          <li><a href="mailto:hello@gabrielavillegas.com" class="hover:text-accent">hello@gabrielavillegas.com</a></li>
-          <li><a href={links[3].href} target="_blank" rel="noopener noreferrer" class="hover:text-accent">{links[3].label}</a></li>
+          <li><a href="mailto:hello@gabrielavillegas.com" class="hover:text-dusty">hello@gabrielavillegas.com</a></li>
+          <li><a href={links[3].href} target="_blank" rel="noopener noreferrer" class="hover:text-dusty">{links[3].label}</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="uppercase font-semibold tracking-wide mb-3">{t.footer.aboutTitle}</h3>
-        <p class="text-gray-400 leading-relaxed">
+        <p class="text-taupe/70 leading-relaxed">
           {t.footer.aboutText}
         </p>
       </div>
     </div>
 
-    <div class="relative w-1/2 mx-auto">
-      <img src="/assets/images/hero_logo-w.svg" alt="Logo Footer" class="w-full relative z-10" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none"></div>
+    <div class="text-center">
+      <Logo size="large" class="text-taupe" />
     </div>
 
-    <div class="text-center text-xs text-gray-500 pt-6 border-t border-gray-800">
-      © {currentYear} Double Films — {t.footer.copyright}
+    <div class="text-center text-xs text-taupe/70 pt-6 border-t border-blush">
+      © {currentYear} PolkaDots Cinema — {t.footer.copyright}
     </div>
   </div>
 </footer>

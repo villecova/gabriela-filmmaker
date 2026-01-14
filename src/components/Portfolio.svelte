@@ -32,9 +32,9 @@
   });
 </script>
 
-<section class="bg-[#f6f2ed] pt-32 pb-16 px-4">
+<section class="bg-blush-bg pt-32 pb-16 px-4">
   <div class="max-w-screen-lg mx-auto">
-    <h2 class="text-4xl md:text-5xl font-main mb-10 text-black text-center">
+    <h2 class="text-4xl md:text-5xl font-main mb-10 text-taupe text-center">
       {t.gallery.title}
     </h2>
 
@@ -48,7 +48,7 @@
           on:click={() => openModal('/assets/videos/hero.mp4')}
         >
           <div class="overflow-hidden relative">
-            <div class="absolute inset-0 bg-black bg-opacity-30 z-2"></div>
+            <div class="absolute inset-0 bg-dark bg-opacity-30 z-2"></div>
             <div class="absolute inset-0 z-3 flex items-center justify-center">
               <Icon size="w-24 h-24" color="text-white" d="M8 18V6l8 6-8 6Z" className="bg-white rounded-full bg-opacity-20 py-2 pl-2"/>
             </div>
@@ -58,7 +58,7 @@
           </div>
           <div class="p-4">
             <p class="text-xs pb-2">{item.date}</p>
-            <p class="text-xs text-gray-500 uppercase text-accent">{item.category}</p>
+            <p class="text-xs text-gray-500 uppercase text-dusty">{item.category}</p>
             <h3 class="text-lg font-medium text-gray-800 mt-1">{item.title}</h3>
           </div>
         </div>
@@ -68,14 +68,14 @@
 
   {#if modalOpen}
     <div
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-dark bg-opacity-90"
       role="button"
       tabindex="0"
       on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && closeModal}
       on:click={closeModal}
     >
       <div
-        class="relative w-full max-w-3xl mx-auto bg-black md:rounded-lg overflow-hidden"        role="button"
+        class="relative w-full max-w-3xl mx-auto bg-dark md:rounded-lg overflow-hidden"        role="button"
         tabindex="0"
         on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && stopPropagation}
         on:click|stopPropagation
