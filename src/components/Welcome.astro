@@ -7,6 +7,8 @@ import es from '../i18n/messages/es.json';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
+const base = lang === 'es' ? '/es' : '';
+const exploreLabel = lang === 'es' ? 'Explorar nuestro trabajo' : 'Explore Our Work';
 ---
 
 <section class="relative w-full h-screen overflow-hidden flex items-center justify-start text-left pt-16" id="hero">
@@ -39,6 +41,6 @@ const t = lang === 'es' ? es : en;
       <p>Old film tones — Raw emotions</p>
     </div>
 
-    <Button href="/portfolio" label="Explore Our Work" variant="tertiary" size="compact" />
+    <Button href={`${base}/gallery`} label={exploreLabel} variant="tertiary" size="compact" />
   </div>
 </section>

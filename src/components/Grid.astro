@@ -1,32 +1,51 @@
+---
+import Button from './shared/Button.astro';
+
+const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const base = lang === 'es' ? '/es' : '';
+const buttonLabel = lang === 'es' ? 'Explorar nuestro trabajo' : 'Explore Our Work';
+
+// Offsets muy dispersos: inicio, mitad, final, mezclados
+const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
+---
+
 <section class="bg-ivory px-4 py-16">
-    <div class="max-w-screen-lg mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full hidden md:block rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt="">
+    <div class="max-w-screen-lg mx-auto">
+        <div id="video-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {videoOffsets.map((offset, index) => (
+                <div class={`overflow-hidden rounded-lg ${index === 8 ? 'hidden md:block' : ''}`}>
+                    <video 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline 
+                        data-offset={offset}
+                        class="grid-video h-auto w-full object-cover pointer-events-none"
+                    >
+                        <source src="/assets/videos/hero.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            ))}
         </div>
 
+        <div class="text-center mt-10">
+            <Button href={`${base}/gallery`} label={buttonLabel} variant="primary" />
+        </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const videos = document.querySelectorAll('.grid-video') as NodeListOf<HTMLVideoElement>;
+        
+        videos.forEach((video) => {
+            const offset = parseInt(video.dataset.offset || '0', 10);
+            
+            video.addEventListener('loadedmetadata', () => {
+                // Asegurarse de que el offset no exceda la duración del video
+                const startTime = offset % video.duration;
+                video.currentTime = startTime;
+            });
+        });
+    });
+</script>
