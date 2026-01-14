@@ -12,13 +12,21 @@
     // Animar salida
     animate = true;
     
+    // Verificar si necesita redirigir
+    const currentPath = window.location.pathname;
+    const isSpanish = currentPath.startsWith('/es');
+    const needsRedirect = (lang === 'es' && !isSpanish) || (lang === 'en' && isSpanish);
+    
     setTimeout(() => {
       showIntro = false;
-      // Redirigir
-      if (lang === 'es') {
-        window.location.href = '/es';
-      } else {
-        window.location.href = '/';
+      
+      // Solo redirigir si es necesario
+      if (needsRedirect) {
+        if (lang === 'es') {
+          window.location.href = '/es';
+        } else {
+          window.location.href = '/';
+        }
       }
     }, 1000);
   };
