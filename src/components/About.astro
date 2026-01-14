@@ -4,36 +4,48 @@ import es from '../i18n/messages/es.json';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
+
+// Convertir markdown básico a HTML (solo **bold**)
+function parseMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-taupe">$1</strong>')
+    .replace(/\n\n/g, '</p><p class="leading-relaxed mb-4">')
+}
 ---
 
 <section class="bg-white py-16" id="about">
-    <div class="max-w-screen-lg mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="max-w-screen-lg mx-auto px-4">
       
-      <!-- Texto -->
-      <div>
-        <h2 class="text-4xl md:text-5xl font-main mb-6 text-taupe">
-          {t.about.title}
-        </h2>
-  
-        <p class="mb-4 leading-relaxed">
-          {t.about.subtitle}
-        </p>
-  
-        <p class="leading-relaxed">
-          {t.about.description}
-        </p>
-  
-        <!-- Firma -->
-        <img src="/assets/images/signature.webp" alt="Signature" class="h-32 w-auto" />
-      </div>
-  
-      <!-- Imagen -->
-      <div>
-        <img
-          src="/assets/images/about2.webp"
-          alt="Gabriela with camera"
-          class="rounded-lg object-cover w-full shadow-lg h-[350px]"
-        />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Texto -->
+        <div>
+          <h2 class="text-4xl md:text-5xl font-main mb-4 text-taupe">
+            {t.about.title}
+          </h2>
+
+          {t.about.subtitle && (
+            <p class="text-lg leading-relaxed text-taupe/80 mb-6 italic">
+              {t.about.subtitle}
+            </p>
+          )}
+
+          <div class="text-sm leading-relaxed">
+            <p class="leading-relaxed mb-4" set:html={parseMarkdown(t.about.description)} />
+          </div>
+        </div>
+    
+        <!-- Imagen + Detalles -->
+        <div class="relative">
+          <img
+            src="/assets/images/about2.webp"
+            alt="Mario & Gabriela"
+            class="rounded-lg object-cover w-full shadow-lg h-[400px]"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-taupe/10 backdrop-blur-sm px-4 py-3 rounded-b-lg space-y-1">
+            <p class="text-sm text-white"><strong>Mario</strong> – {t.about.mario}</p>
+            <p class="text-sm text-white"><strong>Gabriela</strong> – {t.about.gabriela}</p>
+          </div>
+        </div>
       </div>
   
     </div>

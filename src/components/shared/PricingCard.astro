@@ -17,7 +17,7 @@ const { title, price, description, features, buttonText } = Astro.props;
     <h3 class="mb-2 text-2xl font-main text-taupe">{title}</h3>
     <p class="font-light text-taupe/70 text-xs">{description}</p>
     <div class="flex justify-start items-baseline mt-2 mb-4">
-      <span class="text-xl font-bold text-taupe">{price}</span>
+      <span class="text-xl font-medium text-taupe">{price}</span>
     </div>
     <ul role="list" class="mb-8 space-y-2 text-left">
       {features.map((feature) => (
