@@ -1,9 +1,11 @@
 ---
 import Button from './shared/Button.astro';
+import en from '../i18n/messages/en.json';
+import es from '../i18n/messages/es.json';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const t = lang === 'es' ? es : en;
 const base = lang === 'es' ? '/es' : '';
-const buttonLabel = lang === 'es' ? 'Explorar nuestro trabajo' : 'Explore Our Work';
 
 // Offsets muy dispersos: inicio, mitad, final, mezclados
 const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
@@ -29,7 +31,7 @@ const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
         </div>
 
         <div class="text-center mt-12 md:mt-16">
-            <Button href={`${base}/gallery`} label={buttonLabel} variant="primary" />
+            <Button href={`${base}/gallery`} label={t.grid.cta} variant="primary" />
         </div>
     </div>
 </section>

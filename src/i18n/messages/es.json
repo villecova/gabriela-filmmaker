@@ -15,7 +15,12 @@
     "hero": {
       "title": "El tiempo vuela... pero la historia se mantiene.",
       "cta_primary": "Ver portfolio",
-      "cta_secondary": "Agendar" 
+      "cta_secondary": "Agendar",
+      "description": [
+        "Moody, cinematográfico y profundamente atmosférico.",
+        "Bodas con alma y mirada documental.",
+        "Tonos de película antigua — Emociones reales"
+      ]
     },
     "about": {
         "title": "Sobre nosotros",
@@ -86,6 +91,17 @@
       "testimonials": {
         "title": "Lo que dicen nuestras parejas",
         "subtitle": "Historias reales de parejas reales"
+      },
+      "pricing": {
+        "title": "Paquetes y Precios",
+        "subtitle": "Simple y transparente."
+      },
+      "faqs": {
+        "title": "¿Tienes alguna pregunta?",
+        "subtitle": "Aquí encontrarás respuestas a las preguntas más frecuentes sobre nuestros videos de boda."
+      },
+      "grid": {
+        "cta": "Explorar Nuestro Trabajo"
       },
       "contact": {
         "title": "Solicitud de Cotización para Boda",

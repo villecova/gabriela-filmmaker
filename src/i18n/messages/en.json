@@ -15,7 +15,12 @@
     "hero": {
       "title": "Time flies... but the story remains.",
       "cta_primary": "View portfolio",
-      "cta_secondary": "Book Now" 
+      "cta_secondary": "Book Now",
+      "description": [
+        "Moody, cinematic, and deeply atmospheric.",
+        "Weddings with soul & documentary eye.",
+        "Old film tones — Raw emotions"
+      ]
     },
     "about": {
       "title": "About Us",
@@ -86,6 +91,17 @@
       "testimonials": {
         "title": "What Our Couples Say",
         "subtitle": "Real stories from real couples"
+      },
+      "pricing": {
+        "title": "Pricing Packages",
+        "subtitle": "Simple and transparent."
+      },
+      "faqs": {
+        "title": "Do you have any questions?",
+        "subtitle": "Here are answers to some common questions about our wedding films."
+      },
+      "grid": {
+        "cta": "Explore Our Work"
       },
       "contact": {
         "title": "Wedding Quote Request",
