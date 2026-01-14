@@ -13,18 +13,18 @@ const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
 
 <section class="bg-ivory py-20 md:py-32">
     <div class="max-w-screen-xl mx-auto px-6 md:px-12">
-        <div id="video-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div id="video-grid" data-aos="fade-up" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {videoOffsets.map((offset, index) => (
                 <div class={`overflow-hidden ${index === 8 ? 'hidden md:block' : ''}`}>
                     <video 
-                        autoplay 
                         muted 
                         loop 
-                        playsinline 
+                        playsinline
+                        preload="none"
+                        data-src="/assets/videos/hero.mp4"
                         data-offset={offset}
-                        class="grid-video h-auto w-full object-cover pointer-events-none hover:scale-105 transition-transform duration-700"
+                        class="lazy-video grid-video h-auto w-full object-cover pointer-events-none hover:scale-105 transition-transform duration-700"
                     >
-                        <source src="/assets/videos/hero.mp4" type="video/mp4" />
                     </video>
                 </div>
             ))}
@@ -38,24 +38,40 @@ const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const videos = document.querySelectorAll('.grid-video') as NodeListOf<HTMLVideoElement>;
+        const lazyVideos = document.querySelectorAll('.lazy-video') as NodeListOf<HTMLVideoElement>;
         
-        videos.forEach((video) => {
-            const offset = parseInt(video.dataset.offset || '0', 10);
-            
-            const setOffset = () => {
-                if (video.duration) {
-                    const startTime = offset % video.duration;
-                    video.currentTime = startTime;
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target as HTMLVideoElement;
+                    const src = video.dataset.src;
+                    const offset = parseInt(video.dataset.offset || '0', 10);
+                    
+                    if (src && !video.src) {
+                        // Crear source y cargar video
+                        const source = document.createElement('source');
+                        source.src = src;
+                        source.type = 'video/mp4';
+                        video.appendChild(source);
+                        video.load();
+                        
+                        // Cuando cargue, aplicar offset y reproducir
+                        video.addEventListener('loadedmetadata', () => {
+                            if (video.duration) {
+                                video.currentTime = offset % video.duration;
+                            }
+                            video.play().catch(() => {});
+                        });
+                    }
+                    
+                    videoObserver.unobserve(video);
                 }
-            };
-            
-            // Si el video ya está cargado
-            if (video.readyState >= 1) {
-                setOffset();
-            } else {
-                video.addEventListener('loadedmetadata', setOffset);
-            }
+            });
+        }, {
+            rootMargin: '100px 0px',
+            threshold: 0.1
         });
+        
+        lazyVideos.forEach(video => videoObserver.observe(video));
     });
 </script>
