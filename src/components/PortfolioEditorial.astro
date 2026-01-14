@@ -49,9 +49,10 @@ const projects = t.portfolio.projects;
                     muted
                     loop
                     playsinline
+                    preload="none"
                     data-hover-video
+                    data-src={project.video}
                   >
-                    <source src={project.video} type="video/mp4" />
                   </video>
                   
                   <!-- Static image -->
@@ -142,7 +143,7 @@ const projects = t.portfolio.projects;
 </style>
 
 <script>
-  // Video hover effect for desktop
+  // Video hover effect for desktop with lazy loading
   document.addEventListener('DOMContentLoaded', () => {
     const articles = document.querySelectorAll('article.group');
     
@@ -150,7 +151,19 @@ const projects = t.portfolio.projects;
       const video = article.querySelector('[data-hover-video]') as HTMLVideoElement;
       
       if (video && window.innerWidth >= 1024) {
+        let videoLoaded = false;
+        
         article.addEventListener('mouseenter', () => {
+          // Lazy load video on first hover
+          if (!videoLoaded && video.dataset.src) {
+            const source = document.createElement('source');
+            source.src = video.dataset.src;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+            video.load();
+            videoLoaded = true;
+          }
+          
           video.currentTime = 0;
           video.play().catch(() => {});
         });

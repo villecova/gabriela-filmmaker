@@ -11,7 +11,7 @@ const t = lang === 'es' ? es : en;
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Texto -->
-        <div>
+        <div data-aos="fade-right">
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-main mb-3 text-taupe tracking-tight">
             {t.about.title}
           </h2>
@@ -40,7 +40,7 @@ const t = lang === 'es' ? es : en;
         </div>
     
         <!-- Imagen -->
-        <div class="h-[450px] lg:h-[550px] w-full overflow-hidden">
+        <div data-aos="fade-left" class="h-[450px] lg:h-[550px] w-full overflow-hidden">
           <img
             src="/assets/images/about2.webp"
             alt="Mario & Gabriela"
