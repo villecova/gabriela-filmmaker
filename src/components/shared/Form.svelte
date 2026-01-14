@@ -40,11 +40,14 @@
   };
 </script>
 
-<section class="bg-[#f6f2ed] pt-32 pb-16 px-4" id="contact">
-  <div class="max-w-screen-lg mx-auto md:px-4">
-    <div class="text-center mb-10">
-      <h2 class="text-4xl md:text-5xl font-main mb-2 text-taupe">{t.contact.title}</h2>
-      <p class="text-sm text-dusty">{t.contact.subtitle}</p>
+<section class="bg-ivory pt-32 pb-24" id="contact">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+    <div class="text-center mb-16 md:mb-20">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-main mb-3 text-taupe tracking-tight">{t.contact.title}</h1>
+      <div class="flex items-center justify-center gap-4 text-dusty text-xl mb-6">
+        <span>•</span><span>•</span><span>•</span>
+      </div>
+      <p class="text-lg md:text-xl text-taupe/60 font-light max-w-2xl mx-auto">{t.contact.subtitle}</p>
     </div>
 
     <form
@@ -53,7 +56,7 @@
       netlify
       netlify-honeypot="bot-field"
       on:submit={handleSubmit}
-      class="grid grid-cols-1 md:grid-cols-2 gap-4 mad:gap-6 max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md"
+      class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
     >
       <input type="hidden" name="form-name" value="wedding-quote" />
       <p class="hidden">
@@ -61,51 +64,64 @@
       </p>
 
       <div>
-        <input type="text" name="name" bind:value={formData.name} placeholder={t.contact.name} class="p-3 border border-gray-300 rounded-md w-full" />
+        <input type="text" name="name" bind:value={formData.name} placeholder={t.contact.name} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.name}<p class="text-red-500 text-sm pt-2">{errors.name}</p>{/if}
       </div>
 
       <div>
-        <input type="email" name="email" bind:value={formData.email} placeholder={t.contact.email} class="p-3 border border-gray-300 rounded-md w-full" />
+        <input type="email" name="email" bind:value={formData.email} placeholder={t.contact.email} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.email}<p class="text-red-500 text-sm pt-2">{errors.email}</p>{/if}
       </div>
 
       <div>
-        <input type="tel" name="phone" bind:value={formData.phone} placeholder={t.contact.phone} class="p-3 border border-gray-300 rounded-md w-full" />
+        <input type="tel" name="phone" bind:value={formData.phone} placeholder={t.contact.phone} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.phone}<p class="text-red-500 text-sm pt-2">{errors.phone}</p>{/if}
       </div>
 
       <div>
-        <input type="date" name="date" bind:value={formData.date} class="p-3 border border-gray-300 rounded-md w-full" />
+        <input type="date" name="date" bind:value={formData.date} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe transition-colors" />
         {#if errors.date}<p class="text-red-500 text-sm pt-2">{errors.date}</p>{/if}
       </div>
 
       <div class="md:col-span-2">
-        <input type="text" name="location" bind:value={formData.location} placeholder={t.contact.location} class="p-3 border border-gray-300 rounded-md w-full" />
+        <input type="text" name="location" bind:value={formData.location} placeholder={t.contact.location} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.location}<p class="text-red-500 text-sm pt-2">{errors.location}</p>{/if}
       </div>
 
-      <input type="number" name="guests" bind:value={formData.guests} placeholder={t.contact.guests} class="p-3 border border-gray-300 rounded-md" />
+      <input type="number" name="guests" bind:value={formData.guests} placeholder={t.contact.guests} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
 
-      <fieldset class="md:col-span-2">
-        <legend class="text-sm font-medium mb-2">{t.contact.services}</legend>
-        <div class="grid md:grid-cols-2 gap-2">
-          <label><input type="checkbox" value="Full Video" bind:group={formData.services} /> {t.contact.fullVideo}</label>
-          <label><input type="checkbox" value="Teaser" bind:group={formData.services} /> {t.contact.teaser}</label>
-          <label><input type="checkbox" value="Save the Date" bind:group={formData.services} /> {t.contact.saveDate}</label>
-          <label><input type="checkbox" value="Drone" bind:group={formData.services} /> {t.contact.drone}</label>
-          <label><input type="checkbox" value="Guest Messages" bind:group={formData.services} /> {t.contact.guestsMessages}</label>
+      <fieldset class="md:col-span-2 pt-4">
+        <legend class="text-sm text-taupe/70 mb-4">{t.contact.services}</legend>
+        <div class="grid md:grid-cols-2 gap-3">
+          <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
+            <input type="checkbox" value="Full Video" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.fullVideo}
+          </label>
+          <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
+            <input type="checkbox" value="Teaser" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.teaser}
+          </label>
+          <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
+            <input type="checkbox" value="Save the Date" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.saveDate}
+          </label>
+          <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
+            <input type="checkbox" value="Drone" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.drone}
+          </label>
+          <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
+            <input type="checkbox" value="Guest Messages" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.guestsMessages}
+          </label>
         </div>
       </fieldset>
 
-      <input type="text" name="style" bind:value={formData.style} placeholder={t.contact.style} class="md:col-span-2 p-3 border border-gray-300 rounded-md" />
-      <input type="text" name="budget" bind:value={formData.budget} placeholder={t.contact.budget} class="md:col-span-2 p-3 border border-gray-300 rounded-md" />
+      <input type="text" name="style" bind:value={formData.style} placeholder={t.contact.style} class="md:col-span-2 w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
+      <input type="text" name="budget" bind:value={formData.budget} placeholder={t.contact.budget} class="md:col-span-2 w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
 
-      <textarea name="message" rows="4" bind:value={formData.message} placeholder={t.contact.message} class="md:col-span-2 p-3 border border-gray-300 rounded-md"></textarea>
+      <textarea name="message" rows="4" bind:value={formData.message} placeholder={t.contact.message} class="md:col-span-2 w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors resize-none"></textarea>
 
-      <div class="md:col-span-2 text-center">
-        <button type="submit" class="bg-accent hover:bg-opacity-90 text-white font-semibold py-3 px-6 rounded-full transition">
+      <div class="md:col-span-2 text-center pt-8">
+        <button type="submit" class="inline-flex items-center gap-2 bg-blush-bg hover:bg-dusty text-taupe hover:text-white px-8 py-4 text-sm uppercase tracking-widest font-medium transition-all duration-300">
           {t.contact.send}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </button>
       </div>
     </form>

@@ -13,29 +13,32 @@ function parseMarkdown(text: string): string {
 }
 ---
 
-<section class="bg-white py-16" id="about">
-    <div class="max-w-screen-lg mx-auto px-4">
+<section class="bg-white py-20 md:py-32" id="about">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-12">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Texto -->
         <div>
-          <h2 class="text-4xl md:text-5xl font-main mb-4 text-taupe">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-main mb-3 text-taupe tracking-tight">
             {t.about.title}
           </h2>
+          <div class="flex items-center gap-4 text-dusty text-xl mb-6">
+            <span>•</span><span>•</span><span>•</span>
+          </div>
 
           {t.about.subtitle && (
-            <p class="text-lg leading-relaxed text-taupe/80 mb-6 italic">
+            <p class="text-lg md:text-xl leading-relaxed text-taupe/70 mb-8 italic font-light">
               {t.about.subtitle}
             </p>
           )}
 
-          <div class="text-sm leading-relaxed">
+          <div class="text-sm md:text-base leading-relaxed text-taupe/60">
             <p class="leading-relaxed mb-4" set:html={parseMarkdown(t.about.description)} />
           </div>
         </div>
     
         <!-- Imagen con Reveal Effect -->
-        <div class="reveal-card group h-[400px] w-full rounded-lg shadow-lg overflow-hidden relative cursor-pointer">
+        <div class="reveal-card group h-[450px] lg:h-[550px] w-full overflow-hidden relative cursor-pointer">
           <!-- Imagen -->
           <img
             src="/assets/images/about2.webp"
@@ -64,8 +67,6 @@ function parseMarkdown(text: string): string {
           </div>
         </div>
       </div>
-  
+
     </div>
   </section>
-
-  

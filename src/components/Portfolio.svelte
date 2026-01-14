@@ -32,8 +32,8 @@
   });
 </script>
 
-<section class="bg-blush-bg pt-32 pb-16 px-4">
-  <div class="max-w-screen-lg mx-auto">
+<section class="bg-blush-bg pt-32 pb-16">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12">
     <h2 class="text-4xl md:text-5xl font-main mb-10 text-taupe text-center">
       {t.gallery.title}
     </h2>

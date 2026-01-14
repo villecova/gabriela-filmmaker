@@ -3,7 +3,8 @@
     "navbar": {
       "home": "Inicio",
       "about": "Acerca de",
-      "portfolio": "Portafolio",
+      "portfolio": "Nuestro Trabajo",
+      "pricing": "Precios",
       "faqs": "Preguntas",
       "contact": "Contacto"
     },
@@ -23,30 +24,68 @@
         "mario": "videógrafo y fotógrafo con un ojo agudo para tomas creativas y únicas.",
         "gabriela": "el corazón detrás de la narrativa, aportando sensibilidad y emoción a cada cuadro."
       },
-      "gallery": {
-        "title": "Galería",
-        "items": [
+      "portfolio": {
+        "title": "Nuestros Films",
+        "subtitle": "Una colección de historias de amor contadas a través del cine",
+        "viewFilm": "Ver film",
+        "backToPortfolio": "Volver al portafolio",
+        "nextFilm": "Siguiente film",
+        "projects": [
           {
-            "category": "Boda | Verano",
-            "title": "Ena y Robert",
-            "date": "3 de junio de 2025"
+            "slug": "elena-roberto",
+            "title": "Elena & Roberto",
+            "subtitle": "Un atardecer dorado, descalzos en la arena",
+            "description": "Su historia de amor comenzó con un encuentro casual en una tarde lluviosa en la Ciudad de México. Años después, eligieron celebrar rodeados de la brisa del Caribe y el calor de sus amigos y familiares más cercanos.",
+            "location": "Tulum, México",
+            "year": "2025",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
           },
           {
-            "category": "Boda | Verano",
-            "title": "Clara y Max",
-            "date": "3 de junio de 2025"
+            "slug": "clara-maximilian",
+            "title": "Clara & Maximilian",
+            "subtitle": "Donde las montañas se encuentran con el alma",
+            "description": "Una ceremonia íntima en el corazón de los Dolomitas, donde cada mirada hablaba más fuerte que las palabras. La neblina que recorría los valles se convirtió en parte de su historia.",
+            "location": "Tirol del Sur, Italia",
+            "year": "2025",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
           },
           {
-            "category": "Boda | Verano",
-            "title": "Anne y Sven",
-            "date": "3 de junio de 2025"
+            "slug": "anna-sebastian",
+            "title": "Anna & Sebastian",
+            "subtitle": "Bailando bajo mil luces",
+            "description": "Una celebración que se sintió como un sueño—champagne vintage, jardines iluminados con velas, y un primer baile que hizo que el tiempo se detuviera. Su alegría era contagiosa, su amor innegable.",
+            "location": "Provenza, Francia",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
           },
           {
-            "category": "Boda | Verano",
-            "title": "Hanna y Simón",
-            "date": "3 de junio de 2025"
+            "slug": "hannah-simon",
+            "title": "Hannah & Simon",
+            "subtitle": "Una carta de amor escrita en el viento",
+            "description": "Solo querían el océano, el cielo, y el uno al otro. Una ceremonia en los acantilados de Big Sur, donde el Pacífico fue testigo de sus promesas de amor eterno.",
+            "location": "Big Sur, California",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
+          },
+          {
+            "slug": "lucia-andres",
+            "title": "Lucía & Andrés",
+            "subtitle": "Raíces, ritmo y risas sin fin",
+            "description": "Una hacienda llena de cempasúchil, mariachis, y tres generaciones bailando hasta el amanecer. Su boda fue un tributo al patrimonio, la familia, y el amor más profundo.",
+            "location": "Oaxaca, México",
+            "year": "2024",
+            "video": "/assets/videos/hero.mp4",
+            "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
           }
         ]
+      },
+      "testimonials": {
+        "title": "Lo que dicen nuestras parejas",
+        "subtitle": "Historias reales de parejas reales"
       },
       "contact": {
         "title": "Solicitud de Cotización para Boda",

@@ -5,6 +5,7 @@ interface Props {
   href?: string;
   class?: string;
   multiline?: boolean;
+  showCinema?: boolean;
   'data-collapse-toggle'?: string;
   [key: string]: any;
 }
@@ -15,6 +16,7 @@ const {
   href,
   class: className = '',
   multiline = true,
+  showCinema = true,
   'data-collapse-toggle': dataCollapseToggle,
   ...rest
 } = Astro.props;
@@ -54,10 +56,10 @@ const baseClasses = `font-main leading-tight ${className}`;
     {multiline ? (
       <>
         <span class={`block ${classes.main}`}>PolkaDots</span>
-        <span class={`block ${classes.sub}`}>Cinema</span>
+        {showCinema && <span class={`block ${classes.sub}`}>Cinema</span>}
       </>
     ) : (
-      <span class={classes.main}>PolkaDots <span class={classes.sub}>Cinema</span></span>
+      <span class={classes.main}>PolkaDots{showCinema && <span class={`ml-1 ${classes.sub}`}>Cinema</span>}</span>
     )}
   </a>
 ) : (
@@ -65,10 +67,10 @@ const baseClasses = `font-main leading-tight ${className}`;
     {multiline ? (
       <>
         <span class={`block ${classes.main}`}>PolkaDots</span>
-        <span class={`block ${classes.sub}`}>Cinema</span>
+        {showCinema && <span class={`block ${classes.sub}`}>Cinema</span>}
       </>
     ) : (
-      <span class={classes.main}>PolkaDots <span class={classes.sub}>Cinema</span></span>
+      <span class={classes.main}>PolkaDots{showCinema && <span class={`ml-1 ${classes.sub}`}>Cinema</span>}</span>
     )}
   </Tag>
 )}
