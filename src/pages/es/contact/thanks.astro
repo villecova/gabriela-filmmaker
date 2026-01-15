@@ -1,0 +1,48 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import es from '../../../i18n/messages/es.json';
+
+const t = es;
+---
+
+<Layout>
+  <Navbar />
+  <section class="bg-ivory min-h-screen flex items-center justify-center pt-20">
+    <div class="text-center px-6 max-w-2xl mx-auto">
+      <div class="mb-8">
+        <svg class="w-16 h-16 mx-auto text-dusty" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-main text-taupe mb-6 tracking-tight">
+        {t.thanks.title}
+      </h1>
+      
+      <div class="flex items-center justify-center gap-4 text-dusty text-xl mb-8">
+        <span>•</span><span>•</span><span>•</span>
+      </div>
+      
+      <p class="text-lg md:text-xl text-taupe/60 font-light mb-4">
+        {t.thanks.message}
+      </p>
+      
+      <p class="text-base text-taupe/50 mb-12">
+        {t.thanks.timeline}
+      </p>
+      
+      <a 
+        href="/es/" 
+        class="inline-flex items-center gap-2 text-dusty hover:text-taupe transition-colors duration-300 text-sm uppercase tracking-widest"
+      >
+        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+        {t.thanks.backToHome}
+      </a>
+    </div>
+  </section>
+  <Footer />
+</Layout>
