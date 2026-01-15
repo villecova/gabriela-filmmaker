@@ -13,9 +13,9 @@ const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
 
 <section class="bg-ivory py-20 md:py-32">
     <div class="max-w-screen-xl mx-auto px-6 md:px-12">
-        <div id="video-grid" data-aos="fade-up" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div id="video-grid" data-aos="fade-up" class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
             {videoOffsets.map((offset, index) => (
-                <div class={`overflow-hidden ${index === 8 ? 'hidden md:block' : ''}`}>
+                <div class={`overflow-hidden ${index >= 4 ? 'hidden md:block' : ''}`}>
                     <video 
                         muted 
                         loop 
