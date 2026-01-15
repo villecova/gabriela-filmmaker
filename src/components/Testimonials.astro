@@ -134,6 +134,38 @@ const testimonials = [
     height: auto;
   }
 
+  /* Remove all focus/active/hover states from navigation buttons */
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none;
+    touch-action: manipulation;
+  }
+
+  .swiper-button-prev-custom:hover,
+  .swiper-button-next-custom:hover {
+    background-color: rgba(232, 201, 176, 0.2) !important; /* blush/20 */
+  }
+
+  .swiper-button-prev-custom:focus,
+  .swiper-button-next-custom:focus,
+  .swiper-button-prev-custom:active,
+  .swiper-button-next-custom:active,
+  .swiper-button-prev-custom:focus-visible,
+  .swiper-button-next-custom:focus-visible,
+  .swiper-button-prev-custom:focus-within,
+  .swiper-button-next-custom:focus-within {
+    outline: none !important;
+    background-color: white !important;
+  }
+
+  /* Prevent any state change during swipe */
+  .swiper-button-prev-custom *,
+  .swiper-button-next-custom * {
+    pointer-events: none;
+  }
+
   .swiper-pagination-custom.swiper-pagination-bullets .swiper-pagination-bullet {
     width: 8px !important;
     height: 8px !important;
