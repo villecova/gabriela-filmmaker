@@ -1,18 +1,18 @@
-import { pathHasLocale, getLocaleByPath, getRelativeLocaleUrl } from 'astro:i18n';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import en from './messages/en.json';
 import es from './messages/es.json';
 
 /**
- * Detecta el idioma basado en la URL usando astro:i18n
+ * Detecta el idioma basado en la URL
  * @param {URL} url - La URL de Astro
  * @returns {string} 'en' o 'es'
  */
 export function getLang(url) {
-  // Si el path tiene locale (como /es/...), usar astro:i18n
-  if (pathHasLocale(url.pathname)) {
-    return getLocaleByPath(url.pathname) || 'en';
+  // Detectar manualmente si el path empieza con /es
+  if (url.pathname.startsWith('/es/') || url.pathname === '/es') {
+    return 'es';
   }
-  // Si no tiene locale, es el default (en)
+  // Cualquier otro path es inglés (default locale sin prefijo)
   return 'en';
 }
 
