@@ -34,12 +34,34 @@
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     if (!validate()) {
-      e.preventDefault();
       showGeneralError = true;
-    } else {
-      showGeneralError = false;
+      return;
+    }
+    
+    showGeneralError = false;
+    
+    // Preparar los datos del formulario
+    const form = e.target;
+    const formDataObj = new FormData(form);
+    
+    try {
+      // Enviar el formulario a Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataObj).toString()
+      });
+      
+      // Redirigir a la página de agradecimiento personalizada
+      const thanksUrl = lang === 'es' ? '/es/contact/thanks/' : '/contact/thanks/';
+      window.location.href = thanksUrl;
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      showGeneralError = true;
     }
   };
 </script>
@@ -57,8 +79,7 @@
     <form
       name="wedding-quote"
       method="POST"
-      action={lang === 'es' ? '/es/contact/thanks/' : '/contact/thanks/'}
-      netlify
+      data-netlify="true"
       netlify-honeypot="bot-field"
       on:submit={handleSubmit}
       class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
