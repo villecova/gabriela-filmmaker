@@ -1,0 +1,28 @@
+---
+import About from '../About.astro';
+import Faqs from '../Faqs.astro';
+import Footer from '../Footer.astro';
+import Grid from '../Grid.astro';
+import Navbar from '../Navbar.astro';
+import Princing from '../Princing.astro';
+import Testimonials from '../Testimonials.astro';
+import Welcome from '../Welcome.astro';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+---
+
+<Layout>
+	<Navbar/>
+	<Welcome/>
+	<About/>
+	<Testimonials/>
+	<Grid/>
+	<Princing/>
+	<Faqs/>
+	<Footer/>
+</Layout>
