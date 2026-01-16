@@ -120,14 +120,20 @@
         "saveDate": "Save the Date",
         "drone": "Drone Footage",
         "guestsMessages": "Messages from Guests",
-        "style": "Preferred Style (optional)",
-        "budget": "Estimated Budget (optional)",
+        "style": "Preferred Style",
+        "budget": "Estimated Budget",
         "message": "Tell us more about your event",
         "send": "Get in Touch",
         "botField": "Do not fill this field:",
         "errors": {
           "required": "This field is required"
         }
+      },
+      "thanks": {
+        "title": "Thank You",
+        "message": "We've received your message and we're excited to learn more about your special day.",
+        "timeline": "We'll be in touch within 24-48 hours.",
+        "backToHome": "Back to Home"
       },
       "footer": {
         "navigationTitle": "Navigation",
