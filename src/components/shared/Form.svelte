@@ -19,6 +19,7 @@
   };
 
   let errors = {};
+  let showGeneralError = false;
 
   const validate = () => {
     errors = {};
@@ -36,6 +37,9 @@
   const handleSubmit = (e) => {
     if (!validate()) {
       e.preventDefault();
+      showGeneralError = true;
+    } else {
+      showGeneralError = false;
     }
   };
 </script>
@@ -53,6 +57,7 @@
     <form
       name="wedding-quote"
       method="POST"
+      action={lang === 'es' ? '/es/contact/thanks/' : '/contact/thanks/'}
       netlify
       netlify-honeypot="bot-field"
       on:submit={handleSubmit}
@@ -64,27 +69,30 @@
       </p>
 
       <div>
-        <input type="text" name="name" bind:value={formData.name} placeholder={t.contact.name} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
+        <input type="text" name="name" bind:value={formData.name} placeholder="{t.contact.name} *" class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.name}<p class="text-red-500 text-sm pt-2">{errors.name}</p>{/if}
       </div>
 
       <div>
-        <input type="email" name="email" bind:value={formData.email} placeholder={t.contact.email} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
+        <input type="email" name="email" bind:value={formData.email} placeholder="{t.contact.email} *" class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.email}<p class="text-red-500 text-sm pt-2">{errors.email}</p>{/if}
       </div>
 
       <div>
-        <input type="tel" name="phone" bind:value={formData.phone} placeholder={t.contact.phone} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
+        <input type="tel" name="phone" bind:value={formData.phone} placeholder="{t.contact.phone} *" class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.phone}<p class="text-red-500 text-sm pt-2">{errors.phone}</p>{/if}
       </div>
 
-      <div>
-        <input type="date" name="date" bind:value={formData.date} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe transition-colors" />
+      <div class="relative">
+        {#if !formData.date}
+          <span class="absolute left-0 top-4 text-taupe/40 pointer-events-none text-base">{t.contact.date} *</span>
+        {/if}
+        <input type="date" name="date" bind:value={formData.date} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe transition-colors date-input" class:has-value={formData.date} />
         {#if errors.date}<p class="text-red-500 text-sm pt-2">{errors.date}</p>{/if}
       </div>
 
       <div class="md:col-span-2">
-        <input type="text" name="location" bind:value={formData.location} placeholder={t.contact.location} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
+        <input type="text" name="location" bind:value={formData.location} placeholder="{t.contact.location} *" class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
         {#if errors.location}<p class="text-red-500 text-sm pt-2">{errors.location}</p>{/if}
       </div>
 
@@ -94,19 +102,19 @@
         <legend class="text-sm text-taupe/70 mb-4">{t.contact.services}</legend>
         <div class="grid md:grid-cols-2 gap-3">
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" value="Full Video" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.fullVideo}
+            <input type="checkbox" name="services" value="Full Video" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.fullVideo}
           </label>
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" value="Teaser" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.teaser}
+            <input type="checkbox" name="services" value="Teaser" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.teaser}
           </label>
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" value="Save the Date" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.saveDate}
+            <input type="checkbox" name="services" value="Save the Date" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.saveDate}
           </label>
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" value="Drone" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.drone}
+            <input type="checkbox" name="services" value="Drone" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.drone}
           </label>
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" value="Guest Messages" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.guestsMessages}
+            <input type="checkbox" name="services" value="Guest Messages" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.guestsMessages}
           </label>
         </div>
       </fieldset>
@@ -117,13 +125,33 @@
       <textarea name="message" rows="4" bind:value={formData.message} placeholder={t.contact.message} class="md:col-span-2 w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors resize-none"></textarea>
 
       <div class="md:col-span-2 text-center pt-8">
+        <p class="text-sm text-taupe/50 mb-6">
+          {lang === 'es' ? '* Campos requeridos' : '* Required fields'}
+        </p>
         <button type="submit" class="inline-flex items-center gap-2 bg-blush-bg hover:bg-dusty text-taupe hover:text-white px-8 py-4 text-sm uppercase tracking-widest font-medium transition-all duration-300">
           {t.contact.send}
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </button>
+        {#if showGeneralError}
+          <p class="text-red-500 text-sm mt-4">
+            {lang === 'es' ? 'Por favor completa todos los campos requeridos.' : 'Please fill in all required fields.'}
+          </p>
+        {/if}
       </div>
     </form>
   </div>
 </section>
+
+<style>
+  .date-input:not(.has-value)::-webkit-datetime-edit {
+    color: transparent;
+  }
+  .date-input:not(.has-value)::-webkit-datetime-edit-fields-wrapper {
+    color: transparent;
+  }
+  .date-input.has-value::-webkit-datetime-edit {
+    color: inherit;
+  }
+</style>

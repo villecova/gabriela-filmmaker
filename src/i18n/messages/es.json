@@ -120,14 +120,20 @@
         "saveDate": "Save the date",
         "drone": "Tomas con dron",
         "guestsMessages": "Mensajes de invitados",
-        "style": "Estilo preferido (opcional)",
-        "budget": "Presupuesto estimado (opcional)",
+        "style": "Estilo preferido",
+        "budget": "Presupuesto estimado",
         "message": "Cuéntanos más sobre tu evento",
         "send": "Enviar mensaje",
         "botField": "No llenar este campo:",
         "errors": {
           "required": "Este campo es obligatorio"
         }
+      },
+      "thanks": {
+        "title": "¡Gracias!",
+        "message": "Hemos recibido tu mensaje y estamos emocionados de conocer más sobre tu día especial.",
+        "timeline": "Nos pondremos en contacto contigo en las próximas 24-48 horas.",
+        "backToHome": "Volver al Inicio"
       },
       "footer": {
         "navigationTitle": "Navegación",
