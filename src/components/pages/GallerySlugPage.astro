@@ -1,0 +1,168 @@
+---
+import Footer from '../Footer.astro';
+import Navbar from '../Navbar.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getTranslations, getBasePath } from '../../i18n/utils.js';
+
+interface Props {
+  locale: string;
+  project: any;
+  slug: string;
+}
+
+const { locale, project, slug } = Astro.props;
+const t = getTranslations(locale);
+const base = getBasePath(locale);
+
+// Find current project index and next project
+const projects = t.portfolio.projects;
+const currentIndex = projects.findIndex(p => p.slug === slug);
+const nextProject = projects[(currentIndex + 1) % projects.length];
+---
+
+<Layout>
+  <Navbar />
+  
+  <main class="bg-ivory min-h-screen">
+    
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] md:h-[85vh] overflow-hidden">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={project.video} type="video/mp4" />
+      </video>
+      
+      <!-- Gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-ivory via-transparent to-transparent"></div>
+      <div class="absolute inset-0 bg-taupe/20"></div>
+      
+      <!-- Play button overlay -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <button 
+          id="play-main-video"
+          class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all duration-300 group"
+          aria-label={locale === 'es' ? 'Reproducir film' : 'Play film'}
+        >
+          <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="max-w-screen-lg mx-auto px-6 md:px-12 py-16 md:py-24">
+      
+      <!-- Header -->
+      <header class="text-center mb-16 md:mb-24">
+        <div class="flex items-center justify-center gap-3 text-xs tracking-widest uppercase text-taupe/50 mb-6">
+          <span>{project.location}</span>
+          <span class="w-1 h-1 rounded-full bg-taupe/30"></span>
+          <span>{project.year}</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-main text-taupe mb-3">
+          {project.title}
+        </h1>
+        <div class="flex items-center justify-center gap-4 text-dusty text-xl mb-6">
+          <span>•</span><span>•</span><span>•</span>
+        </div>
+        
+        <p class="text-xl md:text-2xl text-taupe/70 font-light italic max-w-2xl mx-auto">
+          {project.subtitle}
+        </p>
+      </header>
+
+      <!-- Editorial Description -->
+      <div class="max-w-2xl mx-auto text-center mb-20">
+        <p class="text-base md:text-lg text-taupe/70 leading-relaxed">
+          {project.description}
+        </p>
+      </div>
+
+      <!-- Embedded Video -->
+      <div class="mb-20">
+        <div class="aspect-video bg-taupe/5 rounded-sm overflow-hidden">
+          <video
+            id="main-video"
+            controls
+            class="w-full h-full object-cover"
+            poster={project.image}
+          >
+            <source src={project.video} type="video/mp4" />
+            <track kind="captions" src="" srclang={locale} label={locale === 'es' ? 'Subtítulos' : 'Captions'} />
+          </video>
+        </div>
+      </div>
+
+      <!-- Photo Stills (placeholder grid) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-20">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src={project.image} alt={locale === 'es' ? 'Foto de boda' : 'Wedding still'} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/5] overflow-hidden md:col-span-1 col-span-1">
+          <img src={project.image} alt={locale === 'es' ? 'Foto de boda' : 'Wedding still'} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/5] overflow-hidden col-span-2 md:col-span-1">
+          <img src={project.image} alt={locale === 'es' ? 'Foto de boda' : 'Wedding still'} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Navigation -->
+    <nav class="border-t border-taupe/10">
+      <div class="max-w-screen-lg mx-auto px-6 md:px-12">
+        <div class="flex items-center justify-between py-8 md:py-12">
+          
+          <!-- Back to Portfolio -->
+          <a 
+            href={`${base}/gallery`}
+            class="group flex items-center gap-3 text-sm text-taupe/70 hover:text-taupe transition-colors"
+          >
+            <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>
+            <span>{t.portfolio.backToPortfolio}</span>
+          </a>
+
+          <!-- Next Film -->
+          <a 
+            href={`${base}/gallery/${nextProject.slug}`}
+            class="group flex items-center gap-3 text-sm text-taupe/70 hover:text-taupe transition-colors"
+          >
+            <span class="text-right">
+              <span class="block text-xs text-taupe/50 mb-1">{t.portfolio.nextFilm}</span>
+              <span class="font-main text-base text-taupe">{nextProject.title}</span>
+            </span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+
+  </main>
+  
+  <Footer />
+</Layout>
+
+<script>
+  // Scroll to video and play when clicking hero play button
+  document.getElementById('play-main-video')?.addEventListener('click', () => {
+    const video = document.getElementById('main-video') as HTMLVideoElement;
+    if (video) {
+      video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        video.play();
+      }, 500);
+    }
+  });
+</script>
