@@ -126,7 +126,9 @@
         "send": "Get in Touch",
         "botField": "Do not fill this field:",
         "errors": {
-          "required": "This field is required"
+          "required": "This field is required",
+          "invalidEmail": "Please enter a valid email address",
+          "invalidPhone": "Please enter a complete phone number"
         }
       },
       "thanks": {

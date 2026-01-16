@@ -126,7 +126,9 @@
         "send": "Enviar mensaje",
         "botField": "No llenar este campo:",
         "errors": {
-          "required": "Este campo es obligatorio"
+          "required": "Este campo es obligatorio",
+          "invalidEmail": "Por favor ingresa un correo electrónico válido",
+          "invalidPhone": "Por favor ingresa un número de teléfono completo"
         }
       },
       "thanks": {
