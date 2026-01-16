@@ -57,7 +57,7 @@
     <form
       name="wedding-quote"
       method="POST"
-      action={lang === 'es' ? '/es/contact/thanks' : '/contact/thanks'}
+      action={lang === 'es' ? '/es/contact/thanks/' : '/contact/thanks/'}
       netlify
       netlify-honeypot="bot-field"
       on:submit={handleSubmit}
