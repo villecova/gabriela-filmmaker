@@ -1,10 +1,16 @@
 ---
 import '../styles/global.css';
 import IntroScreen from '../components/IntroScreen.svelte';
+import { pathHasLocale, getLocaleByPath } from 'astro:i18n';
+
+const locale = pathHasLocale(Astro.url.pathname) 
+  ? getLocaleByPath(Astro.url.pathname) || 'en'
+  : 'en';
+const htmlLang = locale;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />

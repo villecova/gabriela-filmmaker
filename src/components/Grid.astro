@@ -1,11 +1,10 @@
 ---
 import Button from './shared/Button.astro';
-import en from '../i18n/messages/en.json';
-import es from '../i18n/messages/es.json';
+import { getLang, getTranslations, getBasePath } from '../i18n/utils.js';
 
-const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
-const t = lang === 'es' ? es : en;
-const base = lang === 'es' ? '/es' : '';
+const lang = getLang(Astro.url);
+const t = getTranslations(lang);
+const base = getBasePath(lang);
 
 // Offsets muy dispersos: inicio, mitad, final, mezclados
 const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];

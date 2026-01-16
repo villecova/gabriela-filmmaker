@@ -1,13 +1,11 @@
 ---
 import Button from "./shared/Button.astro";
 import Logo from "./shared/Logo.astro";
+import { getLang, getTranslations, getBasePath } from '../i18n/utils.js';
 
-import en from '../i18n/messages/en.json';
-import es from '../i18n/messages/es.json';
-
-const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
-const t = lang === 'es' ? es : en;
-const base = lang === 'es' ? '/es' : '';
+const lang = getLang(Astro.url);
+const t = getTranslations(lang);
+const base = getBasePath(lang);
 ---
 
 <section class="relative w-full h-screen overflow-hidden flex items-center justify-start text-left pt-16" id="hero">
