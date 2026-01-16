@@ -1,0 +1,18 @@
+---
+import Footer from '../Footer.astro';
+import Navbar from '../Navbar.astro';
+import PortfolioEditorial from '../PortfolioEditorial.astro';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+---
+
+<Layout>
+	<Navbar/>
+	<PortfolioEditorial />
+	<Footer/>
+</Layout>

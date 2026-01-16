@@ -1,10 +1,14 @@
 ---
 import '../styles/global.css';
 import IntroScreen from '../components/IntroScreen.svelte';
+
+// Detectar locale manualmente (más robusto que usar astro:i18n en build)
+const locale = Astro.url.pathname.startsWith('/es/') || Astro.url.pathname === '/es' ? 'es' : 'en';
+const htmlLang = locale;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />

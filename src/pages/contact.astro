@@ -1,12 +1,5 @@
 ---
-import Footer from '../components/Footer.astro';
-import Navbar from '../components/Navbar.astro';
-import Form from '../components/shared/Form.svelte';
-import Layout from '../layouts/Layout.astro';
+import ContactPage from '../components/pages/ContactPage.astro';
 ---
 
-<Layout>
-	<Navbar/>
-	<Form client:only="svelte" />
-	<Footer/>
-</Layout>
+<ContactPage locale="en" />

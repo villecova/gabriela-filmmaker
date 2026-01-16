@@ -1,8 +1,9 @@
 ---
 import Logo from './shared/Logo.astro';
+import { getLang, getBasePath } from '../i18n/utils.js';
 
-const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
-const base = lang === 'es' ? '/es' : '';
+const lang = getLang(Astro.url);
+const base = getBasePath(lang);
 const currentYear = new Date().getFullYear();
 
 const tagline = lang === 'es' ? 'Videos de boda atemporales' : 'Timeless wedding films';
@@ -23,7 +24,7 @@ const faqsLabel = lang === 'es' ? 'Preguntas frecuentes' : 'FAQs';
 
       <!-- FAQs Link -->
       <a 
-        href={`${base || '/'}#faqs`} 
+        href={`${base}/#faqs`} 
         class="text-xs uppercase tracking-widest text-white/50 hover:text-dusty transition-colors duration-300"
       >
         {faqsLabel}
