@@ -26,8 +26,7 @@
     "about": {
       "title": "Our Story",
       "intro": ["The stolen glances.", "The nervous laughter.", "The tears your dad tried to hide."],
-      "description": "Before filming weddings, we learned to pay attention to people.\n\nWe are Mario & Gabriela — partners in life and in filmmaking. Being a couple ourselves taught us how vulnerable this day truly is.\n\nThat's why we don't ask you to perform for the camera. We simply stay close, observe quietly, and let things unfold.",
-      "mario": "The eye. Focused on composition, light, and the moments that happen once.",
+      "description": "We’re Mario & Gabriela, a creative couple with over 5 years of experience capturing weddings in a real and meaningful way. As a couple ourselves, we know how important it is to feelcomfortable in front of the camera, so we focus on creating a relaxed atmosphere where you can truly be yourselves. \n\n That's why we don't ask you to perform for the camera. We simply stay close, observe quietly, and let things unfold. The result? A cinematic wedding film filled with genuine emotions and authentic moments.\n\n  Based in Playa del Carmen, we combine our strengths—Mario’s creative eye and Gabriela’s emotional storytelling—to create timeless films you’ll treasure forever.",
       "gabriela": "The heart. Attuned to emotion, rhythm, and the invisible connections between people.",
       "closing": "Together, we tell love stories the way they are felt — honest, intimate, and timeless."
       },
@@ -45,7 +44,7 @@
             "description": "Their love story began with a chance encounter on a rainy afternoon in Mexico City. Years later, they chose to celebrate surrounded by the Caribbean breeze and the warmth of their closest friends and family.",
             "location": "Tulum, Mexico",
             "year": "2025",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
           },
           {
@@ -55,7 +54,7 @@
             "description": "An intimate ceremony in the heart of the Dolomites, where every glance spoke louder than words. The mist rolling through the valleys became part of their story.",
             "location": "South Tyrol, Italy",
             "year": "2025",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
           },
           {
@@ -65,7 +64,7 @@
             "description": "A celebration that felt like a dream—vintage champagne, candlelit gardens, and a first dance that made time stand still. Their joy was contagious, their love undeniable.",
             "location": "Provence, France",
             "year": "2024",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
           },
           {
@@ -75,7 +74,7 @@
             "description": "They wanted nothing but the ocean, the sky, and each other. A ceremony on the cliffs of Big Sur, where the Pacific witnessed their promises to forever.",
             "location": "Big Sur, California",
             "year": "2024",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
           },
           {
@@ -85,7 +84,7 @@
             "description": "A hacienda filled with marigolds, mariachis, and three generations dancing until dawn. Their wedding was a tribute to heritage, family, and the deepest kind of love.",
             "location": "Oaxaca, Mexico",
             "year": "2024",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
           }
         ]
@@ -96,7 +95,49 @@
       },
       "pricing": {
         "title": "Wedding Film Collections",
-        "subtitle": "Simple and transparent."
+        "subtitle": "Simple and transparent.",
+        "plans": [
+          {
+            "title": "Package 1",
+            "price": "950 USD",
+            "description": "Perfect for intimate ceremonies or elopements.",
+            "features": [
+              "3 hours of coverage",
+              "1 videographer",
+              "Ceremony, couple session, reception",
+              "Edited Full HD video delivery (10–15 min)*"
+            ],
+            "buttonText": "Check availability"
+          },
+          {
+            "title": "Package 2",
+            "price": "1450 USD",
+            "description": "Great for small to medium weddings.",
+            "features": [
+              "6 hours of coverage",
+              "1 videographer",
+              "Bride & Groom getting ready, ceremony, couple session, reception",
+              "Edited Full HD video delivery (15–20 min)*"
+            ],
+            "buttonText": "Check availability",
+            "featured": true
+          },
+          {
+            "title": "Package 3",
+            "price": "1985 USD",
+            "description": "Complete coverage for full-day events.",
+            "features": [
+              "8 hours of coverage",
+              "2 videographers",
+              "Bride & Groom getting ready, ceremony, couple session, reception",
+              "Drone coverage during the ceremony",
+              "Edited Full HD video delivery (30–40 min)*",
+              "Highlight video (3–5 min)"
+            ],
+            "buttonText": "Reserve your date"
+          }
+        ],
+        "microcopy": "* Video length may vary depending on the content and events of the wedding day."
       },
       "faqs": {
         "title": "A few things you may want to know",
@@ -115,13 +156,9 @@
         "location": "City and Venue",
         "guests": "Estimated Guest Count",
         "services": "What services are you interested in?",
-        "fullVideo": "Full Video",
-        "teaser": "Teaser",
-        "saveDate": "Save the Date",
-        "drone": "Drone Footage",
-        "guestsMessages": "Messages from Guests",
-        "style": "Preferred Style",
-        "budget": "Estimated Budget",
+        "package1": "Package 1",
+        "package2": "Package 2", 
+        "package3": "Package 3",
         "message": "Tell us more about your event",
         "send": "Get in Touch",
         "botField": "Do not fill this field:",

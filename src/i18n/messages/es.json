@@ -26,7 +26,7 @@
     "about": {
         "title": "Nuestra Historia",
         "intro": ["Las miradas robadas.", "Las risas nerviosas.", "Las lágrimas que tu papá intentó esconder."],
-        "description": "Antes de filmar bodas, aprendimos a prestar atención a las personas.\n\nSomos Mario y Gabriela — pareja en la vida y en el cine. Ser pareja nos enseñó lo vulnerable que es este día.\n\nPor eso no te pedimos que actúes para la cámara. Simplemente nos quedamos cerca, observamos en silencio, y dejamos que todo fluya.",
+        "description": "Somos Mario y Gabriela, una pareja creativa con más de 5 años de experiencia capturando bodas de una forma auténtica y significativa. Como pareja, sabemos lo importante que es sentirse cómodo frente a la cámara, por eso nos enfocamos en crear un ambiente relajado donde puedan ser ustedes mismos. \n\n Por eso no les pedimos que actúen para la cámara. Simplemente nos mantenemos cerca, observamos en silencio y dejamos que todo fluya. ¿El resultado? Una película de boda cinematográfica llena de emociones genuinas y momentos auténticos. \n\n Con base en Playa del Carmen, combinamos nuestras fortalezas—el ojo creativo de Mario y la narrativa emocional de Gabriela—para crear películas atemporales que atesorarán para siempre.",
         "mario": "La mirada. Enfocado en la composición, la luz y los momentos que suceden una sola vez.",
         "gabriela": "El corazón. Sintonizada con la emoción, el ritmo y las conexiones invisibles entre las personas.",
         "closing": "Juntos, contamos historias de amor como se sienten — honestas, íntimas y atemporales."
@@ -45,7 +45,7 @@
             "description": "Su historia de amor comenzó con un encuentro casual en una tarde lluviosa en la Ciudad de México. Años después, eligieron celebrar rodeados de la brisa del Caribe y el calor de sus amigos y familiares más cercanos.",
             "location": "Tulum, México",
             "year": "2025",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
           },
           {
@@ -55,7 +55,7 @@
             "description": "Una ceremonia íntima en el corazón de los Dolomitas, donde cada mirada hablaba más fuerte que las palabras. La neblina que recorría los valles se convirtió en parte de su historia.",
             "location": "Tirol del Sur, Italia",
             "year": "2025",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
           },
           {
@@ -65,7 +65,7 @@
             "description": "Una celebración que se sintió como un sueño—champagne vintage, jardines iluminados con velas, y un primer baile que hizo que el tiempo se detuviera. Su alegría era contagiosa, su amor innegable.",
             "location": "Provenza, Francia",
             "year": "2024",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
           },
           {
@@ -75,7 +75,7 @@
             "description": "Solo querían el océano, el cielo, y el uno al otro. Una ceremonia en los acantilados de Big Sur, donde el Pacífico fue testigo de sus promesas de amor eterno.",
             "location": "Big Sur, California",
             "year": "2024",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
           },
           {
@@ -85,7 +85,7 @@
             "description": "Una hacienda llena de cempasúchil, mariachis, y tres generaciones bailando hasta el amanecer. Su boda fue un tributo al patrimonio, la familia, y el amor más profundo.",
             "location": "Oaxaca, México",
             "year": "2024",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/aaron-noreen.mp4",
             "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
           }
         ]
@@ -96,7 +96,49 @@
       },
       "pricing": {
         "title": "Colecciones de Video",
-        "subtitle": "Simple y transparente."
+        "subtitle": "Simple y transparente.",
+        "plans": [
+          {
+            "title": "Paquete 1",
+            "price": "950 USD",
+            "description": "Perfecto para ceremonias íntimas o huidas románticas.",
+            "features": [
+              "3 hras cobertura",
+              "1 videógrafo",
+              "Ceremonia, sesión, recepción",
+              "Entrega video full HD editado 10-15 min*"
+            ],
+            "buttonText": "Ver disponibilidad"
+          },
+          {
+            "title": "Paquete 2",
+            "price": "1450 USD",
+            "description": "Ideal para bodas pequeñas a medianas.",
+            "features": [
+              "6 hras cobertura",
+              "1 videógrafo",
+              "Preparativos de la novia y el novio, ceremonia, sesión, recepción",
+              "Entrega video full HD editado 15 - 20 min*"
+            ],
+            "buttonText": "Ver disponibilidad",
+            "featured": true
+          },
+          {
+            "title": "Paquete 3",
+            "price": "1985 USD",
+            "description": "Cobertura completa para eventos de día completo.",
+            "features": [
+              "8 hras cobertura",
+              "2 videógrafos",
+              "Preparativos de la novia y el novio, ceremonia, sesión, recepción",
+              "Drone en ceremonia",
+              "Entrega video full HD editado 30 - 40 min*",
+              "Video Highlight editado 3 - 5 min*"
+            ],
+            "buttonText": "Reservar fecha"
+          }
+        ],
+        "microcopy": "* La duración del video puede variar dependiendo del contenido y los eventos del día de la boda"
       },
       "faqs": {
         "title": "Algunas cosas que quizás quieras saber",
@@ -115,13 +157,9 @@
         "location": "Ciudad y lugar del evento",
         "guests": "Número estimado de invitados",
         "services": "¿Qué servicios deseas cotizar?",
-        "fullVideo": "Video completo",
-        "teaser": "Teaser",
-        "saveDate": "Save the date",
-        "drone": "Tomas con dron",
-        "guestsMessages": "Mensajes de invitados",
-        "style": "Estilo preferido",
-        "budget": "Presupuesto estimado",
+        "package1": "Paquete 1",
+        "package2": "Paquete 2",
+        "package3": "Paquete 3",
         "message": "Cuéntanos más sobre tu evento",
         "send": "Enviar mensaje",
         "botField": "No llenar este campo:",

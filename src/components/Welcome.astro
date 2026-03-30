@@ -1,23 +1,27 @@
 ---
-import Button from "./shared/Button.astro";
+import { getBasePath, getLang, getTranslations } from '../i18n/utils.js';
 import Logo from "./shared/Logo.astro";
-import { getLang, getTranslations, getBasePath } from '../i18n/utils.js';
 
 const lang = getLang(Astro.url);
-const t = getTranslations(lang);
+const t: any = getTranslations(lang);
 const base = getBasePath(lang);
 ---
 
 <section class="relative w-full h-screen overflow-hidden flex items-center justify-start text-left pt-16" id="hero">
+  <!-- Poster de respaldo para evitar gris al cargar -->
+
+
   <!-- Video de fondo -->
   <video
-    autoplay
+    poster="/assets/images/poster/aaron-noreen.png"
     muted
-    loop
     playsinline
+    preload="metadata"
+    id="hero-video"
     class="absolute top-0 left-0 w-full h-full object-cover z-0"
+    webkit-playsinline
   >
-    <source src="/assets/videos/hero.mp4" type="video/mp4" />
+    <source src="/assets/videos/aaron-noreen.mp4" type="video/mp4" />
   </video>
 
   <!-- Overlay -->
@@ -39,10 +43,52 @@ const base = getBasePath(lang);
           ))}
         </div>
       </div>
-
-      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        <Button href={`${base}/gallery`} label={t.grid.cta} variant="tertiary" size="compact" />
-      </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('hero-video');
+
+    const START_TIME = 6;
+    const END_TIME = 20;
+    const LEAD_TIME = 0.15; // pequeño margen para loop suave
+
+    if (!video) return;
+
+    // Asegurar que no arranca automáticamente mal
+    video.pause();
+
+    // Cuando ya tenemos metadata → mover al segundo inicial
+    video.addEventListener('loadedmetadata', () => {
+      try {
+        video.currentTime = START_TIME;
+      } catch (e) {
+        console.warn('Error setting start time', e);
+      }
+    });
+
+    // Cuando ya hizo seek → reproducir
+    video.addEventListener('seeked', () => {
+      if (video.currentTime >= START_TIME) {
+        video.play().catch(() => {
+          // autoplay puede fallar en algunos contextos
+          console.warn('Autoplay blocked');
+        });
+      }
+    });
+
+    // Loop controlado dentro del segmento
+    video.addEventListener('timeupdate', () => {
+      if (video.currentTime >= END_TIME - LEAD_TIME) {
+        video.currentTime = START_TIME;
+      }
+    });
+
+    // Si hay error → se queda el poster (no hacemos nada)
+    video.addEventListener('error', (e) => {
+      console.warn('Video error:', e);
+    });
+  });
+</script>

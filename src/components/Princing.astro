@@ -2,72 +2,19 @@
 import en from '../i18n/messages/en.json';
 import es from '../i18n/messages/es.json';
 import PricingCard from './shared/PricingCard.astro';
+import Button from './shared/Button.astro';
 
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
 
-const plans = [
-  {
-    title: 'Essential',
-    price: '$700',
-    description: 'Perfect for intimate ceremonies or elopements.',
-    features: [
-      '3-hour coverage',
-      '1 videographer',
-      '3–5 min highlight video',
-      'Digital delivery in 3 weeks',
-      'Licensed music',
-      'Single camera setup'
-    ],
-    buttonText: 'Check availability',
-  },
-  {
-    title: 'Classic',
-    price: '$1,200',
-    description: 'Great for small to medium weddings.',
-    features: [
-      'Up to 6-hour coverage',
-      '1 videographer + basic drone',
-      '4–6 min highlight video',
-      '20–30 min extended film',
-      'Professional audio for vows & ceremony',
-      'Digital delivery in 4 weeks'
-    ],
-    buttonText: 'Check availability',
-  },
-  {
-    title: 'Premium',
-    price: '$2,000',
-    description: 'Complete coverage for full-day events.',
-    features: [
-      'Up to 10-hour coverage',
-      '2 videographers',
-      'Professional drone footage',
-      '5–7 min highlight video',
-      '30–60 min cinematic film',
-      'USB box + online gallery',
-      '1-min trailer for social media'
-    ],
-    buttonText: 'Reserve your date',
-    featured: true,
-    microcopy: 'Limited dates per season',
-  },
-  {
-    title: 'Custom',
-    price: "Let's talk",
-    description: 'Tailored packages for multi-day or destination weddings.',
-    features: [
-      'Flexible multi-day coverage',
-      'Pre-wedding or trash-the-dress session',
-      'Creative consultation',
-      '4K cinematic footage',
-      'Vertical videos for reels/TikTok',
-      'Fast-track delivery available'
-    ],
-    buttonText: 'Schedule a call',
-    microcopy: "Let's talk about your vision",
-  }
-];
+interface Props {
+  microcopy?: string;
+}
+
+const { microcopy } = Astro.props;
+
+const plans = t.pricing.plans;
+const sharedMicrocopy = t.pricing.microcopy;
 
 ---
 
@@ -85,7 +32,7 @@ const plans = [
       </p>
     </div>
 
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-center lg:flex-nowrap lg:justify-center">
       {plans.map((plan, index) => (
         <div data-aos="fade-up" data-aos-delay={index * 100}>
         <PricingCard
@@ -95,10 +42,23 @@ const plans = [
           features={plan.features}
           buttonText={plan.buttonText}
           featured={plan.featured}
-          microcopy={plan.microcopy}
         />
         </div>
       ))}
+    </div>
+
+    <div class="text-center mt-12 md:mt-16">  
+        <p class="text-sm md:text-base text-taupe/60 font-light">
+          {sharedMicrocopy}
+        </p>
+    </div>  
+
+    <div class="text-center mt-8">
+      <Button 
+        href={lang === 'es' ? '/es/contact' : '/contact'} 
+        label={lang === 'es' ? 'Consultar disponibilidad' : 'Check Availability'} 
+        variant="primary" 
+      />
     </div>
   </div>
 </section>

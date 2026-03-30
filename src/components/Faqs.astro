@@ -7,42 +7,18 @@ const t = lang === 'es' ? es : en;
 
 const faqs = [
   {
-    question: "What is included in your wedding videography package?",
-    answer: "Most packages include coverage of the ceremony and reception, edited highlight video, and full-length footage. Custom options are also available."
-  },
-  {
-    question: "How many hours of coverage do you provide?",
-    answer: "I typically offer packages ranging from 4 to 10 hours, depending on the size and schedule of your event."
-  },
-  {
     question: "When will we receive our final wedding video?",
     answer: "You will receive your edited video within 4 to 8 weeks, depending on the complexity of the project."
   },
   {
-    question: "Can we choose the music for our video?",
+    question: "Can we choose the music?",
     answer: "Yes, you're welcome to suggest music. I also provide a licensed music library to ensure legal usage."
   },
   {
-    question: "Do you offer drone footage?",
-    answer: "Yes, drone footage is available as an add-on, weather and venue permitting."
-  },
-  {
-    question: "Do you require a deposit to book the date?",
+    question: "Do you need a deposit?",
     answer: "Yes, a non-refundable deposit is required to secure your date. The remaining balance is due before the event."
-  },
-  {
-    question: "Will there be a second videographer?",
-    answer: "A second videographer can be added for more coverage, especially for larger weddings or events with multiple locations."
-  },
-  {
-    question: "Do you travel for destination weddings?",
-    answer: "Absolutely! I’m available for travel and destination weddings. Travel costs are discussed during the booking process."
   }
 ];
-
-const midpoint = Math.ceil(faqs.length / 2);
-const faqsLeft = faqs.slice(0, midpoint);
-const faqsRight = faqs.slice(midpoint);
 ---
 
 <section class="bg-pearl py-20 md:py-32" id="faqs">
@@ -55,42 +31,37 @@ const faqsRight = faqs.slice(midpoint);
       <p class="text-lg md:text-xl text-taupe/60 font-light">{t.faqs.subtitle}</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {[faqsLeft, faqsRight].map((column, colIndex) => (
-        <div class="space-y-4">
-          {column.map((faq, index) => {
-            const uniqueIndex = colIndex * midpoint + index;
-            return (
-              <div
-                class="bg-white px-8"
-                data-accordion="collapse"
-                data-active-classes="bg-white text-taupe border-b-2 border-blush"
-                data-inactive-classes="text-taupe"
+    <div class="max-w-2xl mx-auto">
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div
+            class="bg-white px-8"
+            data-accordion="collapse"
+            data-active-classes="bg-white text-taupe border-b-2 border-blush"
+            data-inactive-classes="text-taupe"
+          >
+            <h3 id={`accordion-heading-${index}`}>
+              <button
+                type="button"
+                class="flex items-center justify-between w-full min-h-[72px] py-4 font-medium text-left text-taupe"
+                data-accordion-target={`#accordion-body-${index}`}
+                aria-expanded="false"
+                aria-controls={`accordion-body-${index}`}
               >
-                <h3 id={`accordion-heading-${uniqueIndex}`}>
-                  <button
-                    type="button"
-                    class="flex items-center justify-between w-full min-h-[72px] py-4 font-medium text-left text-taupe"
-                    data-accordion-target={`#accordion-body-${uniqueIndex}`}
-                    aria-expanded="false"
-                    aria-controls={`accordion-body-${uniqueIndex}`}
-                  >
-                    <span class="w-full text-taupe">{faq.question}</span>
-                    <svg data-accordion-icon class="w-6 h-6 text-taupe rotate-180 flex-shrink-0" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 14-4-4-4 4" />
-                    </svg>
-                  </button>
-                </h3>
-                <div id={`accordion-body-${uniqueIndex}`} class="hidden" aria-labelledby={`accordion-heading-${uniqueIndex}`}>
-                  <div class="pt-2 pb-6">
-                    {faq.answer}
-                  </div>
-                </div>
+                <span class="w-full text-taupe">{faq.question}</span>
+                <svg data-accordion-icon class="w-6 h-6 text-taupe rotate-180 flex-shrink-0" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 14-4-4-4 4" />
+                </svg>
+              </button>
+            </h3>
+            <div id={`accordion-body-${index}`} class="hidden" aria-labelledby={`accordion-heading-${index}`}>
+              <div class="pt-2 pb-6">
+                {faq.answer}
               </div>
-            );
-          })}
-        </div>
-      ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
