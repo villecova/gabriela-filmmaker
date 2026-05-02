@@ -1,11 +1,16 @@
 {
     "intro": "Lo vivirás una vez. Lo sentirás por siempre.",
+    "seo": {
+        "defaultTitle": "PolkaDots Cinema | Video y fotografía de boda en Playa del Carmen",
+        "defaultDescription": "Películas de boda cinematográficas y fotografía editorial en Playa del Carmen. Mirada documental, momentos naturales—la foto como complemento refinado al video."
+    },
     "navbar": {
       "home": "Inicio",
       "about": "Nuestra Historia",
       "portfolio": "Films",
       "pricing": "Precios",
       "faqs": "Preguntas",
+      "photography": "Fotografía",
       "contact": "Contacto"
     },
     "logo": {
@@ -26,7 +31,7 @@
     "about": {
         "title": "Nuestra Historia",
         "intro": ["Las miradas robadas.", "Las risas nerviosas.", "Las lágrimas que tu papá intentó esconder."],
-        "description": "Antes de filmar bodas, aprendimos a prestar atención a las personas.\n\nSomos Mario y Gabriela — pareja en la vida y en el cine. Ser pareja nos enseñó lo vulnerable que es este día.\n\nPor eso no te pedimos que actúes para la cámara. Simplemente nos quedamos cerca, observamos en silencio, y dejamos que todo fluya.",
+        "description": "Somos Mario y Gabriela, una pareja creativa con más de 5 años de experiencia capturando bodas de una forma auténtica y significativa. Como pareja, sabemos lo importante que es sentirse cómodo frente a la cámara, por eso nos enfocamos en crear un ambiente relajado donde puedan ser ustedes mismos. \n\n Por eso no les pedimos que actúen para la cámara. Simplemente nos mantenemos cerca, observamos en silencio y dejamos que todo fluya. ¿El resultado? Una película de boda cinematográfica llena de emociones genuinas y momentos auténticos. \n\n Con base en Playa del Carmen, combinamos nuestras fortalezas—el ojo creativo de Mario y la narrativa emocional de Gabriela—para crear películas atemporales que atesorarán para siempre.",
         "mario": "La mirada. Enfocado en la composición, la luz y los momentos que suceden una sola vez.",
         "gabriela": "El corazón. Sintonizada con la emoción, el ritmo y las conexiones invisibles entre las personas.",
         "closing": "Juntos, contamos historias de amor como se sienten — honestas, íntimas y atemporales."
@@ -96,14 +101,148 @@
       },
       "pricing": {
         "title": "Colecciones de Video",
-        "subtitle": "Simple y transparente."
+        "subtitle": "Simple y transparente.",
+        "plans": [
+          {
+            "title": "Paquete 1",
+            "price": "950 USD",
+            "description": "Perfecto para ceremonias íntimas o huidas románticas.",
+            "features": [
+              "3 hras cobertura",
+              "1 videógrafo",
+              "Ceremonia, sesión, recepción",
+              "Entrega video full HD editado 10-15 min*"
+            ],
+            "buttonText": "Ver disponibilidad"
+          },
+          {
+            "title": "Paquete 2",
+            "price": "1450 USD",
+            "description": "Ideal para bodas pequeñas a medianas.",
+            "features": [
+              "6 hras cobertura",
+              "1 videógrafo",
+              "Preparativos de la novia y el novio, ceremonia, sesión, recepción",
+              "Entrega video full HD editado 15 - 20 min*"
+            ],
+            "buttonText": "Ver disponibilidad",
+            "featured": true
+          },
+          {
+            "title": "Paquete 3",
+            "price": "1985 USD",
+            "description": "Cobertura completa para eventos de día completo.",
+            "features": [
+              "8 hras cobertura",
+              "2 videógrafos",
+              "Preparativos de la novia y el novio, ceremonia, sesión, recepción",
+              "Drone en ceremonia",
+              "Entrega video full HD editado 30 - 40 min*",
+              "Video Highlight editado 3 - 5 min*"
+            ],
+            "buttonText": "Reservar fecha"
+          }
+        ],
+        "microcopy": "* La duración del video puede variar dependiendo del contenido y los eventos del día de la boda"
       },
       "faqs": {
-        "title": "Algunas cosas que quizás quieras saber",
-        "subtitle": ""
+        "title": "Lo que debes saber",
+        "subtitle": "",
+        "items": [
+          {
+            "question": "¿Cuándo recibiremos nuestro video final de boda?",
+            "answer": "Recibirás tu video editado entre 4 y 8 semanas, según la complejidad del proyecto."
+          },
+          {
+            "question": "¿Podemos elegir la música?",
+            "answer": "Sí, puedes proponer música. También ofrezco una biblioteca con licencias para un uso correcto y legal."
+          },
+          {
+            "question": "¿Necesitan anticipo?",
+            "answer": "Sí, se requiere un anticipo no reembolsable para apartar tu fecha. El saldo restante vence antes del evento."
+          }
+        ]
       },
       "grid": {
         "cta": "Explorar los Films"
+      },
+      "homePhotography": {
+        "headline": "Foto + Video",
+        "body": "Momentos reales, desde la misma mirada.",
+        "cta": "Ver más",
+        "imageAlt": "Boda con foto y video trabajando juntos — un mismo equipo, una misma historia."
+      },
+      "photographyPage": {
+        "seo": {
+          "title": "Fotografía y video de boda en Playa del Carmen | PolkaDots Cinema",
+          "description": "Fotografía editorial de boda en Playa del Carmen, pensada para complementar nuestros films. Conoce paquetes foto + video con un mismo equipo creativo y tranquilo."
+        },
+        "hero": {
+          "title": "Fotografía",
+          "subtext": "Una narrativa visual cuidada, pensada para perdurar en el tiempo."
+        },
+        "gallery": {
+          "heading": "Instantáneas editoriales del día",
+          "images": [
+            { "src": "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80", "alt": "Retrato de boda" },
+            { "src": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=900&q=80", "alt": "Pareja en ceremonia" },
+            { "src": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900&q=80", "alt": "Celebración en recepción" },
+            { "src": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=900&q=80", "alt": "Pareja junto al mar" },
+            { "src": "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=900&q=80", "alt": "Detalle de la novia" },
+            { "src": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=80", "alt": "Abrazo de pareja" }
+          ]
+        },
+        "bridge": {
+          "line1": "Las fotografías guardan el instante.",
+          "line2": "El video te permite volver a sentirlo.",
+          "cta": "Ver films"
+        },
+        "pricing": {
+          "title": "Cobertura completa",
+          "subtitle": "Foto y video en armonía.",
+          "microcopy": "Fotografía independiente bajo consulta.",
+          "ctaLabel": "Consultar disponibilidad",
+          "plans": [
+            {
+              "title": "Foto + Video",
+              "price": "Desde 2450 USD",
+              "description": "Un mismo equipo, una misma historia.",
+              "features": [
+                "Film de boda",
+                "Fotografía natural",
+                "Cobertura completa"
+              ],
+              "buttonText": "Contactar",
+              "featured": true
+            }
+          ]
+        },
+        "faq": {
+          "heading": "Lo que debes saber",
+          "items": [
+            {
+              "question": "¿Se puede contratar solo fotografía?",
+              "answer": "Sí, con disponibilidad limitada—pero nuestra experiencia destacada une foto y video para que la historia se sienta continua. Muchas parejas que llegan buscando foto eligen un paquete combinado al ver cómo trabajamos el día."
+            },
+            {
+              "question": "¿Trabajan juntos foto y video?",
+              "answer": "Cuando contratas ambos, planificamos como un solo equipo: mismos tiempos, mismas prioridades y sin competir por tu atención—para que estés presente y tranquila."
+            },
+            {
+              "question": "¿Cuántas fotos se entregan?",
+              "answer": "Cada boda es distinta. Entregamos una selección curada y editada centrada en momentos honestos y retratos—nunca relleno. Los totales varían según horas y eventos; lo vemos en una llamada de descubrimiento."
+            },
+            {
+              "question": "¿Cómo es el proceso de reserva?",
+              "answer": "Escríbenos con fecha y lugar. Confirmamos disponibilidad, recomendamos la mejor opción (prioridad a film o foto + film) y enviamos un acuerdo sencillo con anticipo para apartar la fecha."
+            }
+          ]
+        },
+        "closing": {
+          "line1": "Las fotos te ayudan a recordar.",
+          "line2": "El video te ayuda a sentirlo otra vez.",
+          "ctaContact": "Contactar"
+        }
       },
       "contact": {
         "title": "Cuéntanos sobre tu día",
@@ -115,13 +254,9 @@
         "location": "Ciudad y lugar del evento",
         "guests": "Número estimado de invitados",
         "services": "¿Qué servicios deseas cotizar?",
-        "fullVideo": "Video completo",
-        "teaser": "Teaser",
-        "saveDate": "Save the date",
-        "drone": "Tomas con dron",
-        "guestsMessages": "Mensajes de invitados",
-        "style": "Estilo preferido",
-        "budget": "Presupuesto estimado",
+        "package1": "Paquete 1",
+        "package2": "Paquete 2",
+        "package3": "Paquete 3",
         "message": "Cuéntanos más sobre tu evento",
         "send": "Enviar mensaje",
         "botField": "No llenar este campo:",

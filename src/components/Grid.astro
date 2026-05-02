@@ -1,9 +1,10 @@
 ---
 import Button from './shared/Button.astro';
 import { getLang, getTranslations, getBasePath } from '../i18n/utils.js';
+import type messages from '../i18n/messages/en.json';
 
 const lang = getLang(Astro.url);
-const t = getTranslations(lang);
+const t = getTranslations(lang) as typeof messages;
 const base = getBasePath(lang);
 
 // Offsets muy dispersos: inicio, mitad, final, mezclados
@@ -14,7 +15,7 @@ const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
     <div class="max-w-screen-xl mx-auto px-6 md:px-12">
         <div id="video-grid" data-aos="fade-up" class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
             {videoOffsets.map((offset, index) => (
-                <div class={`overflow-hidden ${index >= 4 ? 'hidden md:block' : ''}`}>
+                <div class={`relative overflow-hidden aspect-[3/4] bg-taupe/5 ${index >= 4 ? 'hidden md:block' : ''}`}>
                     <video 
                         muted 
                         loop 
@@ -22,7 +23,7 @@ const videoOffsets = [0, 45, 15, 60, 30, 75, 10, 55, 40];
                         preload="none"
                         data-src="/assets/videos/hero.mp4"
                         data-offset={offset}
-                        class="lazy-video grid-video h-auto w-full object-cover pointer-events-none hover:scale-105 transition-transform duration-700"
+                        class="lazy-video absolute inset-0 h-full w-full object-cover pointer-events-none hover:scale-105 transition-transform duration-700"
                     >
                     </video>
                 </div>

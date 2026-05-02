@@ -13,8 +13,6 @@
     date: '',
     location: '',
     guests: '',
-    style: '',
-    budget: '',
     message: '',
     services: []
   };
@@ -229,7 +227,7 @@
   };
 </script>
 
-<section class="bg-ivory pt-32 pb-24" id="contact">
+<section class="bg-white pt-32 pb-24" id="contact">
   <div class="max-w-screen-xl mx-auto px-6 md:px-12">
     <div class="text-center mb-16 md:mb-20">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-main mb-3 text-taupe tracking-tight">{t.contact.title}</h1>
@@ -348,29 +346,20 @@
 
       <input type="number" name="guests" bind:value={formData.guests} placeholder={t.contact.guests} class="w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
 
-      <fieldset class="md:col-span-2 pt-4">
+      <fieldset class="md:col-span-3 pt-4">
         <legend class="text-sm text-taupe/70 mb-4">{t.contact.services}</legend>
-        <div class="grid md:grid-cols-2 gap-3">
+        <div class="grid md:grid-cols-3 gap-3">
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" name="services" value="Full Video" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.fullVideo}
+            <input type="checkbox" name="services" value="Package 1" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.package1}
           </label>
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" name="services" value="Teaser" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.teaser}
+            <input type="checkbox" name="services" value="Package 2" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.package2}
           </label>
           <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" name="services" value="Save the Date" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.saveDate}
-          </label>
-          <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" name="services" value="Drone" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.drone}
-          </label>
-          <label class="flex items-center gap-3 text-sm text-taupe/80 cursor-pointer hover:text-taupe transition-colors">
-            <input type="checkbox" name="services" value="Guest Messages" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.guestsMessages}
+            <input type="checkbox" name="services" value="Package 3" bind:group={formData.services} class="w-4 h-4 rounded border-taupe/30 text-dusty focus:ring-dusty/30" /> {t.contact.package3}
           </label>
         </div>
       </fieldset>
-
-      <input type="text" name="style" bind:value={formData.style} placeholder={t.contact.style} class="md:col-span-2 w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
-      <input type="text" name="budget" bind:value={formData.budget} placeholder={t.contact.budget} class="md:col-span-2 w-full px-0 py-4 bg-transparent border-0 border-b border-taupe/20 focus:border-dusty focus:ring-0 text-taupe placeholder:text-taupe/40 transition-colors" />
 
       <div class="md:col-span-2">
         <textarea 

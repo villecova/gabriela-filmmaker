@@ -1,5 +1,4 @@
 ---
-import Button from './Button.astro';
 
 interface Props {
   title: string;
@@ -8,14 +7,13 @@ interface Props {
   features: string[];
   buttonText: string;
   featured?: boolean;
-  microcopy?: string;
 }
 
-const { title, price, description, features, buttonText, featured = false, microcopy } = Astro.props;
+const { title, price, description, features, buttonText, featured = false } = Astro.props;
 
 const cardClasses = featured 
-  ? "flex flex-col justify-between p-8 bg-blush-bg text-left h-full shadow-md" 
-  : "flex flex-col justify-between p-6 bg-ivory text-left h-full shadow-sm";
+  ? "flex flex-col justify-between p-8 bg-blush-bg text-left h-full shadow-md w-full max-w-xs mx-auto sm:mx-0 flex-shrink-0" 
+  : "flex flex-col justify-between p-6 bg-ivory text-left h-full shadow-sm w-full max-w-xs mx-auto sm:mx-0 flex-shrink-0";
 
 const textColor = featured ? "text-taupe" : "text-taupe";
 const textMuted = featured ? "text-taupe/80" : "text-taupe/70";
@@ -33,8 +31,8 @@ const iconColor = featured ? "text-taupe" : "text-dusty";
     <ul role="list" class="mb-8 space-y-2 text-left">
       {features.map((feature) => (
         <li class="flex items-center space-x-3">
-          <svg class={`w-5 h-5 ${iconColor}`} fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.0 1.414l-8 8a1 1 0 01-1.414.0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414.0z" clip-rule="evenodd" />
+          <svg class={`flex-shrink-0 w-1.5 h-1.5 ${iconColor}`} fill="currentColor" viewBox="0 0 20 20">
+            <circle cx="10" cy="10" r="6" />
           </svg>
           <span class={`text-xs ${featured ? 'text-taupe' : 'text-taupe'}`}>{feature}</span>
         </li>
@@ -42,9 +40,9 @@ const iconColor = featured ? "text-taupe" : "text-dusty";
     </ul>
   </div>
   <div>
-    {microcopy && (
+    <!-- {microcopy && (
       <p class={`text-[10px] text-center mb-3 italic tracking-wide ${textSubtle}`}>{microcopy}</p>
-    )}
-    <Button href="#" label={buttonText} variant={featured ? "inverse" : "primary"} fullWidth />
+    )} -->
+    <!-- <Button href="#" label={buttonText} variant={featured ? "inverse" : "primary"} fullWidth /> -->
   </div>
 </div>
