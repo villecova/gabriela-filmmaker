@@ -12,8 +12,8 @@ interface Props {
 const { title, price, description, features, buttonText, featured = false } = Astro.props;
 
 const cardClasses = featured 
-  ? "flex flex-col justify-between p-8 bg-blush-bg text-left h-full shadow-md w-full max-w-xs flex-shrink-0" 
-  : "flex flex-col justify-between p-6 bg-ivory text-left h-full shadow-sm w-full max-w-xs flex-shrink-0";
+  ? "flex flex-col justify-between p-8 bg-blush-bg text-left h-full shadow-md w-full max-w-xs mx-auto sm:mx-0 flex-shrink-0" 
+  : "flex flex-col justify-between p-6 bg-ivory text-left h-full shadow-sm w-full max-w-xs mx-auto sm:mx-0 flex-shrink-0";
 
 const textColor = featured ? "text-taupe" : "text-taupe";
 const textMuted = featured ? "text-taupe/80" : "text-taupe/70";
@@ -31,7 +31,7 @@ const iconColor = featured ? "text-taupe" : "text-dusty";
     <ul role="list" class="mb-8 space-y-2 text-left">
       {features.map((feature) => (
         <li class="flex items-center space-x-3">
-          <svg class={`flex-shrink-0 w-6 h-6 ${iconColor}`} fill="currentColor" viewBox="0 0 20 20">
+          <svg class={`flex-shrink-0 w-1.5 h-1.5 ${iconColor}`} fill="currentColor" viewBox="0 0 20 20">
             <circle cx="10" cy="10" r="6" />
           </svg>
           <span class={`text-xs ${featured ? 'text-taupe' : 'text-taupe'}`}>{feature}</span>

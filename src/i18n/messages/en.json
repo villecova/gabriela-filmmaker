@@ -1,191 +1,288 @@
 {
-    "intro": "You'll live it once. You'll feel it forever",
+    "intro": "You'll live it once. You'll feel it forever.",
+    "seo": {
+        "defaultTitle": "PolkaDots Cinema | Wedding Video & Photography in Playa del Carmen",
+        "defaultDescription": "Cinematic wedding films and editorial photography in Playa del Carmen. A documentary eye and natural moments—photography as a refined complement to film."
+    },
     "navbar": {
       "home": "Home",
       "about": "Our Story",
       "portfolio": "Films",
       "pricing": "Pricing",
-      "faqs": "FAQs",
+      "faqs": "Questions",
+      "photography": "Photography",
       "contact": "Contact"
     },
     "logo": {
         "title": "PolkaDots Cinema",
-        "subtitle": "Cinematic Love Stories"
+        "subtitle": "Love stories like in the movies"
     },
     "hero": {
       "title": "Time flies… but the story remains.",
       "cta_primary": "View portfolio",
-      "cta_secondary": "Book Now",
+      "cta_secondary": "Book",
       "description": [
-        "Moody, cinematic wedding films",
+        "Cinematic wedding films",
         "with a documentary eye.",
         "",
-        "Old film tones — raw emotions."
+        "Old film tones — pure emotions."
       ]
     },
     "about": {
       "title": "Our Story",
       "intro": ["The stolen glances.", "The nervous laughter.", "The tears your dad tried to hide."],
-      "description": "We’re Mario & Gabriela, a creative couple with over 5 years of experience capturing weddings in a real and meaningful way. As a couple ourselves, we know how important it is to feelcomfortable in front of the camera, so we focus on creating a relaxed atmosphere where you can truly be yourselves. \n\n That's why we don't ask you to perform for the camera. We simply stay close, observe quietly, and let things unfold. The result? A cinematic wedding film filled with genuine emotions and authentic moments.\n\n  Based in Playa del Carmen, we combine our strengths—Mario’s creative eye and Gabriela’s emotional storytelling—to create timeless films you’ll treasure forever.",
+      "description": "We're Mario and Gabriela, a creative couple with more than 5 years of experience capturing weddings in an authentic and meaningful way. As a couple ourselves, we know how important it is to feel comfortable in front of the camera, so we focus on creating a relaxed atmosphere where you can be yourselves. \n\n That's why we don't ask you to perform for the camera. We simply stay close, observe quietly, and let everything flow. The result? A cinematic wedding film full of genuine emotions and authentic moments. \n\n Based in Playa del Carmen, we combine our strengths—Mario's creative eye and Gabriela's emotional storytelling—to create timeless films you'll treasure forever.",
+      "mario": "The eye. Focused on composition, light, and moments that happen only once.",
       "gabriela": "The heart. Attuned to emotion, rhythm, and the invisible connections between people.",
       "closing": "Together, we tell love stories the way they are felt — honest, intimate, and timeless."
+    },
+    "portfolio": {
+      "title": "Our Films",
+      "subtitle": "A collection of love stories told through cinema",
+      "viewFilm": "View film",
+      "backToPortfolio": "Back to portfolio",
+      "nextFilm": "Next film",
+      "projects": [
+        {
+          "slug": "elena-roberto",
+          "title": "Elena & Roberto",
+          "subtitle": "A golden sunset, barefoot on the sand",
+          "description": "Their love story began with a chance encounter on a rainy afternoon in Mexico City. Years later, they chose to celebrate surrounded by the Caribbean breeze and the warmth of their closest friends and family.",
+          "location": "Tulum, Mexico",
+          "year": "2025",
+          "video": "/assets/videos/hero.mp4",
+          "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
+        },
+        {
+          "slug": "clara-maximilian",
+          "title": "Clara & Maximilian",
+          "subtitle": "Where the mountains meet the soul",
+          "description": "An intimate ceremony in the heart of the Dolomites, where every glance spoke louder than words. The mist rolling through the valleys became part of their story.",
+          "location": "South Tyrol, Italy",
+          "year": "2025",
+          "video": "/assets/videos/hero.mp4",
+          "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
+        },
+        {
+          "slug": "anna-sebastian",
+          "title": "Anna & Sebastian",
+          "subtitle": "Dancing under a thousand lights",
+          "description": "A celebration that felt like a dream—vintage champagne, candlelit gardens, and a first dance that made time stand still. Their joy was contagious, their love undeniable.",
+          "location": "Provence, France",
+          "year": "2024",
+          "video": "/assets/videos/hero.mp4",
+          "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
+        },
+        {
+          "slug": "hannah-simon",
+          "title": "Hannah & Simon",
+          "subtitle": "A love letter written in the wind",
+          "description": "They wanted nothing but the ocean, the sky, and each other. A ceremony on the cliffs of Big Sur, where the Pacific witnessed their promises to forever.",
+          "location": "Big Sur, California",
+          "year": "2024",
+          "video": "/assets/videos/hero.mp4",
+          "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
+        },
+        {
+          "slug": "lucia-andres",
+          "title": "Lucía & Andrés",
+          "subtitle": "Roots, rhythm, and endless laughter",
+          "description": "A hacienda filled with marigolds, mariachis, and three generations dancing until dawn. Their wedding was a tribute to heritage, family, and the deepest kind of love.",
+          "location": "Oaxaca, Mexico",
+          "year": "2024",
+          "video": "/assets/videos/hero.mp4",
+          "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Their stories, in their words",
+      "subtitle": "Real moments. Real emotions."
+    },
+    "pricing": {
+      "title": "Video Collections",
+      "subtitle": "Simple and transparent.",
+      "plans": [
+        {
+          "title": "Package 1",
+          "price": "950 USD",
+          "description": "Perfect for intimate ceremonies or elopements.",
+          "features": [
+            "3 hrs coverage",
+            "1 videographer",
+            "Ceremony, session, reception",
+            "Delivered edited full HD film 10–15 min*"
+          ],
+          "buttonText": "Check availability"
+        },
+        {
+          "title": "Package 2",
+          "price": "1450 USD",
+          "description": "Ideal for small to medium weddings.",
+          "features": [
+            "6 hrs coverage",
+            "1 videographer",
+            "Bride & groom prep, ceremony, session, reception",
+            "Delivered edited full HD film 15–20 min*"
+          ],
+          "buttonText": "Check availability",
+          "featured": true
+        },
+        {
+          "title": "Package 3",
+          "price": "1985 USD",
+          "description": "Full coverage for full-day events.",
+          "features": [
+            "8 hrs coverage",
+            "2 videographers",
+            "Bride & groom prep, ceremony, session, reception",
+            "Drone at ceremony",
+            "Delivered edited full HD film 30–40 min*",
+            "Edited highlight film 3–5 min*"
+          ],
+          "buttonText": "Reserve your date"
+        }
+      ],
+      "microcopy": "* Film length may vary depending on the content and events of the wedding day."
+    },
+    "faqs": {
+      "title": "What you need to know",
+      "subtitle": "",
+      "items": [
+        {
+          "question": "When will we receive our final wedding film?",
+          "answer": "You will receive your edited film between 4 and 8 weeks, depending on the complexity of the project."
+        },
+        {
+          "question": "Can we choose the music?",
+          "answer": "Yes, you can suggest music. I also offer a library with proper licenses for correct, legal use."
+        },
+        {
+          "question": "Do you require a deposit?",
+          "answer": "Yes, a non-refundable deposit is required to hold your date. The remaining balance is due before the event."
+        }
+      ]
+    },
+    "grid": {
+      "cta": "Explore the Films"
+    },
+    "homePhotography": {
+      "headline": "Photo + Video",
+      "body": "Real moments, through the same eye.",
+      "cta": "See more",
+      "imageAlt": "Wedding day with photo and film working together — one team, one story."
+    },
+    "photographyPage": {
+      "seo": {
+        "title": "Wedding Photography and Video in Playa del Carmen | PolkaDots Cinema",
+        "description": "Editorial wedding photography in Playa del Carmen, designed to complement our films. Explore photo + video packages with one calm, creative team."
       },
-      "portfolio": {
-        "title": "Our Films",
-        "subtitle": "A collection of love stories told through cinema",
-        "viewFilm": "View film",
-        "backToPortfolio": "Back to portfolio",
-        "nextFilm": "Next film",
-        "projects": [
+      "hero": {
+        "title": "Photography",
+        "subtext": "A carefully crafted visual narrative, meant to last."
+      },
+      "gallery": {
+        "heading": "Editorial frames from the day",
+        "images": [
+          { "src": "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80", "alt": "Wedding portrait" },
+          { "src": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=900&q=80", "alt": "Couple at ceremony" },
+          { "src": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900&q=80", "alt": "Reception celebration" },
+          { "src": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=900&q=80", "alt": "Coastal wedding couple" },
+          { "src": "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=900&q=80", "alt": "Bride detail" },
+          { "src": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=80", "alt": "Couple embracing" }
+        ]
+      },
+      "bridge": {
+        "line1": "Photographs hold the moment.",
+        "line2": "Film lets you feel it again.",
+        "cta": "Watch the films"
+      },
+      "pricing": {
+        "title": "Full Coverage",
+        "subtitle": "Photo and video in harmony.",
+        "microcopy": "Photography on its own available upon request.",
+        "ctaLabel": "Check availability",
+        "plans": [
           {
-            "slug": "elena-roberto",
-            "title": "Elena & Roberto",
-            "subtitle": "A golden sunset, barefoot on the sand",
-            "description": "Their love story began with a chance encounter on a rainy afternoon in Mexico City. Years later, they chose to celebrate surrounded by the Caribbean breeze and the warmth of their closest friends and family.",
-            "location": "Tulum, Mexico",
-            "year": "2025",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
-          },
-          {
-            "slug": "clara-maximilian",
-            "title": "Clara & Maximilian",
-            "subtitle": "Where the mountains meet the soul",
-            "description": "An intimate ceremony in the heart of the Dolomites, where every glance spoke louder than words. The mist rolling through the valleys became part of their story.",
-            "location": "South Tyrol, Italy",
-            "year": "2025",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
-          },
-          {
-            "slug": "anna-sebastian",
-            "title": "Anna & Sebastian",
-            "subtitle": "Dancing under a thousand lights",
-            "description": "A celebration that felt like a dream—vintage champagne, candlelit gardens, and a first dance that made time stand still. Their joy was contagious, their love undeniable.",
-            "location": "Provence, France",
-            "year": "2024",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
-          },
-          {
-            "slug": "hannah-simon",
-            "title": "Hannah & Simon",
-            "subtitle": "A love letter written in the wind",
-            "description": "They wanted nothing but the ocean, the sky, and each other. A ceremony on the cliffs of Big Sur, where the Pacific witnessed their promises to forever.",
-            "location": "Big Sur, California",
-            "year": "2024",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
-          },
-          {
-            "slug": "lucia-andres",
-            "title": "Lucía & Andrés",
-            "subtitle": "Roots, rhythm, and endless laughter",
-            "description": "A hacienda filled with marigolds, mariachis, and three generations dancing until dawn. Their wedding was a tribute to heritage, family, and the deepest kind of love.",
-            "location": "Oaxaca, Mexico",
-            "year": "2024",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
+            "title": "Photo + Video",
+            "price": "From 2450 USD",
+            "description": "One team, one story.",
+            "features": [
+              "Wedding film",
+              "Natural photography",
+              "Full coverage"
+            ],
+            "buttonText": "Contact",
+            "featured": true
           }
         ]
       },
-      "testimonials": {
-        "title": "Their stories, in their words",
-        "subtitle": "Real moments. Real emotions."
-      },
-      "pricing": {
-        "title": "Wedding Film Collections",
-        "subtitle": "Simple and transparent.",
-        "plans": [
+      "faq": {
+        "heading": "What you need to know",
+        "items": [
           {
-            "title": "Package 1",
-            "price": "950 USD",
-            "description": "Perfect for intimate ceremonies or elopements.",
-            "features": [
-              "3 hours of coverage",
-              "1 videographer",
-              "Ceremony, couple session, reception",
-              "Edited Full HD video delivery (10–15 min)*"
-            ],
-            "buttonText": "Check availability"
+            "question": "Can we book photography only?",
+            "answer": "Yes, with limited availability—but our standout experience is photo + video together so the story feels continuous. Many couples who come in for photos choose a combined package once they see how we work the day."
           },
           {
-            "title": "Package 2",
-            "price": "1450 USD",
-            "description": "Great for small to medium weddings.",
-            "features": [
-              "6 hours of coverage",
-              "1 videographer",
-              "Bride & Groom getting ready, ceremony, couple session, reception",
-              "Edited Full HD video delivery (15–20 min)*"
-            ],
-            "buttonText": "Check availability",
-            "featured": true
+            "question": "Do photo and video work together?",
+            "answer": "When you book both, we plan as one team: same timing, same priorities, and no competing for your attention—so you can be present and at ease."
           },
           {
-            "title": "Package 3",
-            "price": "1985 USD",
-            "description": "Complete coverage for full-day events.",
-            "features": [
-              "8 hours of coverage",
-              "2 videographers",
-              "Bride & Groom getting ready, ceremony, couple session, reception",
-              "Drone coverage during the ceremony",
-              "Edited Full HD video delivery (30–40 min)*",
-              "Highlight video (3–5 min)"
-            ],
-            "buttonText": "Reserve your date"
+            "question": "How many photos are delivered?",
+            "answer": "Every wedding is different. We deliver a curated, edited selection focused on honest moments and portraits—never filler. Totals vary by hours and events; we cover that on a discovery call."
+          },
+          {
+            "question": "How does booking work?",
+            "answer": "Write us with your date and venue. We confirm availability, recommend the best option (film-first or photo + film), and send a simple agreement with a deposit to hold the date."
           }
-        ],
-        "microcopy": "* Video length may vary depending on the content and events of the wedding day."
+        ]
       },
-      "faqs": {
-        "title": "A few things you may want to know",
-        "subtitle": ""
-      },
-      "grid": {
-        "cta": "Explore the Films"
-      },
-      "contact": {
-        "title": "Let's Talk About Your Day",
-        "subtitle": "Tell us a little about your wedding — we'd love to hear from you.",
-        "name": "Full Name",
-        "email": "Email",
-        "phone": "Phone Number",
-        "date": "Wedding Date",
-        "location": "City and Venue",
-        "guests": "Estimated Guest Count",
-        "services": "What services are you interested in?",
-        "package1": "Package 1",
-        "package2": "Package 2", 
-        "package3": "Package 3",
-        "message": "Tell us more about your event",
-        "send": "Get in Touch",
-        "botField": "Do not fill this field:",
-        "errors": {
-          "required": "This field is required",
-          "invalidEmail": "Please enter a valid email address",
-          "invalidPhone": "Please enter a complete phone number"
-        }
-      },
-      "thanks": {
-        "title": "Thank You",
-        "message": "We've received your message and we're excited to learn more about your special day.",
-        "timeline": "We'll be in touch within 24-48 hours.",
-        "backToHome": "Back to Home"
-      },
-      "footer": {
-        "navigationTitle": "Navigation",
-        "contactTitle": "Contact",
-        "aboutTitle": "About Me",
-        "aboutText": "Capturing authentic love stories with a cinematic eye. Each wedding is unique, and my job is to immortalize it with elegance and emotion.",
-        "copyright": "All rights reserved.",
-        "links": {
-          "home": "Home",
-          "portfolio": "Portfolio",
-          "contact": "Contact",
-          "instagram": "Instagram"
-        }
+      "closing": {
+        "line1": "Photos help you remember.",
+        "line2": "Film helps you feel it again.",
+        "ctaContact": "Contact"
       }
-  }
-  
+    },
+    "contact": {
+      "title": "Tell us about your day",
+      "subtitle": "We'd love to hear more about your wedding.",
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "date": "Wedding date",
+      "location": "City and venue",
+      "guests": "Estimated guest count",
+      "services": "Which services would you like a quote for?",
+      "package1": "Package 1",
+      "package2": "Package 2",
+      "package3": "Package 3",
+      "message": "Tell us more about your event",
+      "send": "Send message",
+      "botField": "Do not fill this field:",
+      "errors": {
+        "required": "This field is required",
+        "invalidEmail": "Please enter a valid email address",
+        "invalidPhone": "Please enter a complete phone number"
+      }
+    },
+    "thanks": {
+      "title": "Thank you!",
+      "message": "We've received your message and we're excited to learn more about your special day.",
+      "timeline": "We'll be in touch within the next 24–48 hours.",
+      "backToHome": "Back to Home"
+    },
+    "footer": {
+      "navigationTitle": "Navigation",
+      "contactTitle": "Contact",
+      "aboutTitle": "About me",
+      "aboutText": "Capturing authentic love stories with a cinematic eye. Each wedding is unique, and my job is to immortalize it with elegance and emotion.",
+      "copyright": "All rights reserved.",
+      "links": {
+        "home": "Home",
+        "portfolio": "Portfolio",
+        "contact": "Contact",
+        "instagram": "Instagram"
+      }
+    }
+}

@@ -227,7 +227,7 @@
   };
 </script>
 
-<section class="bg-ivory pt-32 pb-24" id="contact">
+<section class="bg-white pt-32 pb-24" id="contact">
   <div class="max-w-screen-xl mx-auto px-6 md:px-12">
     <div class="text-center mb-16 md:mb-20">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-main mb-3 text-taupe tracking-tight">{t.contact.title}</h1>

@@ -7,57 +7,83 @@ import PricingCard from './shared/PricingCard.astro';
 const lang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
 const t = lang === 'es' ? es : en;
 
-interface Props {
-  microcopy?: string;
+interface PlanRow {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+  buttonText: string;
+  featured?: boolean;
 }
 
-const { microcopy } = Astro.props;
+interface Props {
+  microcopy?: string;
+  title?: string;
+  subtitle?: string;
+  plans?: PlanRow[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
 
-const plans = t.pricing.plans;
-const sharedMicrocopy = t.pricing.microcopy;
+const { microcopy: microcopyProp, title: titleProp, subtitle: subtitleProp, plans: plansProp, ctaLabel: ctaLabelProp, ctaHref: ctaHrefProp } = Astro.props;
 
+const defaultPlans = t.pricing.plans as PlanRow[];
+
+const resolvedTitle = titleProp ?? t.pricing.title;
+const resolvedSubtitle = subtitleProp ?? t.pricing.subtitle;
+const resolvedPlans = plansProp ?? defaultPlans;
+const resolvedMicrocopy = microcopyProp ?? t.pricing.microcopy;
+const resolvedCtaLabel =
+  ctaLabelProp ?? (lang === 'es' ? 'Consultar disponibilidad' : 'Check Availability');
+const resolvedCtaHref =
+  ctaHrefProp ?? (lang === 'es' ? '/es/contact' : '/contact');
+
+const cardsRowClass =
+  resolvedPlans.length === 1
+    ? 'flex flex-col gap-8 items-center justify-center'
+    : 'flex flex-col gap-8 items-center sm:flex-row sm:flex-wrap sm:justify-center lg:flex-nowrap lg:justify-center';
 ---
 
 <section class="bg-white py-20 md:py-32" id="pricing">
   <div class="max-w-screen-xl mx-auto px-6 md:px-12">
     <div data-aos="fade-up" class="text-center mb-16 md:mb-20">
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-main text-taupe mb-3 tracking-tight">
-        {t.pricing.title}
+        {resolvedTitle}
       </h2>
       <div class="flex items-center justify-center gap-4 text-dusty text-xl mb-6">
         <span>•</span><span>•</span><span>•</span>
       </div>
       <p class="text-lg md:text-xl text-taupe/60 font-light">
-        {t.pricing.subtitle}
+        {resolvedSubtitle}
       </p>
     </div>
 
-    <div class="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-center lg:flex-nowrap lg:justify-center">
-      {plans.map((plan, index) => (
-        <div data-aos="fade-up" data-aos-delay={index * 100}>
-        <PricingCard
-          title={plan.title}
-          price={plan.price}
-          description={plan.description}
-          features={plan.features}
-          buttonText={plan.buttonText}
-          featured={plan.featured}
-        />
+    <div class={cardsRowClass}>
+      {resolvedPlans.map((plan, index) => (
+        <div data-aos="fade-up" data-aos-delay={index * 100} class="w-full flex justify-center sm:w-auto sm:max-w-none">
+          <PricingCard
+            title={plan.title}
+            price={plan.price}
+            description={plan.description}
+            features={plan.features}
+            buttonText={plan.buttonText}
+            featured={plan.featured}
+          />
         </div>
       ))}
     </div>
 
     <div class="text-center mt-12 md:mt-16">  
-        <p class="text-sm md:text-base text-taupe/60 font-light">
-          {sharedMicrocopy}
-        </p>
-    </div>  
+      <p class="text-sm md:text-base text-taupe/60 font-light">
+        {resolvedMicrocopy}
+      </p>
+    </div>
 
     <div class="text-center mt-8">
-      <Button 
-        href={lang === 'es' ? '/es/contact' : '/contact'} 
-        label={lang === 'es' ? 'Consultar disponibilidad' : 'Check Availability'} 
-        variant="primary" 
+      <Button
+        href={resolvedCtaHref}
+        label={resolvedCtaLabel}
+        variant="primary"
       />
     </div>
   </div>
