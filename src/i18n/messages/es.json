@@ -1,20 +1,20 @@
 {
     "intro": "Lo vivirás una vez. Lo sentirás por siempre.",
     "seo": {
-        "defaultTitle": "PolkaDots Cinema | Video y fotografía de boda en Playa del Carmen",
+        "defaultTitle": "POLKADOTS Cinema | Video y fotografía de boda en Playa del Carmen",
         "defaultDescription": "Películas de boda cinematográficas y fotografía editorial en Playa del Carmen. Mirada documental, momentos naturales—la foto como complemento refinado al video."
     },
     "navbar": {
       "home": "Inicio",
       "about": "Nuestra Historia",
       "portfolio": "Films",
-      "pricing": "Precios",
+      "pricing": "Colecciones",
       "faqs": "Preguntas",
       "photography": "Fotografía",
       "contact": "Contacto"
     },
     "logo": {
-        "title": "PolkaDots Cinema",
+        "title": "POLKADOTS Cinema",
         "subtitle": "Historias de amor como en el cine"
     },
     "hero": {
@@ -50,7 +50,7 @@
             "description": "Su historia de amor comenzó con un encuentro casual en una tarde lluviosa en la Ciudad de México. Años después, eligieron celebrar rodeados de la brisa del Caribe y el calor de sus amigos y familiares más cercanos.",
             "location": "Tulum, México",
             "year": "2025",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/video1.mp4",
             "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
           },
           {
@@ -60,38 +60,8 @@
             "description": "Una ceremonia íntima en el corazón de los Dolomitas, donde cada mirada hablaba más fuerte que las palabras. La neblina que recorría los valles se convirtió en parte de su historia.",
             "location": "Tirol del Sur, Italia",
             "year": "2025",
-            "video": "/assets/videos/hero.mp4",
+            "video": "/assets/videos/video1.mp4",
             "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
-          },
-          {
-            "slug": "anna-sebastian",
-            "title": "Anna & Sebastian",
-            "subtitle": "Bailando bajo mil luces",
-            "description": "Una celebración que se sintió como un sueño—champagne vintage, jardines iluminados con velas, y un primer baile que hizo que el tiempo se detuviera. Su alegría era contagiosa, su amor innegable.",
-            "location": "Provenza, Francia",
-            "year": "2024",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
-          },
-          {
-            "slug": "hannah-simon",
-            "title": "Hannah & Simon",
-            "subtitle": "Una carta de amor escrita en el viento",
-            "description": "Solo querían el océano, el cielo, y el uno al otro. Una ceremonia en los acantilados de Big Sur, donde el Pacífico fue testigo de sus promesas de amor eterno.",
-            "location": "Big Sur, California",
-            "year": "2024",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
-          },
-          {
-            "slug": "lucia-andres",
-            "title": "Lucía & Andrés",
-            "subtitle": "Raíces, ritmo y risas sin fin",
-            "description": "Una hacienda llena de cempasúchil, mariachis, y tres generaciones bailando hasta el amanecer. Su boda fue un tributo al patrimonio, la familia, y el amor más profundo.",
-            "location": "Oaxaca, México",
-            "year": "2024",
-            "video": "/assets/videos/hero.mp4",
-            "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
           }
         ]
       },
@@ -174,7 +144,7 @@
       },
       "photographyPage": {
         "seo": {
-          "title": "Fotografía y video de boda en Playa del Carmen | PolkaDots Cinema",
+          "title": "Fotografía y video de boda en Playa del Carmen | POLKADOTS Cinema",
           "description": "Fotografía editorial de boda en Playa del Carmen, pensada para complementar nuestros films. Conoce paquetes foto + video con un mismo equipo creativo y tranquilo."
         },
         "hero": {

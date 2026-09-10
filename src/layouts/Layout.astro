@@ -11,7 +11,7 @@ interface Props {
 	description?: string;
 }
 
-const { title = 'PolkaDots Cinema', description } = Astro.props;
+const { title = 'POLKADOTS Cinema', description } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,7 +19,8 @@ const { title = 'PolkaDots Cinema', description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		{description && <meta name="description" content={description} />}
