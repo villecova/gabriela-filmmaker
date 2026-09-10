@@ -41,7 +41,7 @@ const resolvedCtaHref =
 const cardsRowClass =
   resolvedPlans.length === 1
     ? 'flex flex-col gap-8 items-center justify-center'
-    : 'flex flex-col gap-8 items-center sm:flex-row sm:flex-wrap sm:justify-center lg:flex-nowrap lg:justify-center';
+    : 'grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch';
 ---
 
 <section class="bg-white py-20 md:py-32" id="pricing">
@@ -60,7 +60,7 @@ const cardsRowClass =
 
     <div class={cardsRowClass}>
       {resolvedPlans.map((plan, index) => (
-        <div data-aos="fade-up" data-aos-delay={index * 100} class="w-full flex justify-center sm:w-auto sm:max-w-none">
+        <div data-aos="fade-up" data-aos-delay={index * 100} class="flex flex-col h-full w-full items-center">
           <PricingCard
             title={plan.title}
             price={plan.price}

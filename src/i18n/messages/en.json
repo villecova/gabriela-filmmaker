@@ -1,20 +1,20 @@
 {
     "intro": "You'll live it once. You'll feel it forever.",
     "seo": {
-        "defaultTitle": "PolkaDots Cinema | Wedding Video & Photography in Playa del Carmen",
+        "defaultTitle": "POLKADOTS Cinema | Wedding Video & Photography in Playa del Carmen",
         "defaultDescription": "Cinematic wedding films and editorial photography in Playa del Carmen. A documentary eye and natural moments—photography as a refined complement to film."
     },
     "navbar": {
       "home": "Home",
       "about": "Our Story",
       "portfolio": "Films",
-      "pricing": "Pricing",
+      "pricing": "Collections",
       "faqs": "Questions",
       "photography": "Photography",
       "contact": "Contact"
     },
     "logo": {
-        "title": "PolkaDots Cinema",
+        "title": "POLKADOTS Cinema",
         "subtitle": "Love stories like in the movies"
     },
     "hero": {
@@ -50,7 +50,7 @@
           "description": "Their love story began with a chance encounter on a rainy afternoon in Mexico City. Years later, they chose to celebrate surrounded by the Caribbean breeze and the warmth of their closest friends and family.",
           "location": "Tulum, Mexico",
           "year": "2025",
-          "video": "/assets/videos/hero.mp4",
+          "video": "/assets/videos/video1.mp4",
           "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
         },
         {
@@ -60,38 +60,8 @@
           "description": "An intimate ceremony in the heart of the Dolomites, where every glance spoke louder than words. The mist rolling through the valleys became part of their story.",
           "location": "South Tyrol, Italy",
           "year": "2025",
-          "video": "/assets/videos/hero.mp4",
+          "video": "/assets/videos/video1.mp4",
           "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80"
-        },
-        {
-          "slug": "anna-sebastian",
-          "title": "Anna & Sebastian",
-          "subtitle": "Dancing under a thousand lights",
-          "description": "A celebration that felt like a dream—vintage champagne, candlelit gardens, and a first dance that made time stand still. Their joy was contagious, their love undeniable.",
-          "location": "Provence, France",
-          "year": "2024",
-          "video": "/assets/videos/hero.mp4",
-          "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80"
-        },
-        {
-          "slug": "hannah-simon",
-          "title": "Hannah & Simon",
-          "subtitle": "A love letter written in the wind",
-          "description": "They wanted nothing but the ocean, the sky, and each other. A ceremony on the cliffs of Big Sur, where the Pacific witnessed their promises to forever.",
-          "location": "Big Sur, California",
-          "year": "2024",
-          "video": "/assets/videos/hero.mp4",
-          "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80"
-        },
-        {
-          "slug": "lucia-andres",
-          "title": "Lucía & Andrés",
-          "subtitle": "Roots, rhythm, and endless laughter",
-          "description": "A hacienda filled with marigolds, mariachis, and three generations dancing until dawn. Their wedding was a tribute to heritage, family, and the deepest kind of love.",
-          "location": "Oaxaca, Mexico",
-          "year": "2024",
-          "video": "/assets/videos/hero.mp4",
-          "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80"
         }
       ]
     },
@@ -174,7 +144,7 @@
     },
     "photographyPage": {
       "seo": {
-        "title": "Wedding Photography and Video in Playa del Carmen | PolkaDots Cinema",
+        "title": "Wedding Photography and Video in Playa del Carmen | POLKADOTS Cinema",
         "description": "Editorial wedding photography in Playa del Carmen, designed to complement our films. Explore photo + video packages with one calm, creative team."
       },
       "hero": {

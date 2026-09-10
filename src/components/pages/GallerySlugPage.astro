@@ -131,19 +131,20 @@ const nextProject = projects[(currentIndex + 1) % projects.length];
             <span>{t.portfolio.backToPortfolio}</span>
           </a>
 
-          <!-- Next Film -->
-          <a 
-            href={`${base}/gallery/${nextProject.slug}`}
-            class="group flex items-center gap-3 text-sm text-taupe/70 hover:text-taupe transition-colors"
-          >
-            <span class="text-right">
-              <span class="block text-xs text-taupe/50 mb-1">{t.portfolio.nextFilm}</span>
-              <span class="font-main text-base text-taupe">{nextProject.title}</span>
-            </span>
-            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+          {projects.length > 1 && nextProject && (
+            <a 
+              href={`${base}/gallery/${nextProject.slug}`}
+              class="group flex items-center gap-3 text-sm text-taupe/70 hover:text-taupe transition-colors"
+            >
+              <span class="text-right">
+                <span class="block text-xs text-taupe/50 mb-1">{t.portfolio.nextFilm}</span>
+                <span class="font-main text-base text-taupe">{nextProject.title}</span>
+              </span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          )}
           
         </div>
       </div>

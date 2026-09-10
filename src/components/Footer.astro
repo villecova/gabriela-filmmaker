@@ -1,6 +1,6 @@
 ---
+import { getBasePath, getLang } from '../i18n/utils.js';
 import Logo from './shared/Logo.astro';
-import { getLang, getBasePath } from '../i18n/utils.js';
 
 const lang = getLang(Astro.url);
 const base = getBasePath(lang);
@@ -15,7 +15,7 @@ const faqsLabel = lang === 'es' ? 'Preguntas frecuentes' : 'FAQs';
     
     <div class="flex flex-col items-center text-center space-y-6">
       <!-- Logo -->
-      <Logo size="large" class="text-white" />
+      <Logo size="large" invert />
       
       <!-- Tagline -->
       <p class="text-lg text-white/70 font-light tracking-wide">
@@ -33,7 +33,7 @@ const faqsLabel = lang === 'es' ? 'Preguntas frecuentes' : 'FAQs';
 
     <!-- Copyright -->
     <div class="text-center text-xs text-white/40 mt-12 pt-8 border-t border-white/10">
-      © {currentYear} PolkaDots Cinema
+      © {currentYear} POLKADOTS Cinema
     </div>
   </div>
 </footer>
