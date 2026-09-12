@@ -12,6 +12,7 @@ interface Props {
 }
 
 const { title = 'POLKADOTS Cinema', description } = Astro.props;
+const ogImage = new URL('/assets/images/og-image.jpg', Astro.site ?? Astro.url).href;
 ---
 
 <!doctype html>
@@ -24,6 +25,17 @@ const { title = 'POLKADOTS Cinema', description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		{description && <meta name="description" content={description} />}
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		{description && <meta property="og:description" content={description} />}
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1072" />
+		<meta property="og:image:height" content="559" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		{description && <meta name="twitter:description" content={description} />}
+		<meta name="twitter:image" content={ogImage} />
 		<!-- AOS CSS -->
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	</head>
