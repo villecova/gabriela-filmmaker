@@ -1,0 +1,182 @@
+---
+/**
+ * Lazy YouTube fullscreen modal.
+ * No iframe is rendered until openYouTubeModal(youtubeId) is called.
+ */
+---
+
+<div
+  id="youtube-modal"
+  class="youtube-modal"
+  hidden
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label="YouTube video"
+>
+  <div class="youtube-modal__backdrop" data-youtube-close></div>
+
+  <div class="youtube-modal__content">
+    <button
+      type="button"
+      class="youtube-modal__close"
+      data-youtube-close
+      aria-label="Close video"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="youtube-modal__frame-wrap">
+      <div id="youtube-modal-mount" class="youtube-modal__mount"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .youtube-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .youtube-modal[hidden] {
+    display: none;
+  }
+
+  .youtube-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+  }
+
+  .youtube-modal__content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1120px);
+  }
+
+  .youtube-modal__close {
+    position: absolute;
+    top: -2.75rem;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .youtube-modal__close:hover,
+  .youtube-modal__close:focus-visible {
+    color: #fff;
+    outline: none;
+  }
+
+  .youtube-modal__frame-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .youtube-modal__mount {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .youtube-modal__mount :global(iframe) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+
+<script>
+  const modal = document.getElementById('youtube-modal');
+  const mount = document.getElementById('youtube-modal-mount');
+
+  if (modal instanceof HTMLElement && mount instanceof HTMLElement && !modal.dataset.ytReady) {
+    modal.dataset.ytReady = '1';
+    let isOpen = false;
+
+    const destroyIframe = () => {
+      const iframe = mount.querySelector('iframe');
+      if (iframe) {
+        iframe.src = '';
+        iframe.remove();
+      }
+      mount.replaceChildren();
+    };
+
+    const onKeydown = (event) => {
+      if (event.key === 'Escape') {
+        closeYouTubeModal();
+      }
+    };
+
+    const openYouTubeModal = (youtubeId) => {
+      if (!youtubeId || typeof youtubeId !== 'string') return;
+
+      // Replace any existing player so only one iframe exists
+      destroyIframe();
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?autoplay=1`;
+      iframe.title = 'YouTube video player';
+      iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+
+      mount.appendChild(iframe);
+
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (!isOpen) {
+        document.addEventListener('keydown', onKeydown);
+        isOpen = true;
+      }
+    };
+
+    const closeYouTubeModal = () => {
+      destroyIframe();
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKeydown);
+      isOpen = false;
+    };
+
+    modal.querySelectorAll('[data-youtube-close]').forEach((el) => {
+      el.addEventListener('click', closeYouTubeModal);
+    });
+
+    window.openYouTubeModal = openYouTubeModal;
+    window.closeYouTubeModal = closeYouTubeModal;
+
+    document.addEventListener('open-youtube-modal', (event) => {
+      const id = event.detail?.youtubeId;
+      if (id) openYouTubeModal(id);
+    });
+  }
+</script>

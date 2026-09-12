@@ -1,5 +1,6 @@
 ---
 import { getLang, getTranslations, getBasePath } from '../i18n/utils.js';
+import YouTubeModal from './shared/YouTubeModal.astro';
 
 const lang = getLang(Astro.url);
 const t = getTranslations(lang);
@@ -32,7 +33,7 @@ const projects = t.portfolio.projects;
           data-aos="fade-up"
           data-aos-duration="800"
           data-aos-delay={index * 100}
-          data-video-url={project.video}
+          data-youtube-id={project.youtubeId}
         >
           <div class="block">
             <div class={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
@@ -114,6 +115,8 @@ const projects = t.portfolio.projects;
   </div>
 </section>
 
+<YouTubeModal />
+
 <style>
   /* Subtle line decoration */
   article::before {
@@ -172,63 +175,27 @@ const projects = t.portfolio.projects;
       });
     }, { threshold: 0.5 });
 
+    const openProjectVideo = (youtubeId) => {
+      if (!youtubeId) return;
+      if (typeof window.openYouTubeModal === 'function') {
+        window.openYouTubeModal(youtubeId);
+        return;
+      }
+      document.dispatchEvent(
+        new CustomEvent('open-youtube-modal', { detail: { youtubeId } })
+      );
+    };
+
     articles.forEach(article => {
       const video = article.querySelector('video');
-      if (!video) return;
-
-      observer.observe(video);
+      if (video) {
+        observer.observe(video);
+      }
 
       article.addEventListener('click', (e) => {
         e.preventDefault();
-        const videoUrl = article.dataset.videoUrl;
-        if (videoUrl) {
-          openFullscreenVideo(videoUrl);
-        }
+        openProjectVideo(article.dataset.youtubeId);
       });
     });
-
-    const openFullscreenVideo = (videoUrl) => {
-      const overlay = document.createElement('div');
-      overlay.style.position = 'fixed';
-      overlay.style.top = '0';
-      overlay.style.left = '0';
-      overlay.style.width = '100%';
-      overlay.style.height = '100%';
-      overlay.style.backgroundColor = 'rgba(0,0,0,0.95)';
-      overlay.style.zIndex = '9999';
-      overlay.style.display = 'flex';
-      overlay.style.alignItems = 'center';
-      overlay.style.justifyContent = 'center';
-
-      const video = document.createElement('video');
-      video.src = videoUrl;
-      video.controls = true;
-      video.loop = true;
-      video.muted = false;
-      video.style.maxWidth = '100%';
-      video.style.maxHeight = '100%';
-      video.style.outline = 'none';
-      video.autoplay = true;
-
-      overlay.appendChild(video);
-      document.body.appendChild(overlay);
-
-      const close = () => {
-        video.pause();
-        overlay.remove();
-      };
-
-      overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-          close();
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-          close();
-        }
-      }, { once: true });
-    };
   });
 </script>

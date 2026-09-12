@@ -49,10 +49,24 @@
 {#if showIntro}
   <div class="intro">
     <div class="content" class:visible={visible} class:hide={animate}>
+      <!-- Accent floral -->
+      <div class="accent">
+        <img
+          src="/assets/images/intro.webp"
+          alt=""
+          class="accent-img"
+          width="96"
+          height="96"
+        />
+      </div>
+
       <!-- Logo -->
       <div class="logo">
-        <span class="logo-main">PolkaDots</span>
-        <span class="logo-sub">Cinema</span>
+        <img
+          src="/assets/images/polkadots-logo.png"
+          alt="POLKADOTS Cinema"
+          class="logo-img"
+        />
       </div>
       
       <!-- Tagline -->
@@ -125,21 +139,35 @@
     transform: translateY(-20px);
   }
 
+  .accent {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .accent-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
   .logo {
     display: flex;
-    flex-direction: column;
-    font-family: 'Prata', serif;
-    color: #4A4843;
-    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
   }
 
-  .logo-main {
-    font-size: 3rem;
-    line-height: 1.1;
-  }
-
-  .logo-sub {
-    font-size: 1.5rem;
+  .logo-img {
+    height: 5.5rem;
+    width: auto;
+    max-width: min(92vw, 28rem);
+    object-fit: contain;
   }
 
   .tagline {
@@ -234,14 +262,16 @@
   }
 
   @media (max-width: 640px) {
-    .logo-main {
-      font-size: 2.5rem;
+    .accent {
+      width: 4.25rem;
+      height: 4.25rem;
+      margin-bottom: 1.25rem;
     }
-    
-    .logo-sub {
-      font-size: 1.25rem;
+
+    .logo-img {
+      height: 4rem;
     }
-    
+
     .lang-buttons {
       flex-direction: column;
       width: 100%;
