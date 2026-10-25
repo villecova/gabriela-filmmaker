@@ -29,17 +29,26 @@ const playLabel = locale === 'es' ? 'Reproducir film' : 'Play film';
   
   <main class="bg-white min-h-screen">
     
-    <!-- Hero Section (local preview unchanged) -->
+    <!-- Hero Section (local mini preview, poster fallback) -->
     <section class="relative h-[70vh] md:h-[85vh] overflow-hidden">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        class="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={project.video} type="video/mp4" />
-      </video>
+      {project.video ? (
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster={project.image}
+          class="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={project.video} type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          src={project.image}
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
       
       <!-- Gradient overlay -->
       <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
@@ -65,11 +74,13 @@ const playLabel = locale === 'es' ? 'Reproducir film' : 'Play film';
       
       <!-- Header -->
       <header class="text-center mb-16 md:mb-24">
-        <div class="flex items-center justify-center gap-3 text-xs tracking-widest uppercase text-taupe/50 mb-6">
-          <span>{project.location}</span>
-          <span class="w-1 h-1 rounded-full bg-taupe/30"></span>
-          <span>{project.year}</span>
-        </div>
+        {project.location && project.year && (
+          <div class="flex items-center justify-center gap-3 text-xs tracking-widest uppercase text-taupe/50 mb-6">
+            <span>{project.location}</span>
+            <span class="w-1 h-1 rounded-full bg-taupe/30"></span>
+            <span>{project.year}</span>
+          </div>
+        )}
         
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-main text-taupe mb-3">
           {project.title}
@@ -84,11 +95,13 @@ const playLabel = locale === 'es' ? 'Reproducir film' : 'Play film';
       </header>
 
       <!-- Editorial Description -->
-      <div class="max-w-2xl mx-auto text-center mb-20">
-        <p class="text-base md:text-lg text-taupe/70 leading-relaxed">
-          {project.description}
-        </p>
-      </div>
+      {project.description && (
+        <div class="max-w-2xl mx-auto text-center mb-20">
+          <p class="text-base md:text-lg text-taupe/70 leading-relaxed">
+            {project.description}
+          </p>
+        </div>
+      )}
 
       <!-- Full film trigger (YouTube via modal; no iframe until click) -->
       <div class="mb-20">
