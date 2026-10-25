@@ -5,24 +5,23 @@ import Logo from "./shared/Logo.astro";
 const lang = getLang(Astro.url);
 const t: any = getTranslations(lang);
 const base = getBasePath(lang);
+
+const heroMoments = Array.from({ length: 10 }, (_, i) => `/assets/images/hero/moment-${String(i + 1).padStart(2, '0')}.webp`);
 ---
 
 <section class="relative w-full h-screen overflow-hidden flex items-center justify-center text-center pt-16" id="hero">
-  <!-- Poster de respaldo para evitar gris al cargar -->
-
-
-  <!-- Video de fondo -->
-  <video
-    poster="/assets/images/poster/aaron-noreen.png"
-    muted
-    playsinline
-    preload="metadata"
-    id="hero-video"
-    class="absolute top-0 left-0 w-full h-full object-cover z-0"
-    webkit-playsinline
-  >
-    <source src="/assets/videos/aaron-noreen.mp4" type="video/mp4" />
-  </video>
+  <!-- Momentos de los films (fundido + zoom lento) -->
+  <div class="absolute inset-0 z-0" id="hero-moments">
+    {heroMoments.map((src, i) => (
+      <img
+        src={i === 0 ? src : undefined}
+        data-src={src}
+        alt=""
+        fetchpriority={i === 0 ? 'high' : undefined}
+        class={`hero-moment ${i === 0 ? 'is-active' : ''}`}
+      />
+    ))}
+  </div>
 
   <!-- Overlay -->
   <div class="absolute inset-0 bg-taupe bg-opacity-50 z-2"></div>
@@ -47,48 +46,45 @@ const base = getBasePath(lang);
   </div>
 </section>
 
+<style>
+  .hero-moment {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 1.6s ease, transform 8s linear;
+  }
+
+  .hero-moment.is-active {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-moment { transition: opacity 1.6s ease; transform: none !important; }
+  }
+</style>
+
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('hero-video');
+  const INTERVAL = 5000;
+  const moments = [...document.querySelectorAll<HTMLImageElement>('.hero-moment')];
 
-    const START_TIME = 6;
-    const END_TIME = 20;
-    const LEAD_TIME = 0.15; // pequeño margen para loop suave
-
-    if (!video) return;
-
-    // Asegurar que no arranca automáticamente mal
-    video.pause();
-
-    // Cuando ya tenemos metadata → mover al segundo inicial
-    video.addEventListener('loadedmetadata', () => {
-      try {
-        video.currentTime = START_TIME;
-      } catch (e) {
-        console.warn('Error setting start time', e);
-      }
+  // Cargar el resto de momentos cuando la página ya terminó de cargar
+  window.addEventListener('load', () => {
+    moments.forEach((img) => {
+      if (!img.src && img.dataset.src) img.src = img.dataset.src;
     });
 
-    // Cuando ya hizo seek → reproducir
-    video.addEventListener('seeked', () => {
-      if (video.currentTime >= START_TIME) {
-        video.play().catch(() => {
-          // autoplay puede fallar en algunos contextos
-          console.warn('Autoplay blocked');
-        });
-      }
-    });
-
-    // Loop controlado dentro del segmento
-    video.addEventListener('timeupdate', () => {
-      if (video.currentTime >= END_TIME - LEAD_TIME) {
-        video.currentTime = START_TIME;
-      }
-    });
-
-    // Si hay error → se queda el poster (no hacemos nada)
-    video.addEventListener('error', (e) => {
-      console.warn('Video error:', e);
-    });
+    let current = 0;
+    setInterval(() => {
+      const next = (current + 1) % moments.length;
+      if (!moments[next].complete) return;
+      moments[current].classList.remove('is-active');
+      moments[next].classList.add('is-active');
+      current = next;
+    }, INTERVAL);
   });
 </script>

@@ -3,6 +3,7 @@ import Footer from '../Footer.astro';
 import Navbar from '../Navbar.astro';
 import Layout from '../../layouts/Layout.astro';
 import YouTubeModal from '../shared/YouTubeModal.astro';
+import FilmPreview from '../shared/FilmPreview.astro';
 import { getTranslations, getBasePath } from '../../i18n/utils.js';
 
 interface Props {
@@ -29,26 +30,9 @@ const playLabel = locale === 'es' ? 'Reproducir film' : 'Play film';
   
   <main class="bg-white min-h-screen">
     
-    <!-- Hero Section (local mini preview, poster fallback) -->
+    <!-- Hero Section (local mini video or YouTube preview) -->
     <section class="relative h-[70vh] md:h-[85vh] overflow-hidden">
-      {project.video ? (
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          poster={project.image}
-          class="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={project.video} type="video/mp4" />
-        </video>
-      ) : (
-        <img
-          src={project.image}
-          alt=""
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-      )}
+      <FilmPreview project={project} class="!absolute inset-0" />
       
       <!-- Gradient overlay -->
       <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>

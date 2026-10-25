@@ -1,0 +1,191 @@
+---
+/**
+ * Muted looping preview for a film.
+ * Uses the local mini video (project.video) when set; otherwise plays the
+ * YouTube film muted from previewStart. Nothing loads until the preview is on screen.
+ */
+interface Props {
+  project: {
+    video?: string;
+    youtubeId?: string;
+    image?: string;
+    previewStart?: number;
+  };
+  class?: string;
+}
+
+const { project, class: className = '' } = Astro.props;
+const start = project.previewStart ?? 30;
+---
+
+<div
+  class={`film-preview ${className}`}
+  data-film-preview
+  data-video={project.video || undefined}
+  data-youtube-id={project.video ? undefined : project.youtubeId}
+  data-start={start}
+>
+  {project.image && (
+    <img src={project.image} alt="" loading="lazy" class="film-preview__poster" />
+  )}
+  {project.video ? (
+    <video class="film-preview__media" muted loop playsinline preload="none" poster={project.image}></video>
+  ) : (
+    <div class="film-preview__media film-preview__yt"><div data-yt-mount></div></div>
+  )}
+</div>
+
+<style>
+  .film-preview {
+    position: relative;
+    overflow: hidden;
+    container-type: size;
+    pointer-events: none;
+  }
+
+  .film-preview__poster,
+  .film-preview__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .film-preview__media {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+
+  .film-preview.is-playing .film-preview__media {
+    opacity: 1;
+  }
+
+  /* Cover-fit the 16:9 iframe and crop YouTube's edge UI */
+  .film-preview__yt :global(iframe) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100cqw, 177.78cqh);
+    height: max(100cqh, 56.25cqw);
+    transform: translate(-50%, -50%) scale(1.35);
+    border: 0;
+  }
+</style>
+
+<script>
+  type YTPlayer = any;
+
+  const previews = document.querySelectorAll<HTMLElement>('[data-film-preview]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let ytApi: Promise<any> | null = null;
+  const loadYouTubeApi = () => {
+    const w = window as any;
+    if (w.YT?.Player) return Promise.resolve(w.YT);
+    if (!ytApi) {
+      ytApi = new Promise((resolve) => {
+        const prev = w.onYouTubeIframeAPIReady;
+        w.onYouTubeIframeAPIReady = () => {
+          prev?.();
+          resolve(w.YT);
+        };
+        const script = document.createElement('script');
+        script.src = 'https://www.youtube.com/iframe_api';
+        document.head.appendChild(script);
+      });
+    }
+    return ytApi;
+  };
+
+  const players = new WeakMap<HTMLElement, YTPlayer>();
+
+  const startYouTube = async (el: HTMLElement) => {
+    const existing = players.get(el);
+    if (existing) {
+      existing.playVideo?.();
+      return;
+    }
+
+    const YT = await loadYouTubeApi();
+    const mount = el.querySelector<HTMLElement>('[data-yt-mount]');
+    if (!mount) return;
+
+    const start = Number(el.dataset.start) || 0;
+    let revealTimer: number | undefined;
+
+    // YouTube shows its title/controls for a few seconds after every
+    // play or seek, so keep the poster up until they fade out.
+    const cover = () => {
+      clearTimeout(revealTimer);
+      revealTimer = undefined;
+      el.classList.remove('is-playing');
+    };
+
+    const player = new YT.Player(mount, {
+      videoId: el.dataset.youtubeId,
+      host: 'https://www.youtube-nocookie.com',
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        disablekb: 1,
+        fs: 0,
+        iv_load_policy: 3,
+        playsinline: 1,
+        rel: 0,
+        cc_load_policy: 0,
+        start,
+      },
+      events: {
+        onReady: (e: any) => {
+          e.target.mute();
+          e.target.playVideo();
+        },
+        onStateChange: (e: any) => {
+          if (e.data === YT.PlayerState.PLAYING) {
+            player.unloadModule?.('captions');
+            if (!revealTimer) {
+              revealTimer = window.setTimeout(() => el.classList.add('is-playing'), 5000);
+            }
+          } else {
+            cover();
+            if (e.data === YT.PlayerState.ENDED) player.seekTo(start, true);
+          }
+        },
+      },
+    });
+    players.set(el, player);
+  };
+
+  const startVideo = (el: HTMLElement) => {
+    const video = el.querySelector('video');
+    if (!video) return;
+    if (!video.src) {
+      video.src = el.dataset.video!;
+      video.addEventListener('playing', () => el.classList.add('is-playing'), { once: true });
+    }
+    video.muted = true;
+    video.play().catch(() => {});
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          if (el.dataset.video) startVideo(el);
+          else if (el.dataset.youtubeId) startYouTube(el);
+        } else {
+          el.querySelector('video')?.pause();
+          players.get(el)?.pauseVideo?.();
+        }
+      });
+    },
+    // Start well before the preview scrolls in, so the YouTube cover delay
+    // has already passed by the time it is on screen.
+    { rootMargin: '150% 0px' }
+  );
+
+  if (!reduceMotion) previews.forEach((el) => observer.observe(el));
+</script>

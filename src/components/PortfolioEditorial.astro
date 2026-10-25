@@ -1,6 +1,7 @@
 ---
 import { getLang, getTranslations, getBasePath } from '../i18n/utils.js';
 import YouTubeModal from './shared/YouTubeModal.astro';
+import FilmPreview from './shared/FilmPreview.astro';
 
 const lang = getLang(Astro.url);
 const t = getTranslations(lang);
@@ -40,18 +41,7 @@ const projects = t.portfolio.projects;
               
               <!-- Image/Video Container -->
               <div class={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div class="relative overflow-hidden aspect-[4/3] lg:aspect-[16/10] bg-taupe/5">
-                  <video 
-                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none"
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    poster={project.image}
-                    data-src={project.video}
-                  >
-                  </video>
-                </div>
+                <FilmPreview project={project} class="aspect-[4/3] lg:aspect-[16/10] bg-taupe/5" />
               </div>
 
               <!-- Text Content -->
@@ -134,46 +124,9 @@ const projects = t.portfolio.projects;
 </style>
 
 <script>
-  // Viewport autoplay/pause for gallery videos (desktop + mobile)
+  // Previews autoplay via FilmPreview; click opens the full film
   document.addEventListener('DOMContentLoaded', () => {
     const articles = document.querySelectorAll('article.group');
-
-    const loadVideo = (video) => {
-      if (!video || video.querySelector('source')) return;
-      const src = video.dataset.src;
-      if (src) {
-        const source = document.createElement('source');
-        source.src = src;
-        source.type = 'video/mp4';
-        video.appendChild(source);
-        video.load();
-      }
-    };
-
-    const playVideo = (video) => {
-      if (!video) return;
-      video.muted = true;
-      video.play().catch(() => {});
-    };
-
-    const pauseVideo = (video) => {
-      if (!video) return;
-      video.pause();
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-        if (!video) return;
-
-        if (entry.isIntersecting) {
-          loadVideo(video);
-          playVideo(video);
-        } else {
-          pauseVideo(video);
-        }
-      });
-    }, { threshold: 0.5 });
 
     const openProjectVideo = (youtubeId) => {
       if (!youtubeId) return;
@@ -187,11 +140,6 @@ const projects = t.portfolio.projects;
     };
 
     articles.forEach(article => {
-      const video = article.querySelector('video');
-      if (video) {
-        observer.observe(video);
-      }
-
       article.addEventListener('click', (e) => {
         e.preventDefault();
         openProjectVideo(article.dataset.youtubeId);
